@@ -168,3 +168,24 @@ a.sponsor-float:hover .sponsor-float-icon,a.sponsor-float:focus-visible .sponsor
 /* Etiqueta del sponsor sin marco, fondo ni caja: solo texto junto al logo WP */
 a.sponsor-float .sponsor-float-label{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;max-width:220px!important;color:#fff!important;text-shadow:0 2px 5px #00180f,0 0 12px #00180f,0 0 20px #00180f!important;font-weight:900!important;}
 @media(max-width:650px){a.sponsor-float .sponsor-float-label{max-width:170px!important;padding:0!important;}}
+
+/* Iconos oficiales en botones de convocatoria */
+#convocatoria .convocatoria-social{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:60px;padding:12px 23px;font-size:14px;font-weight:900;line-height:1.2}
+#convocatoria .convocatoria-social svg{display:block;flex:0 0 29px;width:29px;height:29px}
+#convocatoria .convocatoria-social-whatsapp{background:#25D366;border-color:#25D366;color:#053c24}
+#convocatoria .convocatoria-social-whatsapp svg{fill:#fff;stroke:none}
+#convocatoria .convocatoria-social-whatsapp svg path{fill:#fff}
+#convocatoria .convocatoria-social-whatsapp:hover{background:#3de67c;color:#053c24}
+#convocatoria .convocatoria-social-instagram{background:#fff;border-color:#fff;color:#0b4c34}
+#convocatoria .convocatoria-social-instagram:hover{background:#f0fff5;color:#0b4c34}
+@media(max-width:650px){#convocatoria .convocatoria-social{width:100%;min-height:60px}}
+
+/* Logos oficiales de redes sociales en convocatoria */
+#convocatoria a.convocatoria-social-instagram{background:linear-gradient(115deg,#833ab4 0%,#c13584 48%,#e1306c 78%,#fd1d1d 100%)!important;border-color:#c13584!important;color:#fff!important;box-shadow:0 9px 26px #3b0a3670!important;}
+#convocatoria a.convocatoria-social-instagram:hover{filter:brightness(1.12)!important;}
+#convocatoria a.convocatoria-social-instagram .instagram-brand-icon{color:#fff!important;stroke:#fff!important;}
+#convocatoria a.convocatoria-social-whatsapp{background:#075e40!important;border-color:#25d366!important;color:#fff!important;box-shadow:0 9px 26px #001e1570!important;}
+#convocatoria a.convocatoria-social-whatsapp:hover{background:#087b51!important;}
+#convocatoria .convocatoria-wp-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 38px;width:38px;height:38px;border:2px solid #fff;border-radius:50%;background:#25d366;}
+#convocatoria .convocatoria-wp-icon .whatsapp-logo{display:block;width:26px!important;height:26px!important;flex:0 0 26px!important;fill:#fff!important;}
+#convocatoria .convocatoria-wp-icon .whatsapp-logo path{fill:#fff!important;}
