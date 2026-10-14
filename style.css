@@ -212,3 +212,7 @@ a.sponsor-float .sponsor-float-label{border:0!important;border-radius:0!importan
 #ser-sponsor .sponsor-contact-options a{display:block!important;width:100%!important;height:auto!important;min-height:0!important;min-width:0!important;max-width:none!important;padding:12px!important;background:#e4f9eb!important;color:#063d27!important;border:0!important;border-radius:7px!important;font-size:13px!important;font-weight:800!important;text-decoration:none!important;line-height:1.35!important;box-shadow:none!important}
 #ser-sponsor .sponsor-contact-options a:hover{background:#b8f2cb!important}
 #ser-sponsor .sponsor-contact-picker .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Botón compacto para contactar al director técnico */
+.technical-director .dt-cta{padding:9px 12px;font-size:10px;letter-spacing:.45px;border-radius:6px;min-height:36px;width:auto;max-width:max-content;line-height:1.3;white-space:normal;text-align:center}
+@media(max-width:600px){.technical-director .dt-cta{padding:8px 11px;font-size:10px;min-height:34px}}
