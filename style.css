@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+:root{--green:#006b40;--dark:#05271b;--mint:#a5e6bc;--ink:#17251d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.75}h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;line-height:1.02;margin-top:0}p{margin:0 0 18px}.hero{min-height:100svh;background:radial-gradient(circle at 70% 38%,#0c6942,#031d13 72%);color:white;position:relative;display:flex;justify-content:center;align-items:center;text-align:center;padding:95px 20px}.hero:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 84px,#fff 85px,transparent 86px);opacity:.06}.hero-content{position:relative}.shield{width:90px;height:105px;border:4px solid white;border-radius:13px 13px 38px 38px;margin:0 auto 28px;display:grid;place-items:center;font:900 43px 'Barlow Condensed',sans-serif}.eyebrow{color:var(--mint);letter-spacing:4px;font-size:11px;font-weight:700}.hero h1{font-size:clamp(52px,10vw,124px);margin:22px 0}.hero h1 span{color:var(--mint)}.hero-subtitle{font-weight:700;letter-spacing:2px;font-size:13px}.hero-subtitle b{color:var(--mint);padding:0 8px}.season{display:inline-block;border:1px solid #83c7a2;padding:8px 24px;margin-top:26px;font-size:11px;letter-spacing:3px}.hero-foot{position:absolute;bottom:25px;left:5%;right:5%;display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:1.5px;color:#b7d4c2}.section{padding:95px 24px}.container{max-width:1050px;margin:auto}.kicker{font-size:11px;letter-spacing:2px;font-weight:800;color:var(--green);margin-bottom:23px}h2{font-size:clamp(48px,8vw,92px);margin-bottom:28px}h2 em{font-style:normal;color:var(--green)}.lead{font-size:clamp(19px,2.5vw,25px);font-weight:600;max-width:780px;line-height:1.55}.intro .container>p:last-child{max-width:740px;color:#536b5c}.modes,.authorities{background:var(--dark);color:#fff}.modes .kicker,.authorities .kicker{color:var(--mint)}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mode{background:linear-gradient(145deg,#127b4b,#06402b);border:1px solid #438a63;min-height:220px;padding:24px;display:flex;flex-direction:column;justify-content:space-between}.mode small{letter-spacing:1.5px;color:#c9f0d9}.mode strong{font:900 clamp(37px,4.4vw,60px) 'Barlow Condensed',sans-serif;line-height:1}.reglamento{background:#f7faf7}.reglamento>.container>p:not(.kicker){max-width:780px}.section-bar{background:#006b40;color:#fff;font:800 26px 'Barlow Condensed',sans-serif;letter-spacing:.7px;padding:17px 22px;margin:60px 0 18px}.article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.article{background:#fff;border:1px solid #dce8df;border-top:3px solid #138456;padding:25px;min-width:0}.article-num{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#138456}.article h3{font-size:30px;margin:10px 0 13px;text-transform:uppercase}.article p{font-size:14px;color:#43574a;overflow-wrap:anywhere}.article p:last-child{margin-bottom:0}.declaration{background:#fff}.declaration-box{border-left:5px solid #087345;background:#f0f6f1;padding:28px;max-width:920px}.note{font-size:13px;color:#506858;border-top:1px solid #cfdfd3;padding-top:20px;margin-top:20px}.person{padding:25px 0;border-bottom:1px solid #3b6d51}.person small{color:var(--mint);letter-spacing:2px}.person h3{font-size:clamp(34px,5vw,56px);margin:10px 0}footer{background:#03170f;color:white;text-align:center;padding:60px 24px}footer strong{font:900 70px 'Barlow Condensed',sans-serif;color:var(--mint)}footer p{margin:5px 0}footer small{display:block;color:#9bb2a4;margin-top:25px}@media(max-width:700px){.section{padding:65px 20px}.hero h1{font-size:clamp(42px,11vw,70px)}.hero-foot{font-size:8px}.mode-grid,.article-grid{grid-template-columns:1fr}.mode{min-height:145px}.article{padding:22px}.section-bar{font-size:22px;margin-top:42px}.hero-subtitle{font-size:11px;letter-spacing:1px}}
+
+/* Escudo oficial FAT: portada y pie de pagina */
+.shield {
+  display: block;
+  width: 138px;
+  height: 138px;
+  object-fit: contain;
+  background: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px;
+  margin: 0 auto 28px;
+}
+.footer-shield {
+  display: block;
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 auto 20px;
+}
