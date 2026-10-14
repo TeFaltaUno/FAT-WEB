@@ -10,45 +10,126 @@
   <link href="style.css" rel="stylesheet"/>
  </head>
  <body>
-  <header class="hero">
-   <div class="hero-content">
-    <img alt="Escudo oficial de FAT - F&uacute;tbol Amateur Tucum&aacute;n" class="shield" src="escudo-fat.jpg"/>
-    <p class="eyebrow">
-     F&Uacute;TBOL AMATEUR TUCUM&Aacute;N
-    </p>
-    <h1>
-     SELECCIONADOS
-     <br/>
-     <span>
-      OFICIALES
-     </span>
-    </h1>
-    <p class="hero-subtitle">
-     F&Uacute;TBOL 5
+  <nav aria-label="Navegaci&oacute;n principal" class="topbar">
+   <a class="brand" href="#inicio">
+    <img alt="Escudo FAT" src="escudo-fat.jpg"/>
+    <span>
      <b>
-      &middot;
+      FAT
      </b>
-     F&Uacute;TBOL 7
-     <b>
-      &middot;
-     </b>
-     F&Uacute;TBOL 11
-    </p>
-    <p class="season">
-     TEMPORADA 2026
-    </p>
+     <small>
+      F&Uacute;TBOL AMATEUR
+      <br/>
+      TUCUM&Aacute;N
+     </small>
+    </span>
+   </a>
+   <div class="navlinks">
+    <a href="#inicio">
+     INICIO
+    </a>
+    <a href="#presentacion">
+     SOBRE FAT
+    </a>
+    <a href="#modalidades">
+     MODALIDADES
+    </a>
+    <a href="#reglamento">
+     REGLAMENTO
+    </a>
+    <a href="#sponsors">
+     SPONSORS
+    </a>
+    <a href="#autoridades">
+     AUTORIDADES
+    </a>
+   </div>
+   <a class="social-top" href="https://www.instagram.com/f.a.tucuman/" rel="noopener noreferrer" target="_blank">
+    <span>
+     INSTAGRAM
+    </span>
+    <strong>
+     F.A.TUCUMAN
+    </strong>
+   </a>
+  </nav>
+  <header class="hero" id="inicio">
+   <div aria-hidden="true" class="hero-shine">
+   </div>
+   <div class="hero-inner">
+    <div class="hero-crest">
+     <img alt="Escudo oficial FAT &ndash; F&uacute;tbol Amateur Tucum&aacute;n" src="escudo-fat.jpg"/>
+    </div>
+    <div class="hero-content">
+     <p class="hero-overline">
+      ORGULLO &middot; COMPROMISO &middot; IDENTIDAD
+     </p>
+     <h1>
+      SELECCIONADOS
+      <br/>
+      <span>
+       OFICIALES
+      </span>
+     </h1>
+     <p class="hero-subtitle">
+      F&Uacute;TBOL 5
+      <b>
+       &middot;
+      </b>
+      F&Uacute;TBOL 7
+      <b>
+       &middot;
+      </b>
+      F&Uacute;TBOL 11
+     </p>
+     <p class="season">
+      TEMPORADA 2026
+     </p>
+    </div>
    </div>
    <div class="hero-foot">
     <span>
      FAT / TUCUM&Aacute;N
     </span>
     <span>
-     INFORMACI&Oacute;N INSTITUCIONAL
+     EL F&Uacute;TBOL AMATEUR
+     <br/>
+     TAMBI&Eacute;N ESCRIBE HISTORIA
     </span>
    </div>
   </header>
   <main>
-   <section class="section intro">
+   <section class="sponsors-section" id="sponsors">
+    <div class="container">
+     <p class="kicker">
+      ALIADOS INSTITUCIONALES
+     </p>
+     <h2>
+      SPONSORS
+      <em>
+       OFICIALES.
+      </em>
+     </h2>
+     <div class="sponsor-grid">
+      <div class="sponsor-card">
+       <img alt="SIORM &mdash; otro punto de vista" loading="lazy" src="sponsor-siorm.jpg"/>
+      </div>
+      <div class="sponsor-card">
+       <img alt="Ciudad SMT" loading="lazy" src="sponsor-ciudad-smt.jpg"/>
+      </div>
+      <div class="sponsor-card">
+       <img alt="Unidad Legal" loading="lazy" src="sponsor-unidad-legal.jpg"/>
+      </div>
+      <div class="sponsor-card">
+       <img alt="Caruso Seguros" loading="lazy" src="sponsor-caruso.jpg"/>
+      </div>
+     </div>
+     <p class="sponsor-motto">
+      El f&uacute;tbol amateur tambi&eacute;n escribe historia.
+     </p>
+    </div>
+   </section>
+   <section class="section intro" id="presentacion">
     <div class="container">
      <p class="kicker">
       01 / PRESENTACI&Oacute;N
@@ -68,7 +149,7 @@
      </p>
     </div>
    </section>
-   <section class="section modes">
+   <section class="section modes" id="modalidades">
     <div class="container">
      <p class="kicker">
       02 / MODALIDADES
@@ -106,7 +187,7 @@
      </div>
     </div>
    </section>
-   <section class="section reglamento">
+   <section class="section reglamento" id="reglamento">
     <div class="container">
      <p class="kicker">
       03 / DOCUMENTO OFICIAL
@@ -354,7 +435,7 @@
      </div>
     </div>
    </section>
-   <section class="section authorities">
+   <section class="section authorities" id="autoridades">
     <div class="container">
      <p class="kicker">
       05 / AUTORIDADES
@@ -378,10 +459,26 @@
        ENZO VALENZUELA MASSA
       </h3>
      </div>
+     <div class="person">
+      <small>
+       TESORERO
+      </small>
+      <h3>
+       JUAN FORTINI
+      </h3>
+     </div>
     </div>
    </section>
   </main>
   <footer>
+   <a class="instagram" href="https://www.instagram.com/f.a.tucuman/" rel="noopener noreferrer" target="_blank">
+    <span>
+     INSTAGRAM
+    </span>
+    <strong>
+     F.A.TUCUMAN
+    </strong>
+   </a>
    <img alt="Escudo oficial FAT" class="footer-shield" src="escudo-fat.jpg"/>
    <p>
     F&Uacute;TBOL AMATEUR TUCUM&Aacute;N
@@ -395,4 +492,3 @@
   </footer>
  </body>
 </html>
-

@@ -23,3 +23,79 @@
   padding: 5px;
   margin: 0 auto 20px;
 }
+
+/* Rediseño institucional FAT 2026 */
+body{overflow-x:hidden}
+.topbar{position:relative;z-index:10;background:#031e14;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px max(22px,calc((100vw - 1200px)/2));border-bottom:1px solid #ffffff24}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;line-height:1}
+.brand img{width:49px;height:53px;object-fit:contain;background:white;border-radius:6px;padding:2px}
+.brand b{display:block;font:900 34px 'Barlow Condensed',sans-serif}.brand small{display:block;font-size:8px;letter-spacing:1px;font-weight:800;line-height:1.3}
+.navlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,1.7vw,28px)}.navlinks a,.social-top{color:#e7f6ec;text-decoration:none;font-size:10px;letter-spacing:1px;font-weight:800}.navlinks a:hover,.social-top:hover{color:#9feab5}.social-top{white-space:nowrap;font-size:13px}
+.hero{min-height:calc(100svh - 79px);background:radial-gradient(ellipse at 80% 0%,#83dca36e 0%,transparent 38%),linear-gradient(132deg,#031d15 2%,#005b36 58%,#f0fff0 180%);isolation:isolate;padding:75px 20px 95px}
+.hero:before{background:repeating-linear-gradient(90deg,transparent 0,transparent 115px,#ffffff 116px,transparent 117px);opacity:.10;z-index:-1}
+.hero:after{content:"FAT";position:absolute;inset:auto 0 6%;font:900 clamp(170px,32vw,520px) 'Barlow Condensed',sans-serif;color:#ffffff0b;line-height:.7;z-index:-1;pointer-events:none}
+.hero-overline{font-size:10px;letter-spacing:4px;color:#b5f7c8;margin-bottom:22px;font-weight:800}
+.hero .shield{width:155px;height:155px;background:#fff;border-radius:14px;padding:7px;box-shadow:0 0 0 1px #ffffff44,0 25px 70px #00170d99}
+.hero h1{font-size:clamp(54px,10vw,122px);text-shadow:0 7px 35px #00190c80;line-height:.93}.hero h1 span{color:#a9f4bc}
+.hero .season{background:#002c1b66;backdrop-filter:blur(4px);border-color:#b5f7c8}
+.intro{background:linear-gradient(145deg,#fff 50%,#e7f5eb)}.modes{background:linear-gradient(125deg,#031e14,#085b37)}.mode{box-shadow:0 15px 35px #001a103d}
+.sponsors-section{padding:90px 24px;background:linear-gradient(155deg,#ffffff 25%,#eff8f1 65%,#d8f0df);text-align:center}
+.sponsors-section h2{font-size:clamp(45px,7vw,78px)}.sponsors-section h2 em{font-style:normal;color:#087a4b}
+.sponsor-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:40px 0}
+.sponsor-card{background:#fff;border:1px solid #d9e8dc;border-radius:16px;min-height:180px;display:grid;place-items:center;padding:15px;box-shadow:0 12px 35px #00552b12}
+.sponsor-card img{width:100%;height:160px;object-fit:contain}
+.sponsor-motto{font:800 clamp(22px,3vw,35px) 'Barlow Condensed',sans-serif;color:#06432b;margin-top:34px}
+.authorities{background:linear-gradient(130deg,#031b13,#08603b)}.authorities .container{max-width:1050px}
+.instagram{display:inline-flex;gap:12px;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:15px;font-weight:800;letter-spacing:2px;margin:0 auto 30px}.instagram:hover{color:#a5e6bc}.ig-icon{width:40px;height:40px;border:2px solid #c747b9;border-radius:12px;display:grid;place-items:center;font-size:30px;color:#f6a049;line-height:1}
+@media(max-width:900px){.topbar{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:flex-start;overflow:auto;flex-wrap:nowrap;padding-bottom:6px}.sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.topbar{padding:10px 15px}.brand img{width:42px;height:45px}.brand b{font-size:28px}.social-top span{font-size:10px}.hero{padding:70px 14px 85px;min-height:calc(100svh - 115px)}.hero .shield{width:128px;height:128px}.hero h1{font-size:clamp(42px,10vw,66px)}.hero-overline{font-size:8px;letter-spacing:2px}.sponsors-section{padding:65px 18px}.sponsor-grid{gap:10px}.sponsor-card{padding:8px;min-height:135px}.sponsor-card img{height:125px}.hero-foot{bottom:20px}.hero-subtitle{font-size:10px}}
+
+/* ===== NUEVO DISEÑO FAT: PORTADA CINEMATOGRÁFICA ===== */
+:root{--dark:#031e15;--green:#006b40;--mint:#a8efc4}
+body{overflow-x:hidden}
+.topbar{position:relative;z-index:10;min-height:86px;background:linear-gradient(110deg,#02170f 0%,#06462d 70%,#052c20 100%);border-bottom:1px solid rgba(186,255,212,.22);display:flex;align-items:center;justify-content:space-between;gap:28px;padding:10px max(28px,calc((100vw - 1320px)/2));color:white}
+.topbar .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:white;flex-shrink:0}
+.topbar .brand img{width:55px;height:62px;object-fit:contain;background:white;border-radius:7px;padding:3px}
+.topbar .brand span{display:flex;flex-direction:column;line-height:1.03}
+.topbar .brand b{font:900 38px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.04em}
+.topbar .brand small{font-size:9px;letter-spacing:1.2px;font-weight:800;line-height:1.25}
+.topbar .navlinks{display:flex;flex-wrap:wrap;gap:clamp(11px,1.9vw,27px);justify-content:center}
+.topbar .navlinks a{color:#f1fff5;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.4px;white-space:nowrap;padding:12px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+.topbar .navlinks a:hover,.topbar .navlinks a:focus-visible{color:#a8efc4;border-bottom-color:#8affb4}
+.topbar .social-top{display:flex;flex-direction:column;gap:1px;flex-shrink:0;border-left:2px solid #8cebb3;padding-left:16px;color:white;text-decoration:none;line-height:1.35}
+.topbar .social-top span{font-size:10px;letter-spacing:1.6px}
+.topbar .social-top strong{font-size:13px;letter-spacing:.6px}
+.hero{min-height:630px;min-height:min(760px,85svh);padding:76px 28px 86px;display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate;text-align:left;background:radial-gradient(ellipse at 65% 35%,rgba(30,167,99,.65),transparent 60%),linear-gradient(115deg,#021c13 5%,#065637 58%,#0d4d35 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;opacity:1;background:linear-gradient(90deg,rgba(0,24,14,.08),rgba(1,32,21,.30) 35%,rgba(1,39,23,.12) 66%,rgba(0,25,15,.05)),url('estadio-luces.jpg') left center/34% 100% no-repeat,url('tucuman-hero.jpg') right center/41% 100% no-repeat;mask-image:linear-gradient(to bottom,black 0%,black 73%,transparent 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(0,29,17,.35),transparent 35%,rgba(0,34,18,.08)),linear-gradient(0deg,rgba(0,21,11,.78),transparent 35%),repeating-linear-gradient(108deg,transparent 0 165px,rgba(183,255,208,.045) 166px,transparent 168px)}
+.hero-shine{position:absolute;inset:auto -20% -110px -20%;height:260px;transform:rotate(-3deg);background:radial-gradient(ellipse at 50% 70%,rgba(148,255,179,.26),transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;width:min(1260px,100%);display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,1.55fr);align-items:center;gap:clamp(20px,5vw,85px)}
+.hero-crest{display:flex;align-items:center;justify-content:center}
+.hero-crest img{width:clamp(165px,23vw,320px);max-width:100%;height:auto;aspect-ratio:1.05;object-fit:contain;background:#fff;border:5px solid rgba(245,255,248,.92);border-radius:22px;padding:12px;box-shadow:0 0 0 8px rgba(3,93,53,.32),0 15px 65px rgba(0,0,0,.4),0 0 90px rgba(121,255,164,.22)}
+.hero-content{text-align:center;position:relative}
+.hero-overline{font-size:12px;letter-spacing:4px;font-weight:800;color:#b5f4c9;margin-bottom:18px}
+.hero h1{font-size:clamp(57px,7.2vw,118px);font-weight:900;letter-spacing:-1.5px;line-height:.93;margin:0 0 27px;color:white;text-shadow:0 8px 22px rgba(0,0,0,.38)}
+.hero h1 span{color:#b4f8c7;text-shadow:0 0 40px rgba(90,247,138,.3)}
+.hero-subtitle{font-size:clamp(12px,1.3vw,17px);letter-spacing:3px;color:white;margin:0}
+.hero-subtitle b{color:#76ef9e;padding:0 10px}
+.season{font-size:13px;font-weight:700;letter-spacing:4px;border:1px solid #a2f9c1;box-shadow:0 0 20px rgba(103,244,146,.2);background:rgba(0,35,21,.5);margin-top:32px;padding:13px 28px;color:white}
+.hero-foot{position:absolute;bottom:25px;left:5%;right:5%;display:flex;justify-content:space-between;align-items:end;gap:20px;color:#e1ffea;font-size:11px;letter-spacing:2px;font-weight:700;line-height:1.6}
+.hero-foot span:last-child{border-left:3px solid #7af0a0;padding-left:14px}
+.sponsors-section{background:linear-gradient(115deg,#fff 0%,#f4faf6 45%,#fff 100%);padding:55px 24px 52px;position:relative;color:#053923;text-align:center}
+.sponsors-section::before{content:'';position:absolute;left:0;right:0;top:0;height:9px;background:linear-gradient(90deg,#004529,#79e9a6,#fff,#007345)}
+.sponsors-section .container{max-width:1240px}
+.sponsors-section .kicker{font-size:11px;letter-spacing:3px;margin-bottom:7px}
+.sponsors-section h2{font-size:clamp(25px,3vw,40px);letter-spacing:1px;margin:0 0 26px}
+.sponsor-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:center}
+.sponsor-card{min-width:0;min-height:130px;padding:12px 22px;display:flex;align-items:center;justify-content:center;background:transparent;border:0;border-right:1px solid #c9dbd0;border-radius:0;box-shadow:none}
+.sponsor-card:last-child{border-right:0}
+.sponsor-card img{max-width:100%;max-height:108px;object-fit:contain;mix-blend-mode:multiply}
+.sponsor-motto{margin:20px 0 0;color:#06472e;font-size:clamp(15px,2vw,22px);font-weight:700;letter-spacing:.4px}
+.intro{background:linear-gradient(125deg,#fff,#f0f7f2 90%)}
+.modes{background:linear-gradient(130deg,#021f15,#09603d)}
+.authorities{background:linear-gradient(110deg,#042519,#075638)}
+footer .instagram{display:flex;justify-content:center;align-items:center;gap:15px;text-decoration:none;color:white;font-size:12px;letter-spacing:1.5px;margin-bottom:26px}
+footer .instagram strong{font-size:15px}
+@media(max-width:980px){.topbar{padding:10px 20px;gap:12px;flex-wrap:wrap}.topbar .navlinks{order:3;width:100%;gap:16px;justify-content:center}.topbar .social-top{margin-left:auto}.hero{min-height:650px}.hero-inner{gap:22px;grid-template-columns:1fr 1.8fr}.hero h1{font-size:clamp(45px,7.8vw,85px)}.hero::before{background-size:45% 100%,50% 100%}}
+@media(max-width:650px){.topbar{min-height:auto;padding:12px 16px}.topbar .brand img{width:43px;height:50px}.topbar .brand b{font-size:30px}.topbar .brand small{font-size:8px}.topbar .social-top span{font-size:9px}.topbar .social-top strong{font-size:11px}.topbar .navlinks{gap:6px 14px;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.topbar .navlinks a{font-size:10px}.hero{min-height:730px;min-height:calc(100svh - 104px);padding:65px 20px 90px}.hero-inner{grid-template-columns:1fr;gap:32px}.hero-crest img{width:150px;padding:7px;border-radius:16px}.hero h1{font-size:clamp(43px,10.8vw,72px);letter-spacing:-.6px}.hero-overline{font-size:9px;letter-spacing:2.2px}.hero-subtitle{font-size:11px;letter-spacing:1px}.hero-subtitle b{padding:0 5px}.season{font-size:10px;letter-spacing:2px;margin-top:27px}.hero::before{background:linear-gradient(90deg,rgba(0,27,16,.5),rgba(1,32,20,.18)),url('estadio-luces.jpg') left bottom/55% 70% no-repeat,url('tucuman-hero.jpg') right bottom/65% 65% no-repeat;opacity:.75}.hero-foot{font-size:8px;letter-spacing:1px;bottom:20px}.sponsors-section{padding:44px 15px}.sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sponsor-card{min-height:115px;padding:12px;border-bottom:1px solid #d4e3d9}.sponsor-card:nth-child(even){border-right:0}.sponsor-card:nth-child(n+3){border-bottom:0}.sponsor-card img{max-height:90px}.sponsor-motto{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
