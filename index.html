@@ -8,7 +8,7 @@
 <title>
    FAT | Seleccionados Oficiales 2026
   </title>
-<link href="style.css" rel="stylesheet"/>
+<link href="style.css?v=20261018-video-fat-1" rel="stylesheet"/>
 </head>
 <body>
 <nav aria-label="Navegación principal" class="topbar">
@@ -440,6 +440,27 @@
 <div class="person"><small>DIRECTOR TÉCNICO (DT)</small><h3>FEDERICO DAVID SANTILLÁN</h3></div></div>
 </section>
 </main>
+
+<section class="fat-video-section" id="video-fat" aria-label="Video oficial FAT">
+  <div class="fat-video-heading"><span class="fat-video-kicker">FAT · CONTENIDO AUDIOVISUAL</span><h2>VIVÍ LA EXPERIENCIA <span>FAT.</span></h2><p>Deslizá para descubrir nuestro video. También podés abrirlo directamente con el botón.</p></div>
+  <div class="fat-video-carousel" id="fat-video-carousel" aria-label="Galería de video deslizable">
+    <div class="fat-video-slide fat-video-slide-intro" id="fat-video-intro">
+      <div class="fat-video-intro-content"><span class="fat-video-slide-count">01 / 02</span><img src="escudo-fat-blanco.png" alt="Escudo de FAT" class="fat-video-crest"/><h3>ESTO ES <em>FAT.</em></h3><p>Fútbol Amateur Tucumán · Seleccionados oficiales 2026</p><button type="button" class="fat-video-next" id="fat-video-next" aria-label="Ver el video de FAT">VER EL VIDEO <span aria-hidden="true">→</span></button><span class="fat-video-swipe-hint">DESLIZÁ HACIA LA IZQUIERDA <span aria-hidden="true">←</span></span></div>
+    </div>
+    <div class="fat-video-slide fat-video-slide-player" id="fat-video-player-slide"><div class="fat-video-player-inner"><span class="fat-video-slide-count">02 / 02 · VIDEO OFICIAL</span><video id="fat-video" controls playsinline preload="metadata" poster="fat-video-portada.jpg" aria-label="Video de Fútbol Amateur Tucumán"><source src="fat-video-oficial.mp4" type="video/mp4"/>Tu navegador no admite reproducción de video. <a href="fat-video-oficial.mp4">Abrir video</a>.</video><p>FAT · FÚTBOL AMATEUR TUCUMÁN</p><a class="fat-video-download" href="fat-video-oficial.mp4" target="_blank" rel="noopener">Abrir video en otra pestaña ↗</a></div></div>
+  </div>
+  <div class="fat-video-navigation"><button type="button" id="fat-video-prev" aria-label="Ver presentación" class="fat-video-nav-btn">← PRESENTACIÓN</button><div class="fat-video-dots" aria-hidden="true"><span class="is-active"></span><span></span></div><button type="button" id="fat-video-go" aria-label="Ir al video" class="fat-video-nav-btn">VIDEO →</button></div>
+</section>
+<script>
+(function(){
+ const carousel=document.getElementById('fat-video-carousel'), next=document.getElementById('fat-video-next'), go=document.getElementById('fat-video-go'), prev=document.getElementById('fat-video-prev'), player=document.getElementById('fat-video'), dots=document.querySelectorAll('.fat-video-dots span');
+ if(!carousel)return;
+ function move(index){carousel.scrollTo({left:index*carousel.clientWidth,behavior:'smooth'});}
+ next.addEventListener('click',()=>move(1));go.addEventListener('click',()=>move(1));prev.addEventListener('click',()=>move(0));
+ let tick;carousel.addEventListener('scroll',()=>{clearTimeout(tick);tick=setTimeout(()=>{const active=carousel.scrollLeft>=carousel.clientWidth*.5?1:0;dots.forEach((dot,i)=>dot.classList.toggle('is-active',i===active));if(active===0&&!player.paused)player.pause();},100);},{passive:true});
+})();
+</script>
+
 <footer>
 <a class="instagram" href="https://www.instagram.com/f.a.tucuman/" rel="noopener noreferrer" target="_blank">
 <span>
