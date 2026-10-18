@@ -8,7 +8,7 @@
 <title>
    FAT | Seleccionados Oficiales 2026
   </title>
-<link href="style.css?v=20261018-video-reparado-3" rel="stylesheet"/>
+<link href="style.css?v=20261018-gesto-video-1" rel="stylesheet"/>
 </head>
 <body>
 <nav aria-label="Navegación principal" class="topbar">
@@ -440,24 +440,7 @@
 <div class="person"><small>DIRECTOR TÉCNICO (DT)</small><h3>FEDERICO DAVID SANTILLÁN</h3></div></div>
 </section>
 </main>
-<section aria-label="Video oficial FAT" class="fat-video-section" id="video-fat">
-<div class="fat-video-heading"><span class="fat-video-kicker">FAT · CONTENIDO AUDIOVISUAL</span><h2>VIVÍ LA EXPERIENCIA <span>FAT.</span></h2><p>Deslizá para descubrir nuestro video. También podés abrirlo directamente con el botón.</p></div>
-<div aria-label="Galería de video deslizable" class="fat-video-carousel" id="fat-video-carousel">
-<div class="fat-video-slide fat-video-slide-intro" id="fat-video-intro">
-<div class="fat-video-intro-content"><span class="fat-video-slide-count">01 / 02</span><img alt="Escudo de FAT" class="fat-video-crest" src="escudo-fat-blanco.png"/><h3>ESTO ES <em>FAT.</em></h3><p>Fútbol Amateur Tucumán · Seleccionados oficiales 2026</p><button aria-label="Ver el video de FAT" class="fat-video-next" id="fat-video-next" type="button">VER EL VIDEO <span aria-hidden="true">→</span></button><span class="fat-video-swipe-hint">DESLIZÁ HACIA LA IZQUIERDA <span aria-hidden="true">←</span></span></div>
-</div>
-<div class="fat-video-slide fat-video-slide-player" id="fat-video-player-slide"><div class="fat-video-player-inner"><span class="fat-video-slide-count">02 / 02 · VIDEO OFICIAL</span><video aria-label="Video de Fútbol Amateur Tucumán" controls="" id="fat-video" playsinline="" poster="fat-video-portada.jpg" preload="metadata"><source src="fat-video-oficial.mp4" type="video/mp4"/>Tu navegador no admite reproducción de video. <a href="fat-video-oficial.mp4">Abrir video</a>.</video><p>FAT · FÚTBOL AMATEUR TUCUMÁN</p><a class="fat-video-download" href="fat-video-oficial.mp4" rel="noopener" target="_blank">Abrir video en otra pestaña ↗</a></div></div>
-</div>
-<div class="fat-video-navigation"><button aria-label="Ver presentación" class="fat-video-nav-btn" id="fat-video-prev" type="button">← PRESENTACIÓN</button><div aria-hidden="true" class="fat-video-dots"><span class="is-active"></span><span></span></div><button aria-label="Ir al video" class="fat-video-nav-btn" id="fat-video-go" type="button">VIDEO →</button></div>
-</section><script>
-(function(){
- const carousel=document.getElementById('fat-video-carousel'), next=document.getElementById('fat-video-next'), go=document.getElementById('fat-video-go'), prev=document.getElementById('fat-video-prev'), player=document.getElementById('fat-video'), dots=document.querySelectorAll('.fat-video-dots span');
- if(!carousel)return;
- function move(index){carousel.scrollTo({left:index*carousel.clientWidth,behavior:'smooth'});}
- next.addEventListener('click',()=>move(1));go.addEventListener('click',()=>move(1));prev.addEventListener('click',()=>move(0));
- let tick;carousel.addEventListener('scroll',()=>{clearTimeout(tick);tick=setTimeout(()=>{const active=carousel.scrollLeft>=carousel.clientWidth*.5?1:0;dots.forEach((dot,i)=>dot.classList.toggle('is-active',i===active));if(active===0&&!player.paused)player.pause();},100);},{passive:true});
-})();
-</script><footer>
+<footer>
 <a class="instagram" href="https://www.instagram.com/f.a.tucuman/" rel="noopener noreferrer" target="_blank">
 <span>
      INSTAGRAM
@@ -476,6 +459,22 @@
 <small>
     Reglamento General · Versión 1.0 · Año 2026
    </small>
-</footer>
+</footer><section aria-label="Video oficial FAT" class="fat-swipe-entry" id="video-fat"><button aria-label="Abrir video FAT a pantalla completa" class="fat-swipe-trigger" id="fat-swipe-trigger" type="button"><span aria-hidden="true" class="fat-swipe-arrow">←</span><span>DESLIZÁ PARA VER EL VIDEO OFICIAL</span><span aria-hidden="true" class="fat-swipe-arrow">→</span></button></section><script>
+(function(){
+ const overlay=document.getElementById('fat-fullscreen-video'), video=document.getElementById('fat-video-full');
+ const trigger=document.getElementById('fat-swipe-trigger'), close=document.getElementById('fat-video-close'), sound=document.getElementById('fat-video-sound');
+ if(!overlay||!video)return;
+ let oldFocus=null, touchStart=null, openedAt=0;
+ function openVideo(){if(overlay.classList.contains('is-open'))return;oldFocus=document.activeElement;overlay.classList.add('is-open');overlay.setAttribute('aria-hidden','false');document.body.classList.add('fat-video-open');video.muted=true;video.currentTime=0;const result=video.play();if(result&&result.catch)result.catch(()=>{video.controls=true;});openedAt=Date.now();close.focus({preventScroll:true});}
+ function closeVideo(){video.pause();overlay.classList.remove('is-open');overlay.setAttribute('aria-hidden','true');document.body.classList.remove('fat-video-open');video.controls=false;if(oldFocus&&oldFocus.focus)oldFocus.focus({preventScroll:true});}
+ trigger.addEventListener('click',openVideo);close.addEventListener('click',closeVideo);
+ sound.addEventListener('click',()=>{video.muted=!video.muted;sound.textContent=video.muted?'🔇 ACTIVAR SONIDO':'🔊 SILENCIAR';sound.setAttribute('aria-label',video.muted?'Activar sonido':'Silenciar video');});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.classList.contains('is-open'))closeVideo();});
+ // Un deslizamiento horizontal al final del sitio abre el video inmediatamente.
+ document.addEventListener('touchstart',e=>{if(e.touches.length!==1)return;const t=e.touches[0];touchStart={x:t.clientX,y:t.clientY,nearEnd:(window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-Math.max(160,window.innerHeight*.4)),inside:overlay.classList.contains('is-open')};},{passive:true});
+ document.addEventListener('touchend',e=>{if(!touchStart||e.changedTouches.length!==1)return;const t=e.changedTouches[0],dx=t.clientX-touchStart.x,dy=t.clientY-touchStart.y;const horizontal=Math.abs(dx)>85&&Math.abs(dx)>Math.abs(dy)*1.4;if(horizontal){if(touchStart.inside){if(Date.now()-openedAt>400)closeVideo();}else if(touchStart.nearEnd){openVideo();}}touchStart=null;},{passive:true});
+ // En computadoras, también se puede abrir sin deslizar.
+})();
+</script><div aria-hidden="true" aria-label="Video oficial de FAT" aria-modal="true" class="fat-fullscreen-video" id="fat-fullscreen-video" role="dialog"><video id="fat-video-full" loop="" playsinline="" poster="fat-video-portada.jpg" preload="metadata" webkit-playsinline=""><source src="fat-video-oficial.mp4" type="video/mp4"/>Tu navegador no admite videos.</video><button aria-label="Cerrar video" class="fat-video-close" id="fat-video-close" type="button">✕ CERRAR</button><button aria-label="Activar sonido" class="fat-video-sound" id="fat-video-sound" type="button">🔇 ACTIVAR SONIDO</button></div>
 <a aria-label="Consultar para sumarte como sponsor de FAT por WhatsApp" class="sponsor-float" href="https://wa.me/5493813323280?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" rel="noopener noreferrer" target="_blank" title="Sumarte como sponsor por WhatsApp"><span class="sponsor-float-label">¿QUERÉS SUMARTE COMO SPONSOR?</span><span class="sponsor-float-icon"><svg aria-hidden="true" class="whatsapp-logo" focusable="false" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 .8C7.65.8.85 7.58.85 15.93c0 2.66.7 5.26 2.03 7.56L.7 31.2l7.91-2.08a15.14 15.14 0 0 0 7.39 1.89h.01c8.35 0 15.15-6.79 15.15-15.13A15.04 15.04 0 0 0 16 .8zm0 27.65a12.55 12.55 0 0 1-6.4-1.75l-.46-.28-4.7 1.23 1.25-4.58-.3-.47a12.53 12.53 0 0 1-1.93-6.67C3.46 9.01 9.08 3.4 16 3.4a12.5 12.5 0 0 1 12.54 12.5c0 6.92-5.63 12.55-12.54 12.55zm6.88-9.39c-.38-.19-2.23-1.1-2.57-1.22-.35-.13-.6-.19-.85.19-.25.38-.98 1.22-1.2 1.47-.22.25-.44.28-.82.1-.38-.19-1.59-.59-3.02-1.87-1.12-1-1.87-2.23-2.09-2.61-.22-.38-.02-.58.17-.77.17-.17.38-.44.56-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.09-.19-.85-2.05-1.17-2.8-.31-.74-.63-.64-.85-.65h-.72c-.25 0-.66.09-1 .47-.35.38-1.32 1.29-1.32 3.14s1.35 3.64 1.54 3.89c.19.25 2.65 4.05 6.42 5.68.9.39 1.61.62 2.16.8.91.29 1.74.25 2.39.15.73-.11 2.23-.91 2.55-1.79.31-.88.31-1.63.22-1.79-.1-.16-.35-.25-.73-.44z" fill="#ffffff"></path></svg></span></a></body>
 </html>

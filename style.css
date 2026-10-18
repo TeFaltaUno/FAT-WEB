@@ -301,3 +301,15 @@ a.sponsor-float .sponsor-float-label{border:0!important;border-radius:0!importan
 .fat-video-slide-player{background:linear-gradient(125deg,#071114,#15302e);padding:26px 24px}.fat-video-player-inner{text-align:center;width:100%;max-width:720px}.fat-video-player-inner .fat-video-slide-count{margin-bottom:12px}.fat-video-player-inner video{display:block;max-width:100%;width:auto;max-height:70vh;min-height:220px;aspect-ratio:16/9;object-fit:contain;background:#000;margin:0 auto;border-radius:10px}.fat-video-player-inner p{font-size:12px;font-weight:800;letter-spacing:.16em;color:#d6e9e2;margin:17px 0 8px}.fat-video-download{color:#c1e6d6;font-size:12px;text-underline-offset:4px}.fat-video-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:20px}.fat-video-nav-btn{background:transparent;border:0;color:#dce9e5;font-size:11px;font-weight:800;letter-spacing:.1em;cursor:pointer;padding:10px 0}.fat-video-nav-btn:hover{color:#fff}.fat-video-dots{display:flex;gap:9px}.fat-video-dots span{width:7px;height:7px;border-radius:50%;background:#627b76}.fat-video-dots span.is-active{background:#c1ead7;width:22px;border-radius:6px}
 @media(max-width:700px){.fat-video-section{padding:55px 16px 35px}.fat-video-slide{min-height:420px}.fat-video-carousel{border-radius:12px}.fat-video-slide-player{padding:16px 10px}.fat-video-player-inner video{width:100%;min-height:0;max-height:58vh;aspect-ratio:auto}.fat-video-intro-content{padding:26px 15px}.fat-video-crest{width:85px;height:85px}.fat-video-navigation{padding:14px 4px 0}.fat-video-nav-btn{font-size:10px}}
 
+
+/* Video FAT: pantalla completa por gesto, sin carrusel ni pantallas intermedias */
+.fat-swipe-entry{background:linear-gradient(115deg,#061615,#102a2a);color:#e5f3ef;padding:18px 18px 24px;text-align:center;border-top:1px solid rgba(168,211,199,.25)}
+.fat-swipe-trigger{display:flex;align-items:center;justify-content:center;gap:12px;min-height:54px;max-width:560px;width:100%;margin:auto;background:transparent;color:#e5f3ef;border:0;font:700 12px/1.5 inherit;letter-spacing:.09em;cursor:pointer;touch-action:pan-y}
+.fat-swipe-trigger .fat-swipe-arrow{font-size:27px;font-weight:400;line-height:1}
+.fat-fullscreen-video{position:fixed;inset:0;z-index:999999;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden;overscroll-behavior:contain;touch-action:pan-y}
+.fat-fullscreen-video.is-open{display:flex}
+.fat-fullscreen-video video{display:block;width:100vw;height:100dvh;max-height:100%;object-fit:contain;background:#000}
+.fat-video-close,.fat-video-sound{position:absolute;z-index:2;top:max(18px,env(safe-area-inset-top));border:1px solid rgba(255,255,255,.5);border-radius:40px;color:white;background:rgba(0,0,0,.6);font:700 13px/1.2 system-ui,sans-serif;padding:12px 15px;cursor:pointer}
+.fat-video-close{left:16px}.fat-video-sound{right:16px}
+body.fat-video-open{overflow:hidden!important;touch-action:none}
+@media(max-width:700px){.fat-swipe-entry{padding:12px 14px 18px}.fat-swipe-trigger{min-height:56px;font-size:11px}.fat-fullscreen-video video{height:100dvh}}
