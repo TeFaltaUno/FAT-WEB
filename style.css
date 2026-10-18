@@ -1,3 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+:root{--green:#006b40;--dark:#05271b;--mint:#a5e6bc;--ink:#17251d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.75}h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;line-height:1.02;margin-top:0}p{margin:0 0 18px}.hero{min-height:100svh;background:radial-gradient(circle at 70% 38%,#0c6942,#031d13 72%);color:white;position:relative;display:flex;justify-content:center;align-items:center;text-align:center;padding:95px 20px}.hero:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 84px,#fff 85px,transparent 86px);opacity:.06}.hero-content{position:relative}.shield{width:90px;height:105px;border:4px solid white;border-radius:13px 13px 38px 38px;margin:0 auto 28px;display:grid;place-items:center;font:900 43px 'Barlow Condensed',sans-serif}.eyebrow{color:var(--mint);letter-spacing:4px;font-size:11px;font-weight:700}.hero h1{font-size:clamp(52px,10vw,124px);margin:22px 0}.hero h1 span{color:var(--mint)}.hero-subtitle{font-weight:700;letter-spacing:2px;font-size:13px}.hero-subtitle b{color:var(--mint);padding:0 8px}.season{display:inline-block;border:1px solid #83c7a2;padding:8px 24px;margin-top:26px;font-size:11px;letter-spacing:3px}.hero-foot{position:absolute;bottom:25px;left:5%;right:5%;display:flex;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:1.5px;color:#b7d4c2}.section{padding:95px 24px}.container{max-width:1050px;margin:auto}.kicker{font-size:11px;letter-spacing:2px;font-weight:800;color:var(--green);margin-bottom:23px}h2{font-size:clamp(48px,8vw,92px);margin-bottom:28px}h2 em{font-style:normal;color:var(--green)}.lead{font-size:clamp(19px,2.5vw,25px);font-weight:600;max-width:780px;line-height:1.55}.intro .container>p:last-child{max-width:740px;color:#536b5c}.modes,.authorities{background:var(--dark);color:#fff}.modes .kicker,.authorities .kicker{color:var(--mint)}.mode-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mode{background:linear-gradient(145deg,#127b4b,#06402b);border:1px solid #438a63;min-height:220px;padding:24px;display:flex;flex-direction:column;justify-content:space-between}.mode small{letter-spacing:1.5px;color:#c9f0d9}.mode strong{font:900 clamp(37px,4.4vw,60px) 'Barlow Condensed',sans-serif;line-height:1}.reglamento{background:#f7faf7}.reglamento>.container>p:not(.kicker){max-width:780px}.section-bar{background:#006b40;color:#fff;font:800 26px 'Barlow Condensed',sans-serif;letter-spacing:.7px;padding:17px 22px;margin:60px 0 18px}.article-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.article{background:#fff;border:1px solid #dce8df;border-top:3px solid #138456;padding:25px;min-width:0}.article-num{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#138456}.article h3{font-size:30px;margin:10px 0 13px;text-transform:uppercase}.article p{font-size:14px;color:#43574a;overflow-wrap:anywhere}.article p:last-child{margin-bottom:0}.declaration{background:#fff}.declaration-box{border-left:5px solid #087345;background:#f0f6f1;padding:28px;max-width:920px}.note{font-size:13px;color:#506858;border-top:1px solid #cfdfd3;padding-top:20px;margin-top:20px}.person{padding:25px 0;border-bottom:1px solid #3b6d51}.person small{color:var(--mint);letter-spacing:2px}.person h3{font-size:clamp(34px,5vw,56px);margin:10px 0}footer{background:#03170f;color:white;text-align:center;padding:60px 24px}footer strong{font:900 70px 'Barlow Condensed',sans-serif;color:var(--mint)}footer p{margin:5px 0}footer small{display:block;color:#9bb2a4;margin-top:25px}@media(max-width:700px){.section{padding:65px 20px}.hero h1{font-size:clamp(42px,11vw,70px)}.hero-foot{font-size:8px}.mode-grid,.article-grid{grid-template-columns:1fr}.mode{min-height:145px}.article{padding:22px}.section-bar{font-size:22px;margin-top:42px}.hero-subtitle{font-size:11px;letter-spacing:1px}}
+
+/* Escudo oficial FAT: portada y pie de pagina */
+.shield {
+  display: block;
+  width: 138px;
+  height: 138px;
+  object-fit: contain;
+  background: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 8px;
+  margin: 0 auto 28px;
+}
+.footer-shield {
+  display: block;
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 auto 20px;
+}
+
+/* Rediseño institucional FAT 2026 */
+body{overflow-x:hidden}
+.topbar{position:relative;z-index:10;background:#031e14;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px max(22px,calc((100vw - 1200px)/2));border-bottom:1px solid #ffffff24}
+.brand{display:flex;align-items:center;gap:12px;color:white;text-decoration:none;line-height:1}
+.brand img{width:49px;height:53px;object-fit:contain;background:white;border-radius:6px;padding:2px}
+.brand b{display:block;font:900 34px 'Barlow Condensed',sans-serif}.brand small{display:block;font-size:8px;letter-spacing:1px;font-weight:800;line-height:1.3}
+.navlinks{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(10px,1.7vw,28px)}.navlinks a,.social-top{color:#e7f6ec;text-decoration:none;font-size:10px;letter-spacing:1px;font-weight:800}.navlinks a:hover,.social-top:hover{color:#9feab5}.social-top{white-space:nowrap;font-size:13px}
+.hero{min-height:calc(100svh - 79px);background:radial-gradient(ellipse at 80% 0%,#83dca36e 0%,transparent 38%),linear-gradient(132deg,#031d15 2%,#005b36 58%,#f0fff0 180%);isolation:isolate;padding:75px 20px 95px}
+.hero:before{background:repeating-linear-gradient(90deg,transparent 0,transparent 115px,#ffffff 116px,transparent 117px);opacity:.10;z-index:-1}
+.hero:after{content:"FAT";position:absolute;inset:auto 0 6%;font:900 clamp(170px,32vw,520px) 'Barlow Condensed',sans-serif;color:#ffffff0b;line-height:.7;z-index:-1;pointer-events:none}
+.hero-overline{font-size:10px;letter-spacing:4px;color:#b5f7c8;margin-bottom:22px;font-weight:800}
+.hero .shield{width:155px;height:155px;background:#fff;border-radius:14px;padding:7px;box-shadow:0 0 0 1px #ffffff44,0 25px 70px #00170d99}
+.hero h1{font-size:clamp(54px,10vw,122px);text-shadow:0 7px 35px #00190c80;line-height:.93}.hero h1 span{color:#a9f4bc}
+.hero .season{background:#002c1b66;backdrop-filter:blur(4px);border-color:#b5f7c8}
+.intro{background:linear-gradient(145deg,#fff 50%,#e7f5eb)}.modes{background:linear-gradient(125deg,#031e14,#085b37)}.mode{box-shadow:0 15px 35px #001a103d}
+.sponsors-section{padding:90px 24px;background:linear-gradient(155deg,#ffffff 25%,#eff8f1 65%,#d8f0df);text-align:center}
+.sponsors-section h2{font-size:clamp(45px,7vw,78px)}.sponsors-section h2 em{font-style:normal;color:#087a4b}
+.sponsor-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:40px 0}
+.sponsor-card{background:#fff;border:1px solid #d9e8dc;border-radius:16px;min-height:180px;display:grid;place-items:center;padding:15px;box-shadow:0 12px 35px #00552b12}
+.sponsor-card img{width:100%;height:160px;object-fit:contain}
+.sponsor-motto{font:800 clamp(22px,3vw,35px) 'Barlow Condensed',sans-serif;color:#06432b;margin-top:34px}
+.authorities{background:linear-gradient(130deg,#031b13,#08603b)}.authorities .container{max-width:1050px}
+.instagram{display:inline-flex;gap:12px;align-items:center;justify-content:center;text-decoration:none;color:#fff;font-size:15px;font-weight:800;letter-spacing:2px;margin:0 auto 30px}.instagram:hover{color:#a5e6bc}.ig-icon{width:40px;height:40px;border:2px solid #c747b9;border-radius:12px;display:grid;place-items:center;font-size:30px;color:#f6a049;line-height:1}
+@media(max-width:900px){.topbar{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:flex-start;overflow:auto;flex-wrap:nowrap;padding-bottom:6px}.sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.topbar{padding:10px 15px}.brand img{width:42px;height:45px}.brand b{font-size:28px}.social-top span{font-size:10px}.hero{padding:70px 14px 85px;min-height:calc(100svh - 115px)}.hero .shield{width:128px;height:128px}.hero h1{font-size:clamp(42px,10vw,66px)}.hero-overline{font-size:8px;letter-spacing:2px}.sponsors-section{padding:65px 18px}.sponsor-grid{gap:10px}.sponsor-card{padding:8px;min-height:135px}.sponsor-card img{height:125px}.hero-foot{bottom:20px}.hero-subtitle{font-size:10px}}
+
+/* ===== NUEVO DISEÑO FAT: PORTADA CINEMATOGRÁFICA ===== */
+:root{--dark:#031e15;--green:#006b40;--mint:#a8efc4}
+body{overflow-x:hidden}
+.topbar{position:relative;z-index:10;min-height:86px;background:linear-gradient(110deg,#02170f 0%,#06462d 70%,#052c20 100%);border-bottom:1px solid rgba(186,255,212,.22);display:flex;align-items:center;justify-content:space-between;gap:28px;padding:10px max(28px,calc((100vw - 1320px)/2));color:white}
+.topbar .brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:white;flex-shrink:0}
+.topbar .brand img{width:55px;height:62px;object-fit:contain;background:white;border-radius:7px;padding:3px}
+.topbar .brand span{display:flex;flex-direction:column;line-height:1.03}
+.topbar .brand b{font:900 38px 'Barlow Condensed',Impact,sans-serif;letter-spacing:.04em}
+.topbar .brand small{font-size:9px;letter-spacing:1.2px;font-weight:800;line-height:1.25}
+.topbar .navlinks{display:flex;flex-wrap:wrap;gap:clamp(11px,1.9vw,27px);justify-content:center}
+.topbar .navlinks a{color:#f1fff5;text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.4px;white-space:nowrap;padding:12px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+.topbar .navlinks a:hover,.topbar .navlinks a:focus-visible{color:#a8efc4;border-bottom-color:#8affb4}
+.topbar .social-top{display:flex;flex-direction:column;gap:1px;flex-shrink:0;border-left:2px solid #8cebb3;padding-left:16px;color:white;text-decoration:none;line-height:1.35}
+.topbar .social-top span{font-size:10px;letter-spacing:1.6px}
+.topbar .social-top strong{font-size:13px;letter-spacing:.6px}
+.hero{min-height:630px;min-height:min(760px,85svh);padding:76px 28px 86px;display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate;text-align:left;background:radial-gradient(ellipse at 65% 35%,rgba(30,167,99,.65),transparent 60%),linear-gradient(115deg,#021c13 5%,#065637 58%,#0d4d35 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;opacity:1;background:linear-gradient(90deg,rgba(0,24,14,.08),rgba(1,32,21,.30) 35%,rgba(1,39,23,.12) 66%,rgba(0,25,15,.05)),url('estadio-luces.jpg') left center/34% 100% no-repeat,url('tucuman-hero.jpg') right center/41% 100% no-repeat;mask-image:linear-gradient(to bottom,black 0%,black 73%,transparent 100%)}
+.hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(0,29,17,.35),transparent 35%,rgba(0,34,18,.08)),linear-gradient(0deg,rgba(0,21,11,.78),transparent 35%),repeating-linear-gradient(108deg,transparent 0 165px,rgba(183,255,208,.045) 166px,transparent 168px)}
+.hero-shine{position:absolute;inset:auto -20% -110px -20%;height:260px;transform:rotate(-3deg);background:radial-gradient(ellipse at 50% 70%,rgba(148,255,179,.26),transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;width:min(1260px,100%);display:grid;grid-template-columns:minmax(180px,.85fr) minmax(0,1.55fr);align-items:center;gap:clamp(20px,5vw,85px)}
+.hero-crest{display:flex;align-items:center;justify-content:center}
+.hero-crest img{width:clamp(165px,23vw,320px);max-width:100%;height:auto;aspect-ratio:1.05;object-fit:contain;background:#fff;border:5px solid rgba(245,255,248,.92);border-radius:22px;padding:12px;box-shadow:0 0 0 8px rgba(3,93,53,.32),0 15px 65px rgba(0,0,0,.4),0 0 90px rgba(121,255,164,.22)}
+.hero-content{text-align:center;position:relative}
+.hero-overline{font-size:12px;letter-spacing:4px;font-weight:800;color:#b5f4c9;margin-bottom:18px}
+.hero h1{font-size:clamp(57px,7.2vw,118px);font-weight:900;letter-spacing:-1.5px;line-height:.93;margin:0 0 27px;color:white;text-shadow:0 8px 22px rgba(0,0,0,.38)}
+.hero h1 span{color:#b4f8c7;text-shadow:0 0 40px rgba(90,247,138,.3)}
+.hero-subtitle{font-size:clamp(12px,1.3vw,17px);letter-spacing:3px;color:white;margin:0}
+.hero-subtitle b{color:#76ef9e;padding:0 10px}
+.season{font-size:13px;font-weight:700;letter-spacing:4px;border:1px solid #a2f9c1;box-shadow:0 0 20px rgba(103,244,146,.2);background:rgba(0,35,21,.5);margin-top:32px;padding:13px 28px;color:white}
+.hero-foot{position:absolute;bottom:25px;left:5%;right:5%;display:flex;justify-content:space-between;align-items:end;gap:20px;color:#e1ffea;font-size:11px;letter-spacing:2px;font-weight:700;line-height:1.6}
+.hero-foot span:last-child{border-left:3px solid #7af0a0;padding-left:14px}
+.sponsors-section{background:linear-gradient(115deg,#fff 0%,#f4faf6 45%,#fff 100%);padding:55px 24px 52px;position:relative;color:#053923;text-align:center}
+.sponsors-section::before{content:'';position:absolute;left:0;right:0;top:0;height:9px;background:linear-gradient(90deg,#004529,#79e9a6,#fff,#007345)}
+.sponsors-section .container{max-width:1240px}
+.sponsors-section .kicker{font-size:11px;letter-spacing:3px;margin-bottom:7px}
+.sponsors-section h2{font-size:clamp(25px,3vw,40px);letter-spacing:1px;margin:0 0 26px}
+.sponsor-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;align-items:center}
+.sponsor-card{min-width:0;min-height:130px;padding:12px 22px;display:flex;align-items:center;justify-content:center;background:transparent;border:0;border-right:1px solid #c9dbd0;border-radius:0;box-shadow:none}
+.sponsor-card:last-child{border-right:0}
+.sponsor-card img{max-width:100%;max-height:108px;object-fit:contain;mix-blend-mode:multiply}
+.sponsor-motto{margin:20px 0 0;color:#06472e;font-size:clamp(15px,2vw,22px);font-weight:700;letter-spacing:.4px}
+.intro{background:linear-gradient(125deg,#fff,#f0f7f2 90%)}
+.modes{background:linear-gradient(130deg,#021f15,#09603d)}
+.authorities{background:linear-gradient(110deg,#042519,#075638)}
+footer .instagram{display:flex;justify-content:center;align-items:center;gap:15px;text-decoration:none;color:white;font-size:12px;letter-spacing:1.5px;margin-bottom:26px}
+footer .instagram strong{font-size:15px}
+@media(max-width:980px){.topbar{padding:10px 20px;gap:12px;flex-wrap:wrap}.topbar .navlinks{order:3;width:100%;gap:16px;justify-content:center}.topbar .social-top{margin-left:auto}.hero{min-height:650px}.hero-inner{gap:22px;grid-template-columns:1fr 1.8fr}.hero h1{font-size:clamp(45px,7.8vw,85px)}.hero::before{background-size:45% 100%,50% 100%}}
+@media(max-width:650px){.topbar{min-height:auto;padding:12px 16px}.topbar .brand img{width:43px;height:50px}.topbar .brand b{font-size:30px}.topbar .brand small{font-size:8px}.topbar .social-top span{font-size:9px}.topbar .social-top strong{font-size:11px}.topbar .navlinks{gap:6px 14px;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.topbar .navlinks a{font-size:10px}.hero{min-height:730px;min-height:calc(100svh - 104px);padding:65px 20px 90px}.hero-inner{grid-template-columns:1fr;gap:32px}.hero-crest img{width:150px;padding:7px;border-radius:16px}.hero h1{font-size:clamp(43px,10.8vw,72px);letter-spacing:-.6px}.hero-overline{font-size:9px;letter-spacing:2.2px}.hero-subtitle{font-size:11px;letter-spacing:1px}.hero-subtitle b{padding:0 5px}.season{font-size:10px;letter-spacing:2px;margin-top:27px}.hero::before{background:linear-gradient(90deg,rgba(0,27,16,.5),rgba(1,32,20,.18)),url('estadio-luces.jpg') left bottom/55% 70% no-repeat,url('tucuman-hero.jpg') right bottom/65% 65% no-repeat;opacity:.75}.hero-foot{font-size:8px;letter-spacing:1px;bottom:20px}.sponsors-section{padding:44px 15px}.sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sponsor-card{min-height:115px;padding:12px;border-bottom:1px solid #d4e3d9}.sponsor-card:nth-child(even){border-right:0}.sponsor-card:nth-child(n+3){border-bottom:0}.sponsor-card img{max-height:90px}.sponsor-motto{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Convocatoria FAT 2026 */
+.convocatoria{position:relative;overflow:hidden;color:#fff;text-align:center;background:radial-gradient(ellipse at 85% 15%,#16955b77,transparent 48%),linear-gradient(120deg,#021e15 0%,#075638 52%,#032b20 100%);border-top:1px solid #67d59655;border-bottom:1px solid #67d59655}
+.convocatoria::before{content:"FAT";position:absolute;inset:auto -10px -70px auto;font:900 clamp(180px,33vw,430px) 'Barlow Condensed',Impact,sans-serif;line-height:.8;color:#ffffff08;pointer-events:none}
+.convocatoria-inner{position:relative;z-index:1;max-width:950px}.convocatoria .kicker{color:#a8efc4;letter-spacing:3px}.convocatoria h2{font-size:clamp(42px,6.5vw,86px);line-height:1.03;margin:0 0 25px}.convocatoria h2 em{color:#b4f8c7}.convocatoria-lead{font-size:clamp(17px,2vw,22px);line-height:1.6;max-width:740px;margin:0 auto 14px}.convocatoria-detail{font-size:12px;letter-spacing:2px;color:#b8eecb;font-weight:800}.convocatoria-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:32px auto}.convocatoria-button{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:15px 24px;background:#b4f8c7;color:#073b27;border:2px solid #b4f8c7;border-radius:6px;font-weight:800;letter-spacing:.6px;font-size:13px;text-decoration:none;transition:transform .2s,background .2s}.convocatoria-button:hover{transform:translateY(-2px);background:#fff}.convocatoria-button-outline{background:transparent;color:#fff}.convocatoria-button-outline:hover{background:#ffffff18}.convocatoria-note{font-size:13px;color:#c8e8d5;max-width:720px;margin:0 auto}.convocatoria-note a{color:#fff;font-weight:700}
+@media(max-width:650px){.convocatoria-actions{flex-direction:column;align-items:stretch}.convocatoria-button{width:100%}.convocatoria h2{font-size:clamp(39px,10vw,62px)}}
+
+/* ===== NUEVAS SECCIONES: SPONSORS Y DIRECCIÓN TÉCNICA ===== */
+.sponsor-call{position:relative;overflow:hidden;color:#fff;background:radial-gradient(circle at 92% 15%,#177e4f 0%,transparent 38%),linear-gradient(115deg,#031d14,#07583a 70%,#022c1d);padding:95px 24px}
+.sponsor-call-inner{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(220px,.7fr);gap:55px;align-items:center}
+.sponsor-call .kicker{color:#b3f4cb;letter-spacing:3px}.sponsor-call h2{font-size:clamp(50px,7vw,94px);margin:0 0 22px}.sponsor-call h2 em{color:#aaf2c2}.sponsor-call-lead{font-size:clamp(16px,2vw,21px);max-width:720px;line-height:1.65;color:#e5f7eb}
+.sponsor-call-label{font-size:11px;font-weight:800;letter-spacing:2.5px;color:#aef1c6;margin:27px 0 12px}
+.sponsor-call-actions{display:flex;flex-wrap:wrap;gap:12px}.sponsor-call-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 19px;border:1px solid #a7eec0;border-radius:6px;background:#b6f7c9;color:#043522;text-decoration:none;font-size:12px;letter-spacing:.45px;font-weight:800;transition:transform .2s,background .2s}.sponsor-call-actions a:nth-child(2){background:transparent;color:white}.sponsor-call-actions a:hover{transform:translateY(-2px);background:#e0ffea;color:#043522}
+.sponsor-call-note{font-size:12px;color:#c1e3cd;margin:18px 0 0}.sponsor-call-note a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.sponsor-call-art{display:flex;align-items:center;flex-direction:column;gap:20px}.sponsor-call-art img{width:min(260px,100%);aspect-ratio:1;object-fit:contain;padding:16px;background:white;border-radius:22px;box-shadow:0 24px 75px #00180c8a}.sponsor-call-art span{font-size:10px;font-weight:800;letter-spacing:2px;text-align:center;color:#b8f6cd}
+.technical-director{background:linear-gradient(125deg,#f8fbf8,#e6f4eb);padding:90px 24px}.technical-director .kicker{letter-spacing:3px}.dt-card{display:grid;grid-template-columns:minmax(250px,.85fr) minmax(0,1.15fr);overflow:hidden;border-radius:15px;background:#fff;box-shadow:0 22px 65px #0338201a;border:1px solid #d5e6da}
+.dt-photo{min-height:470px;background:#dceae1}.dt-photo img{display:block;width:100%;height:100%;min-height:470px;object-fit:cover;object-position:52% 45%}.dt-info{padding:clamp(28px,5vw,68px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.dt-label,.dt-contact-label{font-size:11px;font-weight:800;letter-spacing:2.5px;color:#08744a}.dt-info h2{font-size:clamp(45px,5.3vw,75px);margin:14px 0 22px}.dt-info h2 em{color:#08744a}.dt-role{font-size:11px;letter-spacing:1.4px;color:#668372;font-weight:800}.dt-info h3{font-size:clamp(34px,4.2vw,58px);color:#082d1d;margin:8px 0 25px}.dt-contact-label{margin:0 0 4px}.dt-phone{font-size:clamp(16px,2vw,21px);color:#074b32;font-weight:800;text-decoration:none}.dt-phone:hover{text-decoration:underline}.dt-whatsapp{margin-top:20px;padding:12px 20px;border-radius:5px;background:#086b43;color:#fff;font-size:12px;font-weight:800;letter-spacing:.6px;text-decoration:none}.dt-whatsapp:hover{background:#06452e}
+@media(max-width:780px){.sponsor-call-inner{grid-template-columns:1fr;gap:35px}.sponsor-call-art{display:none}.dt-card{grid-template-columns:1fr}.dt-photo,.dt-photo img{min-height:300px;max-height:410px}.dt-info{padding:32px 24px}.sponsor-call{padding:70px 20px}.technical-director{padding:65px 20px}}
+@media(max-width:440px){.sponsor-call-actions{flex-direction:column}.sponsor-call-actions a{width:100%;font-size:11px}.dt-info h3{font-size:37px}}
+
+/* FAT 2026 · Director técnico / diseño editorial negro, blanco y verde */
+.technical-director{position:relative;isolation:isolate;overflow:hidden;padding:0;background:#07130f;color:#fff}
+.technical-director::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 45% 12%,#16a76c33,transparent 34%),linear-gradient(125deg,#0c1b17 0%,#050a09 62%,#111b19 100%)}
+.dt-stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);min-height:650px;max-width:1500px;margin:auto}
+.dt-visual{position:relative;min-height:640px;overflow:hidden;background:linear-gradient(145deg,#0a593d,#06130e 75%)}
+.dt-visual::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,#04181040,#06231d44),url('estadio-luces.jpg') center/cover;opacity:.65}
+.dt-visual::after{content:"";position:absolute;inset:-15% -25% -15% auto;width:65%;transform:skewX(-20deg);background:linear-gradient(100deg,#f4faf9b8 0%,#f4faf922 17%,#08a76577 20%,#073b2a 65%);mix-blend-mode:screen;pointer-events:none}
+.dt-photo-new{position:absolute;inset:8% 8% 11% 8%;overflow:hidden;transform:rotate(-2deg);border:8px solid #f3f6f2;box-shadow:0 30px 90px #0009;z-index:1}
+.dt-photo-new img{display:block;width:100%;height:100%;object-fit:cover;object-position:55% 40%;filter:contrast(1.08) saturate(.93)}
+.dt-visual-caption{position:absolute;z-index:2;bottom:22px;left:8%;font:900 44px 'Barlow Condensed',Impact,sans-serif;letter-spacing:1px;text-shadow:0 3px 15px #000}.dt-visual-caption span{display:block;font:700 10px Inter,Arial,sans-serif;letter-spacing:3px}
+.dt-copy{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(35px,5.3vw,90px) clamp(28px,5vw,80px);background:linear-gradient(135deg,#121b1a 0%,#060b0a 90%)}
+.dt-copy::before{content:"FAT";position:absolute;right:-8%;top:6%;font:900 clamp(170px,26vw,410px) 'Barlow Condensed',Impact,sans-serif;color:#ffffff07;pointer-events:none;line-height:1}
+.dt-eyebrow{font-size:11px;letter-spacing:3px;color:#b8f7d0;font-weight:800;border-left:3px solid #47db92;padding-left:13px}
+.dt-copy h2{position:relative;color:#fff;font-size:clamp(56px,6.3vw,106px);line-height:.91;letter-spacing:-.7px;margin:20px 0 24px;text-shadow:0 6px 18px #0008}
+.dt-copy h2 em{font-style:normal;color:#a8f3c2;background:linear-gradient(180deg,#f5fff8,#61e89d);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.dt-description{font-size:clamp(15px,1.4vw,19px);color:#d8e6df;max-width:520px;line-height:1.6}
+.dt-identity{position:relative;display:flex;gap:19px;align-items:center;width:100%;border:1px solid #7bdba58c;border-radius:12px;background:linear-gradient(105deg,#103327,#071411);padding:18px 20px;margin:20px 0 22px;box-shadow:0 10px 35px #0005}
+.dt-initials{display:grid;place-items:center;flex:0 0 68px;height:78px;background:#a9f3c3;color:#051d13;font:900 51px 'Barlow Condensed',Impact,sans-serif;transform:skew(-8deg)}
+.dt-identity strong{display:block;font:900 clamp(25px,2.7vw,43px) 'Barlow Condensed',Impact,sans-serif;line-height:1.02;color:#fff}
+.dt-identity small{display:block;font-size:10px;letter-spacing:2px;color:#a9f3c3;margin-top:8px}
+.dt-contact-new{display:flex;flex-wrap:wrap;align-items:center;gap:18px 26px;width:100%}.dt-contact-new div{display:flex;flex-direction:column;gap:4px}.dt-contact-new span{font-size:10px;letter-spacing:2px;color:#a8f3c2}.dt-contact-new a:not(.dt-cta){color:white;font-size:clamp(17px,2vw,25px);font-weight:800;text-decoration:none}.dt-cta{display:inline-flex;align-items:center;justify-content:center;border:1px solid #81eab0;border-radius:7px;color:#d9ffe8;text-decoration:none;padding:13px 17px;font-size:11px;font-weight:800;letter-spacing:1px;transition:background .2s,color .2s}.dt-cta:hover{background:#a8f3c2;color:#071b11}
+.dt-values{display:grid;grid-template-columns:repeat(3,1fr);max-width:1500px;margin:auto;background:linear-gradient(100deg,#f8faf9,#e9f5ef);color:#102a20;padding:27px clamp(22px,5vw,75px);gap:20px}.dt-values div{border-left:3px solid #1a9d65;padding-left:17px}.dt-values strong{display:block;font:800 25px 'Barlow Condensed',Impact,sans-serif}.dt-values span{font-size:12px;color:#526d60}
+@media(max-width:850px){.dt-stage{grid-template-columns:1fr}.dt-visual{min-height:450px}.dt-photo-new{inset:6% 14% 10%}.dt-copy{padding:50px 28px}.dt-copy h2{font-size:clamp(55px,10vw,83px)}.dt-values{gap:15px}}
+@media(max-width:520px){.dt-visual{min-height:340px}.dt-photo-new{inset:7% 10% 13%;border-width:5px}.dt-visual-caption{font-size:34px}.dt-identity{padding:13px;gap:12px}.dt-initials{flex-basis:52px;height:65px;font-size:41px}.dt-identity strong{font-size:27px}.dt-identity small{font-size:8px}.dt-values{grid-template-columns:1fr;gap:14px}.dt-values div{padding-left:12px}.dt-values strong{font-size:22px}}
+
+/* Instagram del director técnico */
+.dt-instagram{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:16px 0 20px;padding:12px 17px;border-left:3px solid #83e6b0;background:linear-gradient(100deg,rgba(255,255,255,.13),rgba(255,255,255,.03));border-radius:0 9px 9px 0;color:#fff}
+.dt-instagram span{font-size:11px;letter-spacing:2px;font-weight:800;color:#a6efc6}
+.dt-instagram strong{font-size:16px;font-weight:800;letter-spacing:.4px;color:#fff}
+
+/* FAT · Identidad institucional y proyecto deportivo */
+.intro{background:linear-gradient(135deg,#f8fbf9 0%,#fff 46%,#e6f2eb 100%);position:relative;overflow:hidden}
+.intro:before{content:"";position:absolute;right:-150px;top:0;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,#b9e9cd66,transparent 70%);pointer-events:none}
+.about-fat{max-width:1180px;position:relative}.about-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;border-bottom:2px solid #087448;padding-bottom:24px;margin-bottom:30px}.about-heading h2{font-size:clamp(54px,8vw,105px);margin:0}.about-eyebrow{font-size:12px;letter-spacing:2.2px;font-weight:800;color:#087448;margin-bottom:13px}.about-mark{font:900 105px 'Barlow Condensed',Impact,sans-serif;line-height:.75;color:#0c704524;position:relative}.about-mark span{display:block;font:700 13px Inter,Arial,sans-serif;text-align:right;letter-spacing:3px;margin-top:10px;color:#08643d}.about-intro{max-width:1000px}.about-intro .lead{max-width:1000px;font-size:clamp(18px,2vw,23px);color:#142d22}.about-intro p:not(.lead){max-width:980px;font-size:16px;color:#42584c}.about-status{display:flex;gap:22px;align-items:flex-start;background:#052d20;color:#fff;padding:30px 34px;margin:38px 0 24px;border-left:6px solid #80e4a3;box-shadow:0 20px 45px #05391e1c}.about-status-icon{font:800 37px 'Barlow Condensed',sans-serif;color:#8df2b2}.about-status h3,.about-feature h3{font-size:35px;margin:0 0 12px}.about-status p{color:#e1f3e9;margin:0}.about-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.about-feature{padding:29px 30px;background:#fff;border:1px solid #cde3d5;border-top:4px solid #087448;box-shadow:0 12px 32px #0a472011}.about-feature-number{font-size:10px;letter-spacing:2px;color:#087448;font-weight:800}.about-feature h3{margin:15px 0}.about-feature p{margin:0;color:#42584c}.about-values{margin-top:58px}.values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.values-grid>div{display:flex;gap:18px;align-items:center;background:#fff;border:1px solid #cde3d5;min-height:95px;padding:18px 20px}.values-grid strong{color:#006b40;font-size:13px;letter-spacing:.5px;min-width:140px}.values-grid span{font-size:13px;line-height:1.5;color:#43594c}.about-project{margin-top:85px;padding-top:60px;border-top:1px solid #b7d5c1}.about-project-head h2{font-size:clamp(46px,6.2vw,78px);margin:0 0 18px}.about-project-head>p:last-child{max-width:830px;font-size:17px;color:#42584c}.objectives-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:28px}.objectives-grid article{display:flex;gap:17px;padding:23px;background:#fff;border:1px solid #d3e5d8;border-radius:7px;box-shadow:0 10px 26px #05391e0b}.objectives-grid article>span{flex:0 0 auto;width:43px;height:43px;border-radius:6px;background:#e2f4e8;display:grid;place-items:center;color:#006b40;font:800 23px 'Barlow Condensed',sans-serif}.objectives-grid h3{font-size:25px;line-height:1.08;margin:2px 0 9px;color:#06452c}.objectives-grid p{font-size:14px;color:#445b4e;line-height:1.6;margin:0}
+@media(max-width:750px){.about-mark{display:none}.about-duo,.values-grid,.objectives-grid{grid-template-columns:1fr}.about-heading h2{font-size:clamp(49px,12vw,75px)}.about-status{padding:24px 20px;gap:12px}.values-grid>div{flex-direction:column;align-items:start;gap:5px;min-height:0}.values-grid strong{min-width:0}.about-project{margin-top:55px;padding-top:45px}.about-feature{padding:24px}}
+
+/* Botón flotante sponsor: etiqueta + logo original de WhatsApp */
+a.sponsor-float{position:fixed!important;right:18px!important;bottom:calc(20px + env(safe-area-inset-bottom,0px))!important;left:auto!important;top:auto!important;z-index:2147483000!important;display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;gap:10px!important;width:auto!important;min-width:0!important;max-width:calc(100vw - 24px)!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;text-decoration:none!important;transform:none!important;}
+a.sponsor-float .sponsor-float-label{display:block!important;max-width:215px;padding:12px 15px;border:1px solid #7ce4a4;border-radius:12px;background:#072d20;color:#fff;font:900 12px/1.3 Inter,Arial,sans-serif;letter-spacing:.3px;text-align:center;box-shadow:0 6px 24px #0006;}
+a.sponsor-float .sponsor-float-icon{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 62px!important;width:62px!important;height:62px!important;border:3px solid #fff!important;border-radius:50%!important;background:#25D366!important;color:#fff!important;box-shadow:0 7px 25px #0006!important;}
+a.sponsor-float .sponsor-float-icon .whatsapp-logo{display:block!important;flex:none!important;width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important;max-width:38px!important;max-height:38px!important;fill:#fff!important;color:#fff!important;background:transparent!important;border:0!important;padding:0!important;box-shadow:none!important;}
+a.sponsor-float .sponsor-float-icon .whatsapp-logo path{fill:#fff!important;}
+a.sponsor-float:hover .sponsor-float-icon,a.sponsor-float:focus-visible .sponsor-float-icon{transform:scale(1.07);}
+@media(max-width:650px){a.sponsor-float{right:12px!important;bottom:calc(14px + env(safe-area-inset-bottom,0px))!important;gap:8px!important;}a.sponsor-float .sponsor-float-label{max-width:170px;padding:10px 11px;font-size:11px;}a.sponsor-float .sponsor-float-icon{flex-basis:58px!important;width:58px!important;height:58px!important;}a.sponsor-float .sponsor-float-icon .whatsapp-logo{width:35px!important;height:35px!important;min-width:35px!important;min-height:35px!important;max-width:35px!important;max-height:35px!important;}}
+
+/* Etiqueta del sponsor sin marco, fondo ni caja: solo texto junto al logo WP */
+a.sponsor-float .sponsor-float-label{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;max-width:220px!important;color:#fff!important;text-shadow:0 2px 5px #00180f,0 0 12px #00180f,0 0 20px #00180f!important;font-weight:900!important;}
+@media(max-width:650px){a.sponsor-float .sponsor-float-label{max-width:170px!important;padding:0!important;}}
+
+/* Iconos oficiales en botones de convocatoria */
+#convocatoria .convocatoria-social{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:60px;padding:12px 23px;font-size:14px;font-weight:900;line-height:1.2}
+#convocatoria .convocatoria-social svg{display:block;flex:0 0 29px;width:29px;height:29px}
+#convocatoria .convocatoria-social-whatsapp{background:#25D366;border-color:#25D366;color:#053c24}
+#convocatoria .convocatoria-social-whatsapp svg{fill:#fff;stroke:none}
+#convocatoria .convocatoria-social-whatsapp svg path{fill:#fff}
+#convocatoria .convocatoria-social-whatsapp:hover{background:#3de67c;color:#053c24}
+#convocatoria .convocatoria-social-instagram{background:#fff;border-color:#fff;color:#0b4c34}
+#convocatoria .convocatoria-social-instagram:hover{background:#f0fff5;color:#0b4c34}
+@media(max-width:650px){#convocatoria .convocatoria-social{width:100%;min-height:60px}}
+
+/* Logos oficiales de redes sociales en convocatoria */
+#convocatoria a.convocatoria-social-instagram{background:linear-gradient(115deg,#833ab4 0%,#c13584 48%,#e1306c 78%,#fd1d1d 100%)!important;border-color:#c13584!important;color:#fff!important;box-shadow:0 9px 26px #3b0a3670!important;}
+#convocatoria a.convocatoria-social-instagram:hover{filter:brightness(1.12)!important;}
+#convocatoria a.convocatoria-social-instagram .instagram-brand-icon{color:#fff!important;stroke:#fff!important;}
+#convocatoria a.convocatoria-social-whatsapp{background:#075e40!important;border-color:#25d366!important;color:#fff!important;box-shadow:0 9px 26px #001e1570!important;}
+#convocatoria a.convocatoria-social-whatsapp:hover{background:#087b51!important;}
+#convocatoria .convocatoria-wp-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 38px;width:38px;height:38px;border:2px solid #fff;border-radius:50%;background:#25d366;}
+#convocatoria .convocatoria-wp-icon .whatsapp-logo{display:block;width:26px!important;height:26px!important;flex:0 0 26px!important;fill:#fff!important;}
+#convocatoria .convocatoria-wp-icon .whatsapp-logo path{fill:#fff!important;}
+
+/* FAT 2026 — contactos de sponsors: únicamente íconos WhatsApp */
+#ser-sponsor .sponsor-call-actions {display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:flex-start !important;flex-wrap:wrap !important;gap:22px !important;}
+#ser-sponsor .sponsor-call-actions a.sponsor-contact-icon {display:inline-flex !important;align-items:center !important;justify-content:center !important;flex:0 0 66px !important;width:66px !important;height:66px !important;min-width:66px !important;max-width:66px !important;min-height:66px !important;padding:12px !important;margin:0 !important;border:0 !important;border-radius:50% !important;background:#25D366 !important;box-shadow:0 5px 18px rgba(0,0,0,.25) !important;line-height:1 !important;text-decoration:none !important;transition:transform .2s ease,box-shadow .2s ease;}
+#ser-sponsor .sponsor-call-actions a.sponsor-contact-icon:hover {transform:translateY(-3px) scale(1.06);box-shadow:0 9px 24px rgba(0,0,0,.32) !important;}
+#ser-sponsor .sponsor-call-actions .whatsapp-logo {display:block !important;width:100% !important;height:100% !important;max-width:none !important;fill:#fff !important;}
+#ser-sponsor .sponsor-call-actions .sr-only {position:absolute !important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+@media(max-width:600px){#ser-sponsor .sponsor-call-actions {gap:20px !important;}#ser-sponsor .sponsor-call-actions a.sponsor-contact-icon{flex-basis:62px !important;width:62px !important;height:62px !important;min-width:62px !important;min-height:62px !important;max-width:62px !important;}}
+
+/* Selector compacto de un solo WhatsApp para sponsors */
+#ser-sponsor .sponsor-call-actions{display:flex!important;flex-direction:row!important;align-items:flex-start!important;gap:0!important}
+#ser-sponsor .sponsor-contact-picker{position:relative;width:max-content;max-width:100%;}
+#ser-sponsor .sponsor-contact-picker summary{display:inline-flex;align-items:center;justify-content:center;list-style:none;cursor:pointer;outline-offset:5px;}
+#ser-sponsor .sponsor-contact-picker summary::-webkit-details-marker{display:none}
+#ser-sponsor .sponsor-picker-circle{width:49px;height:49px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:#25D366;box-shadow:0 5px 16px #001e1570;transition:transform .2s}
+#ser-sponsor .sponsor-contact-picker summary:hover .sponsor-picker-circle{transform:scale(1.08)}
+#ser-sponsor .sponsor-picker-circle svg{width:32px;height:32px;fill:white;display:block}
+#ser-sponsor .sponsor-picker-circle svg path{fill:white}
+#ser-sponsor .sponsor-contact-options{position:relative;z-index:2;display:flex;flex-direction:column;gap:9px;width:min(330px,calc(100vw - 48px));margin-top:12px;padding:16px;background:#f8fffa;color:#083725;border-radius:12px;box-shadow:0 14px 35px #001d1680}
+#ser-sponsor .sponsor-contact-options p{margin:0 0 3px;font-size:13px;font-weight:800;color:#075535}
+#ser-sponsor .sponsor-contact-options a{display:block!important;width:100%!important;height:auto!important;min-height:0!important;min-width:0!important;max-width:none!important;padding:12px!important;background:#e4f9eb!important;color:#063d27!important;border:0!important;border-radius:7px!important;font-size:13px!important;font-weight:800!important;text-decoration:none!important;line-height:1.35!important;box-shadow:none!important}
+#ser-sponsor .sponsor-contact-options a:hover{background:#b8f2cb!important}
+#ser-sponsor .sponsor-contact-picker .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Botón compacto para contactar al director técnico */
+.technical-director .dt-cta{padding:9px 12px;font-size:10px;letter-spacing:.45px;border-radius:6px;min-height:36px;width:auto;max-width:max-content;line-height:1.3;white-space:normal;text-align:center}
+@media(max-width:600px){.technical-director .dt-cta{padding:8px 11px;font-size:10px;min-height:34px}}
+
+/* Convocatoria inclusiva FAT */
+.convocatoria-generos{max-width:760px;margin:22px auto 28px;padding:20px 24px;border-left:4px solid #9df5ba;background:rgba(0,20,13,.35);color:#fff;text-align:left;border-radius:0 12px 12px 0}
+.convocatoria-generos strong{display:block;color:#adf7c7;font-size:clamp(15px,2vw,20px);font-weight:850;letter-spacing:.08em;line-height:1.3}
+.convocatoria-generos p{margin:10px 0 0;font-size:clamp(14px,1.7vw,18px);line-height:1.65;color:#f3fff7}
+@media(max-width:600px){.convocatoria-generos{margin:20px 0 26px;padding:17px 18px}.convocatoria-generos strong{letter-spacing:.04em}}
+
+
+/* FAT · propuesta profesional 2026: contrastes, gradientes y secciones diferenciadas */
+:root{--fat-mint:#a0e8c5;--fat-deep:#081b1b;--fat-sky:#c5e7eb}
+/* Convocatoria: fotografía de estadio real existente, no imágenes generadas */
+#convocatoria.fat-redesign{
+  isolation:isolate;position:relative;text-align:left;color:#f9fffd;
+  background:linear-gradient(100deg,rgba(3,13,17,.96) 0%,rgba(4,22,25,.9) 48%,rgba(5,26,28,.56) 100%),url('estadio-luces.jpg') center 49%/cover no-repeat;
+  border:0;padding-top:clamp(80px,9vw,132px);padding-bottom:clamp(75px,8vw,115px);
+}
+#convocatoria.fat-redesign::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 86% 6%,rgba(188,221,227,.22),transparent 38%),linear-gradient(0deg,rgba(2,12,13,.65),transparent 50%);z-index:-1;pointer-events:none}
+#convocatoria.fat-redesign::after{content:"";position:absolute;bottom:0;left:0;right:0;height:7px;background:linear-gradient(90deg,#091d20,#9bdfc5 45%,#b9dce0 75%,#10282b);box-shadow:0 -6px 30px rgba(136,213,207,.28)}
+#convocatoria .convocatoria-inner{max-width:1130px}
+#convocatoria .kicker{color:#c6e7db;font-size:12px;font-weight:800;letter-spacing:4px;text-align:left}
+#convocatoria h2{max-width:900px;font-size:clamp(49px,7.3vw,104px);line-height:.95;letter-spacing:-.018em;text-align:left;margin:28px 0 34px;color:#fff}
+#convocatoria h2 em{font-style:normal;color:#a4e8c8;background:linear-gradient(110deg,#91dab5,#c7e8df);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+#convocatoria .convocatoria-lead{margin:0 0 24px;max-width:750px;text-align:left;color:#eef6f3;font-size:clamp(17px,2vw,21px);line-height:1.65}
+#convocatoria .convocatoria-detail{text-align:left;color:#c9e5e1;font-size:12px;letter-spacing:3px;margin:0 0 26px}
+#convocatoria .convocatoria-generos{max-width:820px;text-align:left;background:linear-gradient(105deg,rgba(4,22,25,.76),rgba(12,45,45,.44));border-left:3px solid #a1e9c9;border-top:1px solid rgba(197,233,226,.22);border-bottom:1px solid rgba(197,233,226,.22);padding:22px 25px;margin:22px 0 26px;backdrop-filter:blur(5px)}
+#convocatoria .convocatoria-generos strong{color:#a5e7c5;font-size:clamp(17px,2vw,21px);letter-spacing:.5px}
+#convocatoria .convocatoria-generos p{color:#ecf4f2;font-size:clamp(15px,1.6vw,18px);line-height:1.65;margin:9px 0 0}
+/* Social links: logos visibles y texto, sin recuadros ni barras */
+#convocatoria .convocatoria-actions{justify-content:flex-start;align-items:center;gap:24px 42px;margin:32px 0 24px}
+#convocatoria a.convocatoria-social-instagram,#convocatoria a.convocatoria-social-whatsapp{
+  width:auto!important;min-height:48px!important;max-width:100%;padding:4px 0!important;
+  border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;
+  color:#fff!important;font-weight:800!important;gap:13px!important;justify-content:flex-start!important;
+  text-decoration:none;transition:opacity .2s,transform .2s
+}
+#convocatoria a.convocatoria-social-instagram:hover,#convocatoria a.convocatoria-social-whatsapp:hover{opacity:.82;transform:translateY(-2px);filter:none!important}
+#convocatoria a.convocatoria-social-instagram .instagram-brand-icon{box-sizing:content-box;display:block!important;flex:0 0 27px!important;width:27px!important;height:27px!important;padding:8px;border-radius:12px;background:linear-gradient(35deg,#feda75 0%,#fa7e1e 20%,#d62976 48%,#962fbf 75%,#4f5bd5 100%);color:#fff!important;stroke:#fff!important}
+#convocatoria .convocatoria-wp-icon{box-sizing:content-box!important;display:flex!important;flex:0 0 31px!important;width:31px!important;height:31px!important;padding:7px!important;background:#25d366!important;border:0!important;border-radius:50%!important}
+#convocatoria .convocatoria-wp-icon .whatsapp-logo{width:30px!important;height:30px!important;flex:0 0 30px!important}
+#convocatoria .convocatoria-note{max-width:770px;margin:10px 0 0;text-align:left;font-size:13px;color:#b8d0cb}
+/* DT: nueva superficie separada de la convocatoria con degradado petróleo y verde apagado */
+#director-tecnico.fat-redesign{background:linear-gradient(128deg,#061719 0%,#0b2529 48%,#143b35 100%)!important;border-top:1px solid rgba(204,244,236,.3);border-bottom:7px solid #d5e7e6}
+#director-tecnico.fat-redesign::before{background:radial-gradient(ellipse at 100% 30%,rgba(118,189,172,.18),transparent 53%),linear-gradient(120deg,#071619 0%,#102c2e 54%,#12332c 100%)!important}
+#director-tecnico .dt-visual{background:linear-gradient(155deg,#183d3f,#06191d 75%)!important}
+#director-tecnico .dt-visual::before{background:linear-gradient(125deg,rgba(7,23,28,.25),rgba(4,24,24,.65)),url('estadio-luces.jpg') center/cover!important;opacity:.48!important}
+#director-tecnico .dt-visual::after{background:linear-gradient(110deg,rgba(202,234,235,.4),rgba(96,175,166,.18),transparent)!important}
+#director-tecnico .dt-copy{background:linear-gradient(135deg,rgba(14,39,43,.96),rgba(5,20,23,.94) 70%,rgba(12,43,38,.98))!important}
+#director-tecnico .dt-copy h2 em{background:linear-gradient(100deg,#b5e8d2,#d4e8e5);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+#director-tecnico .dt-eyebrow{color:#c5e9df;border-color:#a2d9c5}
+#director-tecnico .dt-identity{background:linear-gradient(105deg,rgba(35,80,72,.65),rgba(10,31,33,.88));border-color:rgba(185,232,219,.4)}
+#director-tecnico .dt-values{background:linear-gradient(100deg,#f5faf9,#dcebe9,#edf7f4)}
+#director-tecnico .dt-instagram{background:linear-gradient(95deg,rgba(224,237,233,.12),rgba(255,255,255,.02))}
+#director-tecnico .dt-cta{padding:9px 12px;font-size:10px;border-color:#8bd4b5}
+/* Reglamentos: claro y documental, separado con un suave degradado */
+#reglamento{background:linear-gradient(138deg,#fff 0%,#f5faf9 40%,#e6f0ef 100%)!important;border-top:1px solid #c4ddda}
+#reglamento h2 em{color:#08734e}
+@media(max-width:750px){
+ #convocatoria.fat-redesign{background-position:58% center;padding-top:75px;padding-bottom:78px}
+ #convocatoria .convocatoria-inner{padding-left:0;padding-right:0}
+ #convocatoria h2{font-size:clamp(43px,10vw,68px);margin-top:23px}
+ #convocatoria .convocatoria-actions{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+ #convocatoria a.convocatoria-social-instagram,#convocatoria a.convocatoria-social-whatsapp{width:auto!important;min-height:50px!important;justify-content:flex-start!important}
+ #convocatoria .convocatoria-generos{padding:18px}
+ #director-tecnico .dt-photo-new img{filter:none!important}
+}
+
+/* FAT 2026: separación visible de secciones, diseño profesional */
+#convocatoria.fat-redesign {background-image:linear-gradient(100deg,rgba(1,10,13,.94) 0%,rgba(2,19,23,.84) 44%,rgba(4,19,21,.42) 100%),url('estadio-luces.jpg')!important;background-size:cover!important;background-position:center!important;}
+#director-tecnico.fat-redesign {background:linear-gradient(145deg,#09161a 0%,#102f34 52%,#0b2127 100%)!important;border-top:6px solid #c8dddc!important;}
+#director-tecnico.fat-redesign .dt-copy {background:linear-gradient(140deg,#0b1b20 0%,#15343a 55%,#07191c 100%)!important;}
+#director-tecnico.fat-redesign .dt-visual {background:linear-gradient(140deg,#10292d,#08191e)!important;}
+#director-tecnico.fat-redesign .dt-photo-new img {filter:none!important;}
+#reglamento {background:linear-gradient(135deg,#ffffff 0%,#eef5f4 62%,#e0eeeb 100%)!important;}
+
+
+/* Sección audiovisual FAT: estilos adicionales (conservando TODO el CSS original) */
 
 
 /* FAT · Galería audiovisual deslizable, al final de la página */
@@ -6,3 +300,4 @@
 .fat-video-carousel{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;border:1px solid rgba(185,231,221,.25);border-radius:20px;background:#071111;box-shadow:0 28px 65px rgba(0,0,0,.3)}.fat-video-carousel::-webkit-scrollbar{display:none}.fat-video-slide{scroll-snap-align:start;scroll-snap-stop:always;flex:0 0 100%;min-width:0;min-height:480px;position:relative;display:flex;align-items:center;justify-content:center}.fat-video-slide-intro{background:linear-gradient(105deg,rgba(4,17,20,.92),rgba(5,25,28,.78)),url('estadio-luces.jpg') center/cover}.fat-video-intro-content{text-align:center;padding:35px 20px;max-width:660px}.fat-video-slide-count{display:block;color:#b9d8cf;letter-spacing:.2em;font-weight:800;font-size:11px;margin-bottom:24px}.fat-video-crest{width:100px;height:100px;object-fit:contain;margin:0 auto 14px;display:block}.fat-video-intro-content h3{font-size:clamp(43px,8vw,84px);font-weight:900;line-height:1;margin:15px 0}.fat-video-intro-content h3 em{color:#b1e3ce;font-style:normal}.fat-video-intro-content p{color:#d4e0db;margin:0 0 27px}.fat-video-next{background:#e4f2ed;border:0;border-radius:4px;color:#0b2724;padding:15px 27px;font-weight:900;letter-spacing:.08em;cursor:pointer;display:inline-flex;gap:25px;align-items:center}.fat-video-next:hover{background:#fff}.fat-video-swipe-hint{display:block;margin-top:22px;color:#c3d4cf;font-size:10px;letter-spacing:.13em;font-weight:700}
 .fat-video-slide-player{background:linear-gradient(125deg,#071114,#15302e);padding:26px 24px}.fat-video-player-inner{text-align:center;width:100%;max-width:720px}.fat-video-player-inner .fat-video-slide-count{margin-bottom:12px}.fat-video-player-inner video{display:block;max-width:100%;width:auto;max-height:70vh;min-height:220px;aspect-ratio:16/9;object-fit:contain;background:#000;margin:0 auto;border-radius:10px}.fat-video-player-inner p{font-size:12px;font-weight:800;letter-spacing:.16em;color:#d6e9e2;margin:17px 0 8px}.fat-video-download{color:#c1e6d6;font-size:12px;text-underline-offset:4px}.fat-video-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:20px}.fat-video-nav-btn{background:transparent;border:0;color:#dce9e5;font-size:11px;font-weight:800;letter-spacing:.1em;cursor:pointer;padding:10px 0}.fat-video-nav-btn:hover{color:#fff}.fat-video-dots{display:flex;gap:9px}.fat-video-dots span{width:7px;height:7px;border-radius:50%;background:#627b76}.fat-video-dots span.is-active{background:#c1ead7;width:22px;border-radius:6px}
 @media(max-width:700px){.fat-video-section{padding:55px 16px 35px}.fat-video-slide{min-height:420px}.fat-video-carousel{border-radius:12px}.fat-video-slide-player{padding:16px 10px}.fat-video-player-inner video{width:100%;min-height:0;max-height:58vh;aspect-ratio:auto}.fat-video-intro-content{padding:26px 15px}.fat-video-crest{width:85px;height:85px}.fat-video-navigation{padding:14px 4px 0}.fat-video-nav-btn{font-size:10px}}
+
