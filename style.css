@@ -321,3 +321,22 @@ body.fat-video-open{overflow:hidden!important;touch-action:none}
 #sponsors .sponsor-card img{display:block;width:100%;height:150px;max-height:none;max-width:100%;object-fit:contain;mix-blend-mode:normal}
 @media(max-width:700px){#sponsors .sponsor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:25px 0 18px}#sponsors .sponsor-card{min-height:148px;padding:10px;border-radius:10px}#sponsors .sponsor-card img{height:125px}}
 @media(max-width:380px){#sponsors .sponsor-card{min-height:125px;padding:7px}#sponsors .sponsor-card img{height:108px}}
+
+/* FAT 2026 · Fondo institucional con marcas de agua. */
+.hero,
+.convocatoria.fat-redesign,
+.modes {
+  background-image: linear-gradient(110deg,rgba(0,12,10,.70),rgba(0,30,23,.50)),url('fondo-fat-marcas-de-agua.png') !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+.hero::before { opacity:.26 !important; }
+.hero::after { opacity:.28 !important; }
+.convocatoria.fat-redesign::before { opacity:.16 !important; }
+/* Dejar los textos y las marcas de los patrocinadores claros y legibles. */
+.sponsors-section { background:linear-gradient(145deg,#fff 12%,#f0f7f4 65%,#e8f1ef 100%) !important; }
+.intro { background:linear-gradient(135deg,#fff 0%,#f0f8f4 100%) !important; }
+@media(max-width:700px) {
+  .hero,.convocatoria.fat-redesign,.modes { background-position:center top !important; }
+}
