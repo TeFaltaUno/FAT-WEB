@@ -340,3 +340,18 @@ body.fat-video-open{overflow:hidden!important;touch-action:none}
 @media(max-width:700px) {
   .hero,.convocatoria.fat-redesign,.modes { background-position:center top !important; }
 }
+
+/* FAT: modalidades compactas + autoridades */
+.modes .mode-grid{max-width:880px;margin:24px auto 0;gap:12px}
+.modes .mode{min-height:142px;padding:18px 20px;border-radius:12px;background:linear-gradient(145deg,#0e563d,#062b26);justify-content:space-between}
+.modes .mode strong{font-size:clamp(29px,3.2vw,43px)}
+.modes .mode small{font-size:10px}
+.fat-leadership{position:relative;background:linear-gradient(120deg,rgba(2,13,13,.91),rgba(5,39,31,.88)),url('fondo-fat-marcas-de-agua.png') center 40%/cover no-repeat;color:#fff;padding:74px 0 95px}
+.fat-leadership .kicker{color:#a3dfc5}
+.fat-leadership h2{margin:12px 0 28px;line-height:1.03}
+.fat-leadership h2 em{color:#b4e9d6;font-style:normal}
+.fat-leadership-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:950px}
+.fat-leader{padding:24px 26px;border-left:3px solid #90d5b9;background:linear-gradient(125deg,rgba(255,255,255,.095),rgba(255,255,255,.025));border-radius:0 12px 12px 0}
+.fat-leader-role{display:block;font-size:11px;letter-spacing:2px;font-weight:800;color:#b0e6d0;margin-bottom:12px}
+.fat-leader h3{margin:0;font-family:'Barlow Condensed',sans-serif;font-size:clamp(26px,3vw,40px);line-height:1.08;color:#fff}
+@media(max-width:650px){.modes .mode-grid{gap:9px}.modes .mode{min-height:105px;padding:12px 9px;border-radius:9px}.modes .mode small{font-size:8px;letter-spacing:.5px}.modes .mode strong{font-size:clamp(19px,5vw,27px)}.fat-leadership{padding:54px 0 76px}.fat-leadership-grid{grid-template-columns:1fr;gap:12px}.fat-leader{padding:20px 22px}}
