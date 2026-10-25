@@ -1,11 +1,19 @@
-# FAT WEB · V4 Cinematic Scroll
+# FAT-WEB V5 · Reordenamiento institucional
 
-Versión estática lista para GitHub Pages. Incluye video de canchas, profundidad de cámara asociada al scroll, tarjetas flotantes, modalidades F5/F7/F11, presentación de uniforme y jugadora, certificado, mosaico animado de sponsors y contacto WhatsApp.
+## Orden de secciones
+1. Hero principal cinematográfico
+2. Qué es FAT (scrollytelling)
+3. Modalidades F5 / F7 / F11
+4. Convocatoria para jugadores y jugadoras
+5. Indumentaria y visual de jugadora
+6. Certificado
+7. Sponsors (7)
+8. Autoridades: Gonzalo Ríos (Presidente), Enzo Valenzuela Massa (Secretario)
+9. Footer: WhatsApp de sponsors + Instagram oficial FAT + crédito de Enzo
 
-## Publicar
-Extraer el ZIP y subir el **contenido de la carpeta** al directorio raíz del repositorio TeFaltaUno/FAT-WEB (rama main). No crear una subcarpeta FAT-WEB-V4-CINEMATIC-SCROLL dentro del repositorio; index.html debe quedar en la raíz.
+## Publicación
+Subí el contenido de esta carpeta directamente a la raíz del repositorio TeFaltaUno/FAT-WEB en la rama main. No cambies el link público.
 
-## Alcance técnico
-La sensación de cámara se obtiene con video real y transformaciones 2.5D por CSS/JavaScript; el escudo y la jugadora son imágenes renderizadas, **no** modelos 3D interactivos. La camiseta recorre frente/dorso de una imagen panorámica, no es un modelo geométrico 360° real. El video se reproduce automáticamente cuando el navegador lo permite; no está vinculado fotograma a fotograma al scroll.
-
-No se ha probado en todos los modelos de celular. Si se desactivan animaciones por accesibilidad, se sigue mostrando el contenido esencial.
+## Verificaciones
+Los dos íconos WhatsApp son SVG monocromáticos y abren su número respectivo. El logo de Instagram del desarrollador conduce a su perfil.
+El video es el archivo local canchas-las-torres.mp4 y conserva la experiencia scroll del V4.

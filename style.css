@@ -184,3 +184,44 @@ h1 span,h2 span{color:var(--sky)}
  .sticky-shell .stage-video{object-position:center center}
 }
 @media(prefers-reduced-motion:reduce){.mosaic-card,.mode-tile{opacity:1!important;transform:none!important;transition:none!important}.hero-shield,.hero-copy,.sticky-shell .stage-video,.sticky-shell .stage-wrap,.float-panel.active{transform:none!important}}
+
+/* V5: estructura institucional, convocatoria, autoridades y contactos sociales monocromáticos */
+.convocatoria{padding:125px 0;min-height:80svh;overflow:hidden;background:radial-gradient(circle at 85% 45%,rgba(114,208,161,.14),transparent 42%),#080e11}
+.convo-wrap{display:grid;grid-template-columns:.93fr 1.07fr;align-items:center;gap:clamp(30px,7vw,100px)}
+.convo-small{font-size:15px;max-width:630px;color:#a9b8b5}
+.convo-image{position:relative;background:#13181d;border-radius:22px;overflow:hidden;box-shadow:0 30px 85px #0009;border:1px solid #fff2}
+.convo-image img{width:100%;height:auto;object-fit:cover;display:block}
+.convo-image>span{position:absolute;bottom:12px;left:12px;right:12px;padding:10px;background:#03090bbd;backdrop-filter:blur(8px);font-size:10px;font-weight:800;letter-spacing:2px;text-align:center}
+.convo-links{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:30px}
+.convo-links a{display:inline-flex;align-items:center;gap:11px;border-bottom:1px solid #fff6;padding:10px 0;font-weight:800;font-size:12px;letter-spacing:1.3px}
+.social-icon{width:25px;height:25px;flex-shrink:0;display:block}
+.convo-links .social-icon{color:white}
+.authorities{padding:120px 0 110px;border-top:1px solid #ffffff14}
+.authority-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:55px}
+.authority-person{padding:35px 0 10px;border-top:1px solid #ffffff4a}
+.authority-role{display:block;color:var(--mint);font-size:11px;letter-spacing:3px;font-weight:800;margin-bottom:20px}
+.authority-person h3{font-family:var(--display);font-size:clamp(38px,5vw,68px);line-height:1;margin:0;color:#f7f9f7}
+.authority-person p{color:#9bada6;font-size:12px;letter-spacing:1px}
+.footer{padding:75px 0 36px;text-align:left;align-items:stretch}
+.footer-layout{width:min(1240px,92vw)}
+.footer-intro{display:flex;align-items:center;gap:16px;margin-bottom:55px}
+.footer-crest{width:55px;max-height:66px;object-fit:contain;background:white;padding:3px;border-radius:4px}
+.footer-intro strong{font-family:var(--display);font-size:46px;line-height:1;display:block}
+.footer-intro span{letter-spacing:2px;font-size:10px;color:#b4c5bf;display:block;margin-top:6px}
+.footer-contact{padding-bottom:60px}
+.footer-contact h3{font-family:var(--display);font-size:clamp(42px,7vw,84px);line-height:.89;margin:12px 0 18px}
+.footer-contact p:not(.eyebrow){font-size:15px;color:#b9c7c3}
+.whatsapp-contacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:30px}
+.contact-number{display:flex;align-items:center;gap:16px;min-height:74px;padding:18px 22px;border:1px solid #ffffff40;border-radius:14px;background:#fff0;color:white;transition:background .2s ease,transform .2s ease}
+.contact-number:hover{background:#fff1;transform:translateY(-2px)}
+.contact-number .social-icon{width:31px;height:31px}
+.contact-number span{font-family:var(--display);font-size:clamp(21px,2.6vw,33px);letter-spacing:.3px;color:#fff;white-space:nowrap}
+.footer-bottom{border-top:1px solid #ffffff36;padding-top:28px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.footer-bottom a{display:inline-flex;align-items:center;gap:12px;color:#f0f0f0;font-size:13px}
+.footer-bottom .social-icon{width:23px;height:23px;color:#fff}
+.footer-bottom .developer-link strong{font-weight:800}
+.wa-float.wa-mono{background:#fff;color:#080808;border:1px solid #222;padding:12px 16px;gap:9px;border-radius:99px;box-shadow:0 10px 32px #0007}
+.wa-float.wa-mono .social-icon{width:25px;height:25px;color:#080808}
+@media(max-width:900px){.convo-wrap{grid-template-columns:1fr}.convo-image{max-width:680px}.authority-grid{grid-template-columns:1fr}.whatsapp-contacts{grid-template-columns:1fr}}
+@media(max-width:680px){.convocatoria,.authorities{padding:80px 0}.convo-links{gap:22px}.convo-image{border-radius:16px}.authority-grid{gap:8px;margin-top:35px}.authority-person{padding:25px 0 12px}.footer{padding:55px 0 25px}.footer-intro{margin-bottom:40px}.footer-contact{padding-bottom:40px}.contact-number{min-height:65px;padding:13px 15px}.contact-number span{font-size:clamp(21px,5.4vw,30px)}.footer-bottom{align-items:flex-start;gap:24px;flex-direction:column}.wa-float.wa-mono{padding:13px}.wa-float.wa-mono span{display:none}}
+@media(prefers-reduced-motion:reduce){.convo-image,.contact-number{transition:none!important}}

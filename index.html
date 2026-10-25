@@ -1,183 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#040607">
-  <meta name="description" content="FAT · Experiencia scroll cinematográfica">
-  <title>FAT | Experiencia Scroll</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#040607" name="theme-color"/>
+<meta content="Fútbol Amateur Tucumán. Seleccionados F5, F7 y F11, convocatorias, indumentaria, sponsors, autoridades y contacto oficial." name="description"/>
+<title>FAT | Seleccionados Oficiales · Tucumán 2026</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="style.css?v=5-institucional-20261025" rel="stylesheet"/>
+<link href="style.css?v=4" rel="stylesheet"/>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+<div aria-hidden="true" class="progress"><span id="progress"></span></div>
+<header class="topbar">
+<div class="brand">
+<img alt="Escudo FAT" src="escudo-fat.jpg"/>
+<div>
+<strong>FAT</strong>
+<small>FÚTBOL AMATEUR TUCUMÁN</small>
+</div>
+</div>
+<div class="hint">EXPERIENCIA · SCROLL</div>
+</header>
+<main>
 
-  <header class="topbar">
-    <div class="brand">
-      <img src="escudo-fat.jpg" alt="Escudo FAT">
-      <div>
-        <strong>FAT</strong>
-        <small>FÚTBOL AMATEUR TUCUMÁN</small>
-      </div>
-    </div>
-    <div class="hint">EXPERIENCIA · SCROLL</div>
-  </header>
 
-  <main>
-    <section class="hero scene" id="inicio">
-      <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="canchas-poster.jpg">
-        <source src="canchas-las-torres.mp4" type="video/mp4">
-      </video>
-      <div class="overlay hero-overlay"></div>
-      <div class="gridlines"></div>
-      <div class="wrap hero-inner">
-        <div class="hero-copy reveal" data-depth="0.92">
-          <p class="eyebrow">SELECCIONADOS OFICIALES · 2026</p>
-          <h1>FÚTBOL<br>AMATEUR<br><span>TUCUMÁN.</span></h1>
-          <p class="hero-text">Una identidad. Una provincia. La pasión de representar nuestros colores.</p>
-        </div>
-        <div class="hero-shield reveal" data-depth="1.08">
-          <img src="escudo-fat-3d.png" alt="Escudo FAT 3D">
-        </div>
-      </div>
-      <div class="scroll-tag">DESLIZÁ HACIA ABAJO</div>
-    </section>
 
-    <section class="sticky-stage" id="narrativa" aria-label="Historia FAT con desplazamiento cinematográfico">
-      <div class="sticky-shell scene" id="cinemaStage">
-        <video class="bg-video dim stage-video" autoplay muted loop playsinline preload="metadata" poster="canchas-poster.jpg">
-          <source src="canchas-las-torres.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
-        <div class="gridlines soft"></div>
-        <div class="wrap stage-wrap">
-          <div class="stage-copy">
-            <div class="step-card active" data-step="0">
-              <p class="eyebrow">01 / CONCEPTO</p>
-              <h2>EL FÚTBOL<br><span>QUE NOS UNE.</span></h2>
-              <p>FAT es un proyecto dedicado a visibilizar el talento, el esfuerzo y la pasión del fútbol amateur tucumano.</p>
-            </div>
-            <div class="step-card" data-step="1">
-              <p class="eyebrow">02 / ESCENA</p>
-              <h2>NUESTRAS<br><span>CANCHAS.</span></h2>
-              <p>El fútbol amateur vive en los complejos y canchas donde se encuentran equipos, amistades e historias de nuestra provincia.</p>
-            </div>
-            <div class="step-card" data-step="2">
-              <p class="eyebrow">03 / IDENTIDAD</p>
-              <h2>ORGULLO DE<br><span>REPRESENTAR.</span></h2>
-              <p>En cada modalidad, jugadores y jugadoras comparten una misma identidad: compromiso con el deporte y con Tucumán.</p>
-            </div>
-          </div>
 
-          <div class="floating-stack" id="floatingStack" aria-hidden="true">
-            <article class="float-panel panel-shield active" data-panel="0">
-              <img src="escudo-fat-3d.png" alt="Escudo FAT">
-            </article>
-            <article class="float-panel panel-poster" data-panel="1">
-              <img src="canchas-poster.jpg" alt="Canchas FAT">
-            </article>
-            <article class="float-panel panel-cert" data-panel="2">
-              <img src="certificado-fat.png" alt="Certificado FAT">
-            </article>
-          </div>
-        </div>
-        <div class="cinema-depth-label" aria-hidden="true">FAT / TUCUMÁN / 2026</div>
-      </div>
-    </section>
 
-    <section class="modalities section-dark" aria-label="Modalidades de fútbol"><div class="wrap"><p class="eyebrow">04 / MODALIDADES</p><h2>TRES FORMAS.<br><span>UNA PASIÓN.</span></h2><div class="mode-mosaic"><article class="mode-tile"><small>MODALIDAD / 01</small><strong>05</strong><span>FÚTBOL 5</span></article><article class="mode-tile"><small>MODALIDAD / 02</small><strong>07</strong><span>FÚTBOL 7</span></article><article class="mode-tile"><small>MODALIDAD / 03</small><strong>11</strong><span>FÚTBOL 11</span></article></div></div></section>
 
-    <section class="showcase section-dark" id="indumentaria">
-      <div class="wrap intro-block reveal">
-        <p class="eyebrow">05 / NUESTRA INDUMENTARIA</p>
-        <h2>LOS COLORES<br>QUE NOS<br><span>REPRESENTAN.</span></h2>
-        <p class="lead">Verde, blanco y celeste. Nuestra indumentaria representa identidad, pertenencia y el orgullo de llevar los colores de Tucumán.</p>
-      </div>
 
-      <div class="kit-stage" id="kitStage">
-        <div class="kit-sticky">
-          <div class="wrap kit-wrap">
-            <div class="player-panel reveal-fast">
-              <div class="panel-head">JUGADORA · UNIFORME FAT</div>
-              <div class="player-image clean-bg">
-                <img src="jugadora-fat-kit-hd.png" alt="Jugadora FAT en alta definición">
-              </div>
-            </div>
+<section class="hero scene" id="inicio">
+<video autoplay="" class="bg-video" loop="" muted="" playsinline="" poster="canchas-poster.jpg" preload="metadata">
+<source src="canchas-las-torres.mp4" type="video/mp4"/>
+</video>
+<div class="overlay hero-overlay"></div>
+<div class="gridlines"></div>
+<div class="wrap hero-inner">
+<div class="hero-copy reveal" data-depth="0.92">
+<p class="eyebrow">SELECCIONADOS OFICIALES · 2026</p>
+<h1>FÚTBOL<br/>AMATEUR<br/><span>TUCUMÁN.</span></h1>
+<p class="hero-text">Una identidad. Una provincia. La pasión de representar nuestros colores.</p>
+</div>
+<div class="hero-shield reveal" data-depth="1.08">
+<img alt="Escudo FAT 3D" src="escudo-fat-3d.png"/>
+</div>
+</div>
+<div class="scroll-tag">DESLIZÁ HACIA ABAJO</div>
+</section><section aria-label="Qué es FAT — una historia visual del fútbol amateur de Tucumán" class="sticky-stage" id="identidad">
+<div class="sticky-shell scene" id="cinemaStage">
+<video autoplay="" class="bg-video dim stage-video" loop="" muted="" playsinline="" poster="canchas-poster.jpg" preload="metadata">
+<source src="canchas-las-torres.mp4" type="video/mp4"/>
+</video>
+<div class="overlay"></div>
+<div class="gridlines soft"></div>
+<div class="wrap stage-wrap">
+<div class="stage-copy">
+<div class="step-card active" data-step="0">
+<p class="eyebrow">01 / ¿QUÉ ES FAT?</p>
+<h2>FÚTBOL AMATEUR<br/><span>TUCUMÁN.</span></h2>
+<p>FAT es un proyecto deportivo independiente que promueve el desarrollo, la participación y la representación del fútbol amateur de nuestra provincia.</p>
+</div>
+<div class="step-card" data-step="1">
+<p class="eyebrow">01 / NUESTRA MISIÓN</p>
+<h2>IDENTIDAD Y<br/><span>COMPROMISO.</span></h2>
+<p>Buscamos reconocer el talento, fortalecer el sentido de pertenencia y construir un espacio de encuentro para seleccionados masculinos y femeninos.</p>
+</div>
+<div class="step-card" data-step="2">
+<p class="eyebrow">01 / NUESTRA VISIÓN</p>
+<h2>ORGULLO DE<br/><span>REPRESENTAR.</span></h2>
+<p>Promovemos el fútbol amateur en F5, F7 y F11, dando visibilidad a jugadores y jugadoras que comparten la pasión de representar a Tucumán.</p>
+</div>
+</div>
+<div aria-hidden="true" class="floating-stack" id="floatingStack">
+<article class="float-panel panel-shield active" data-panel="0">
+<img alt="Escudo FAT" src="escudo-fat-3d.png"/>
+</article>
+<article class="float-panel panel-poster" data-panel="1">
+<img alt="Canchas FAT" src="canchas-poster.jpg"/>
+</article>
+<article class="float-panel panel-cert" data-panel="2">
+<img alt="Certificado FAT" src="certificado-fat.png"/>
+</article>
+</div>
+</div>
+<div aria-hidden="true" class="cinema-depth-label">FAT / TUCUMÁN / 2026</div>
+</div>
+</section><section aria-label="Modalidades de fútbol" class="modalities section-dark" id="modalidades"><div class="wrap"><p class="eyebrow">02 / MODALIDADES</p><h2>TRES FORMAS.<br/><span>UNA PASIÓN.</span></h2><div class="mode-mosaic"><article class="mode-tile"><small>MODALIDAD / 01</small><strong>05</strong><span>FÚTBOL 5</span></article><article class="mode-tile"><small>MODALIDAD / 02</small><strong>07</strong><span>FÚTBOL 7</span></article><article class="mode-tile"><small>MODALIDAD / 03</small><strong>11</strong><span>FÚTBOL 11</span></article></div></div></section><section aria-label="Formar parte del seleccionado FAT" class="convocatoria section-dark" id="convocatoria"><div class="wrap convo-wrap"><div class="convo-copy reveal"><p class="eyebrow">03 / FORMA PARTE DE FAT</p><h2>REPRESENTÁ<br/><span>A TUCUMÁN.</span></h2><p class="lead">Queremos seguir construyendo un proyecto para jugadores masculinos y jugadoras femeninas que sueñan con representar a la provincia desde el fútbol amateur.</p><p class="lead convo-small">Si querés formar parte de los seleccionados FAT, comunicate con nosotros por los canales oficiales.</p><div class="convo-links"><a aria-label="Contactar por Instagram oficial FAT" href="https://www.instagram.com/f.a.tucuman/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><rect height="17.8" rx="5" stroke="currentColor" stroke-width="1.9" width="17.8" x="3.1" y="3.1"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"></circle><circle cx="17.6" cy="6.6" fill="currentColor" r="1.15"></circle></svg><span>INSTAGRAM FAT</span></a><a aria-label="Consultar por WhatsApp para formar parte de FAT" href="https://wa.me/5493815560086?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20formar%20parte%20de%20FAT" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><path d="M20.2 11.6a8.2 8.2 0 0 1-12.3 7.1L3.2 20l1.4-4.5a8.2 8.2 0 1 1 15.6-3.9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path><path d="M8.3 7.5c-.4-.6-.8-.7-1.2-.2-1.8 2.6 1.9 7.8 5.8 9.4 1.2.5 2.4.3 3.2-.8.2-.3.1-.6-.2-.8l-2-1c-.4-.2-.7 0-1 .4-.3.5-.6.6-1.1.4-1.2-.5-2.6-1.8-3.2-2.9-.2-.4-.2-.8.2-1.1.4-.3.5-.6.3-1l-.8-2.4Z" fill="currentColor"></path></svg><span>WHATSAPP</span></a></div></div><div class="convo-image reveal"><img alt="Visualización conceptual de jugadora con camiseta FAT" loading="lazy" src="jugadora-fat-kit-hd.png"/><span>SELECCIONADOS FEMENINOS Y MASCULINOS</span></div></div></section><section class="showcase section-dark" id="indumentaria">
+<div class="wrap intro-block reveal">
+<p class="eyebrow">04 / INDUMENTARIA</p>
+<h2>LOS COLORES<br/>QUE NOS<br/><span>REPRESENTAN.</span></h2>
+<p class="lead">Verde, blanco y celeste. Nuestra indumentaria representa identidad, pertenencia y el orgullo de llevar los colores de Tucumán.</p>
+</div>
+<div class="kit-stage" id="kitStage">
+<div class="kit-sticky">
+<div class="wrap kit-wrap">
+<div class="player-panel reveal-fast">
+<div class="panel-head">JUGADORA · UNIFORME FAT</div>
+<div class="player-image clean-bg">
+<img alt="Jugadora FAT en alta definición" src="jugadora-fat-kit-hd.png"/>
+</div>
+</div>
+<div class="jersey-panel reveal-fast">
+<div class="panel-head">CAMISETA · FRENTE Y DORSO</div>
+<div class="jersey-view">
+<img alt="Camiseta FAT frente y dorso panorámica" id="jerseyPan" src="camiseta-fat-frente-dorso.jpg"/>
+</div>
+<div class="jersey-meta">
+<span>FAT / 2026</span>
+<span id="jerseyLabel">FRENTE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="certificate section-light" id="certificado">
+<div class="wrap cert-grid">
+<div class="cert-copy reveal">
+<p class="eyebrow dark">05 / CERTIFICADO</p>
+<h2 class="light-title">CERTIFICADO<br/><span>INSTITUCIONAL.</span></h2>
+<p>Un reconocimiento al talento, compromiso y dedicación de quienes son seleccionados para integrar FAT.</p>
+</div>
+<div class="cert-visual reveal">
+<img alt="Certificado FAT" src="certificado-fat.png"/>
+</div>
+</div>
+</section><section class="sponsors section-dark" id="sponsors">
+<div class="wrap reveal">
+<p class="eyebrow">06 / SPONSORS</p>
+<h2>SPONSORS<br/><span>OFICIALES.</span></h2>
+<p class="lead">Marcas que acompañan y apoyan el crecimiento del fútbol amateur tucumano.</p>
+<div class="sponsors-grid animated-mosaic">
+<div class="sponsor-card mosaic-card"><img alt="Caruso" src="sponsor-caruso.jpg"/></div>
+<div class="sponsor-card mosaic-card"><img alt="Unidad Legal" src="sponsor-unidad-legal.jpg"/></div>
+<div class="sponsor-card mosaic-card"><img alt="Ciudad SMT" src="sponsor-ciudad-smt.jpg"/></div>
+<div class="sponsor-card mosaic-card"><img alt="Siorm" src="sponsor-siorm.jpg"/></div>
+<div class="sponsor-card mosaic-card"><img alt="Bordtex" src="sponsor-bordtex.jpg"/></div>
+<div class="sponsor-card mosaic-card"><img alt="Lucben" src="sponsor-lucben.jpg"/></div>
+<div class="sponsor-card span-two mosaic-card"><img alt="Las Torres" src="sponsor-las-torres.jpg"/></div>
+</div>
+</div>
+</section><section aria-label="Autoridades FAT" class="authorities section-dark" id="autoridades"><div class="wrap"><p class="eyebrow">07 / AUTORIDADES</p><h2>QUIENES ESTÁN<br/><span>DETRÁS DE FAT.</span></h2><div class="authority-grid"><article class="authority-person reveal"><span class="authority-role">PRESIDENTE</span><h3>GONZALO RÍOS</h3><p>Fútbol Amateur Tucumán</p></article><article class="authority-person reveal"><span class="authority-role">SECRETARIO</span><h3>ENZO VALENZUELA MASSA</h3><p>Fútbol Amateur Tucumán</p></article></div></div></section></main>
 
-            <div class="jersey-panel reveal-fast">
-              <div class="panel-head">CAMISETA · FRENTE Y DORSO</div>
-              <div class="jersey-view">
-                <img id="jerseyPan" src="camiseta-fat-frente-dorso.jpg" alt="Camiseta FAT frente y dorso panorámica">
-              </div>
-              <div class="jersey-meta">
-                <span>FAT / 2026</span>
-                <span id="jerseyLabel">FRENTE</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="certificate section-light" id="certificado">
-      <div class="wrap cert-grid">
-        <div class="cert-copy reveal">
-          <p class="eyebrow dark">06 / DOCUMENTACIÓN</p>
-          <h2 class="light-title">CERTIFICADO<br><span>INSTITUCIONAL.</span></h2>
-          <p>Un reconocimiento al talento, compromiso y dedicación de quienes son seleccionados para integrar FAT.</p>
-        </div>
-        <div class="cert-visual reveal">
-          <img src="certificado-fat.png" alt="Certificado FAT">
-        </div>
-      </div>
-    </section>
-
-    <section class="sponsors section-dark" id="sponsors">
-      <div class="wrap reveal">
-        <p class="eyebrow">07 / ALIANZAS INSTITUCIONALES</p>
-        <h2>SPONSORS<br><span>OFICIALES.</span></h2>
-        <p class="lead">Marcas que acompañan y apoyan el crecimiento del fútbol amateur tucumano.</p>
-        <div class="sponsors-grid animated-mosaic">
-          <div class="sponsor-card mosaic-card"><img src="sponsor-caruso.jpg" alt="Caruso"></div>
-          <div class="sponsor-card mosaic-card"><img src="sponsor-unidad-legal.jpg" alt="Unidad Legal"></div>
-          <div class="sponsor-card mosaic-card"><img src="sponsor-ciudad-smt.jpg" alt="Ciudad SMT"></div>
-          <div class="sponsor-card mosaic-card"><img src="sponsor-siorm.jpg" alt="Siorm"></div>
-          <div class="sponsor-card mosaic-card"><img src="sponsor-bordtex.jpg" alt="Bordtex"></div>
-          <div class="sponsor-card mosaic-card"><img src="sponsor-lucben.jpg" alt="Lucben"></div>
-          <div class="sponsor-card span-two mosaic-card"><img src="sponsor-las-torres.jpg" alt="Las Torres"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact scene" id="contacto">
-      <video class="bg-video dim" autoplay muted loop playsinline preload="metadata" poster="canchas-poster.jpg">
-        <source src="canchas-las-torres.mp4" type="video/mp4">
-      </video>
-      <div class="overlay strong"></div>
-      <div class="wrap reveal">
-        <p class="eyebrow">08 / SPONSOR</p>
-        <h2>¿QUERÉS FORMAR PARTE<br>DEL SELECCIONADO<br><span>COMO SPONSOR?</span></h2>
-        <p class="lead compact">Para solicitar propuesta comercial o recibir más información, comunicate por WhatsApp con cualquiera de estos dos contactos.</p>
-        <div class="contact-list">
-          <a href="https://wa.me/5493813323280" target="_blank" rel="noopener">+54 9 3813 32-3280</a>
-          <a href="https://wa.me/5493815560086" target="_blank" rel="noopener">+54 9 3815 560086</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <a class="wa-float" href="https://wa.me/5493813323280" target="_blank" rel="noopener" aria-label="WhatsApp sponsor">
-    <span class="wa-dot"></span>
-    <span>WHATSAPP SPONSOR</span>
-  </a>
-
-  <footer class="footer">
-    <span>FAT · FÚTBOL AMATEUR TUCUMÁN · 2026</span>
-    <a href="https://www.instagram.com/enzovalenzuelamassa?cplk=MWdvMTk5dXc5Zzk4bA==" target="_blank" rel="noopener">Desarrollado por Enzo Valenzuela Massa</a>
-  </footer>
-
-  <script src="script.js?v=4" defer></script>
+<a aria-label="WhatsApp para sponsors al +54 9 3813 32-3280" class="wa-float wa-mono" href="https://wa.me/5493813323280?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><path d="M20.2 11.6a8.2 8.2 0 0 1-12.3 7.1L3.2 20l1.4-4.5a8.2 8.2 0 1 1 15.6-3.9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path><path d="M8.3 7.5c-.4-.6-.8-.7-1.2-.2-1.8 2.6 1.9 7.8 5.8 9.4 1.2.5 2.4.3 3.2-.8.2-.3.1-.6-.2-.8l-2-1c-.4-.2-.7 0-1 .4-.3.5-.6.6-1.1.4-1.2-.5-2.6-1.8-3.2-2.9-.2-.4-.2-.8.2-1.1.4-.3.5-.6.3-1l-.8-2.4Z" fill="currentColor"></path></svg><span>SPONSORS</span></a><footer class="footer"><div class="wrap footer-layout"><div class="footer-intro"><img alt="Escudo FAT" class="footer-crest" src="escudo-fat.jpg"/><div><strong>FAT</strong><span>FÚTBOL AMATEUR TUCUMÁN · 2026</span></div></div><div class="footer-contact" id="contacto"><p class="eyebrow">08 / CONTACTO</p><h3>¿QUERÉS SER<br/>SPONSOR DE FAT?</h3><p>Solicitá nuestra propuesta de patrocinio por WhatsApp.</p><div class="whatsapp-contacts"><a aria-label="WhatsApp sponsor +54 9 3813 32-3280" class="contact-number" href="https://wa.me/5493813323280?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><path d="M20.2 11.6a8.2 8.2 0 0 1-12.3 7.1L3.2 20l1.4-4.5a8.2 8.2 0 1 1 15.6-3.9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path><path d="M8.3 7.5c-.4-.6-.8-.7-1.2-.2-1.8 2.6 1.9 7.8 5.8 9.4 1.2.5 2.4.3 3.2-.8.2-.3.1-.6-.2-.8l-2-1c-.4-.2-.7 0-1 .4-.3.5-.6.6-1.1.4-1.2-.5-2.6-1.8-3.2-2.9-.2-.4-.2-.8.2-1.1.4-.3.5-.6.3-1l-.8-2.4Z" fill="currentColor"></path></svg><span>+54 9 3813 32-3280</span></a><a aria-label="WhatsApp sponsor +54 9 3815 560086" class="contact-number" href="https://wa.me/5493815560086?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><path d="M20.2 11.6a8.2 8.2 0 0 1-12.3 7.1L3.2 20l1.4-4.5a8.2 8.2 0 1 1 15.6-3.9Z" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"></path><path d="M8.3 7.5c-.4-.6-.8-.7-1.2-.2-1.8 2.6 1.9 7.8 5.8 9.4 1.2.5 2.4.3 3.2-.8.2-.3.1-.6-.2-.8l-2-1c-.4-.2-.7 0-1 .4-.3.5-.6.6-1.1.4-1.2-.5-2.6-1.8-3.2-2.9-.2-.4-.2-.8.2-1.1.4-.3.5-.6.3-1l-.8-2.4Z" fill="currentColor"></path></svg><span>+54 9 3815 560086</span></a></div></div><div class="footer-bottom"><a aria-label="Instagram oficial FAT" class="fat-instagram" href="https://www.instagram.com/f.a.tucuman/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><rect height="17.8" rx="5" stroke="currentColor" stroke-width="1.9" width="17.8" x="3.1" y="3.1"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"></circle><circle cx="17.6" cy="6.6" fill="currentColor" r="1.15"></circle></svg><span>@F.A.TUCUMAN</span></a><a aria-label="Instagram del desarrollador Enzo Valenzuela Massa" class="developer-link" href="https://www.instagram.com/enzovalenzuelamassa/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="social-icon" fill="none" viewbox="0 0 24 24"><rect height="17.8" rx="5" stroke="currentColor" stroke-width="1.9" width="17.8" x="3.1" y="3.1"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.9"></circle><circle cx="17.6" cy="6.6" fill="currentColor" r="1.15"></circle></svg><span>Desarrollado por <strong>Enzo Valenzuela Massa</strong></span></a></div></div></footer>
+<script defer="" src="script.js?v=5-institucional-20261025"></script>
 </body>
 </html>
