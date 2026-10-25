@@ -1,12 +1,11 @@
-# FAT WEB — Escudo y jugadora en 3D real
+# FAT WEB · V4 Cinematic Scroll
 
-Incluye escudo FAT extruido y texturizado (`escudo-fat-3d.glb`) y modelo conceptual de jugadora IA con camiseta FAT (`jugadora-fat-3d.glb`). El escudo responde al desplazamiento de la página; la jugadora puede girar 360° o mostrarse de frente y espalda. El resto de la web conserva video de cancha amateur, siete sponsors, certificado, autoridades y crédito a Enzo Valenzuela Massa.
-
-## Tecnología
-Three.js + GLTFLoader importados desde CDN; el navegador necesita conexión a Internet para cargar la librería. El sitio funciona como HTML estático en GitHub Pages. Si WebGL no está disponible, aparecen imágenes de respaldo. Se respeta movimiento reducido.
-
-## Alcance
-Los modelos son geometría 3D real y están animados mediante rotación, **no son personajes esqueletizados ni animaciones de caminar/correr**. El rostro y uniforme se reconstruyeron de forma aproximada a partir de referencias: no son copias fotográficas exactas. El modelo no representa una jugadora real.
+Versión estática lista para GitHub Pages. Incluye video de canchas, profundidad de cámara asociada al scroll, tarjetas flotantes, modalidades F5/F7/F11, presentación de uniforme y jugadora, certificado, mosaico animado de sponsors y contacto WhatsApp.
 
 ## Publicar
-Extraer todos los archivos del ZIP a la raíz del repositorio `TeFaltaUno/FAT-WEB`, rama `main`. No subir el ZIP sin extraer. Para probar antes de reemplazar la web pública, abrir un servidor local (`python -m http.server 8000`) y navegar a http://localhost:8000.
+Extraer el ZIP y subir el **contenido de la carpeta** al directorio raíz del repositorio TeFaltaUno/FAT-WEB (rama main). No crear una subcarpeta FAT-WEB-V4-CINEMATIC-SCROLL dentro del repositorio; index.html debe quedar en la raíz.
+
+## Alcance técnico
+La sensación de cámara se obtiene con video real y transformaciones 2.5D por CSS/JavaScript; el escudo y la jugadora son imágenes renderizadas, **no** modelos 3D interactivos. La camiseta recorre frente/dorso de una imagen panorámica, no es un modelo geométrico 360° real. El video se reproduce automáticamente cuando el navegador lo permite; no está vinculado fotograma a fotograma al scroll.
+
+No se ha probado en todos los modelos de celular. Si se desactivan animaciones por accesibilidad, se sigue mostrando el contenido esencial.

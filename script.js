@@ -1,1 +1,32 @@
-(()=>{const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const reveals=document.querySelectorAll('.reveal');if('IntersectionObserver'in window&&!reduce){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});reveals.forEach(el=>io.observe(el))}else reveals.forEach(el=>el.classList.add('visible'));const progress=document.getElementById('progress'),emblem=document.getElementById('heroEmblem'),hero=document.querySelector('.hero');let ticking=false;function scrollUpdate(){let max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';if(!reduce&&hero&&emblem){const y=Math.min(scrollY,hero.offsetHeight);emblem.style.transform=`translate3d(0,${y*.20}px,0) rotateY(${Math.min(18,y*.025)}deg) scale(${Math.max(.7,1-y/2500)})`;hero.querySelector('.hero-media video').style.transform=`scale(${1.12+Math.min(.18,y/4000)}) translateY(${y*.06}px)`}ticking=false}addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(scrollUpdate);ticking=true}},{passive:true});scrollUpdate();const menu=document.querySelector('.menu'),nav=document.getElementById('nav');menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));const viewport=document.getElementById('kitViewport');document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{viewport.classList.toggle('back',b.dataset.view==='back');viewport.classList.toggle('front',b.dataset.view==='front');document.querySelectorAll('[data-view]').forEach(t=>{t.classList.toggle('selected',t===b);t.setAttribute('aria-pressed',String(t===b))})}));if(reduce){const v=document.querySelector('.hero video');v?.pause()}})();
+(() => {
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const progress=document.getElementById('progress');
+ const story=document.querySelector('.sticky-stage');
+ const stage=document.getElementById('cinemaStage');
+ const cards=[...document.querySelectorAll('.step-card')];
+ const panels=[...document.querySelectorAll('.float-panel')];
+ const kit=document.getElementById('kitStage');
+ const jersey=document.getElementById('jerseyPan');
+ const jerseyLabel=document.getElementById('jerseyLabel');
+ const hero=document.querySelector('.hero');
+ const clamp=(n,a=0,b=1)=>Math.min(Math.max(n,a),b);
+ const revealElems=[...document.querySelectorAll('.reveal,.reveal-fast,.mosaic-card,.mode-tile')];
+ if('IntersectionObserver' in window){
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px 30px 0px'});
+  revealElems.forEach(e=>obs.observe(e));
+ } else revealElems.forEach(e=>e.classList.add('visible'));
+ let scheduled=false;
+ function update(){
+  const full=document.documentElement.scrollHeight-innerHeight;
+  if(progress) progress.style.width=`${full>0?100*scrollY/full:0}%`;
+  if(hero&&!reduce){const r=hero.getBoundingClientRect();hero.style.setProperty('--hero-depth',clamp(-r.top/Math.max(hero.offsetHeight,1)).toFixed(4))}
+  if(story&&stage){const r=story.getBoundingClientRect(),total=Math.max(story.offsetHeight-innerHeight,1);const t=clamp(-r.top/total);const i=t<.333?0:t<.666?1:2;
+   cards.forEach((el,k)=>el.classList.toggle('active',i===k));panels.forEach((el,k)=>el.classList.toggle('active',i===k));
+   if(!reduce){stage.style.setProperty('--camera-scale',(1.03+.34*t).toFixed(3));stage.style.setProperty('--camera-y',`${(-32*t).toFixed(1)}px`);stage.style.setProperty('--camera-angle',`${(-1.2+2.4*t).toFixed(2)}deg`);stage.style.setProperty('--float-progress',((t*3)%1).toFixed(3))}
+  }
+  if(kit&&jersey){const r=kit.getBoundingClientRect(),total=Math.max(kit.offsetHeight-innerHeight,1);const t=clamp(-r.top/total);if(!reduce) jersey.style.transform=`translateX(-${(t*40).toFixed(2)}%)`;if(jerseyLabel)jerseyLabel.textContent=t<.30?'FRENTE':t<.68?'TRANSICIÓN':'DORSO'}
+  scheduled=false;
+ }
+ addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update)}},{passive:true});
+ addEventListener('resize',()=>requestAnimationFrame(update));update();
+})();
