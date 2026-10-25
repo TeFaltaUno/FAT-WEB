@@ -1,18 +1,18 @@
-# FAT-WEB V7 · Editorial / Scrollytelling
-
-Todo por deslizamiento. Texto a la izquierda, imágenes a la derecha.
+# FAT-WEB V9 · "Somos la FAT"
 
 ## Orden
-1. ¿Querés formar parte del seleccionado como sponsor? (escudo 3D) + sponsors oficiales en mosaico.
-2. Indumentaria: camiseta 360° automática + jugadora.
-3. Quiénes somos (sólo texto): Quiénes somos · Estado institucional · Misión · Visión · Valores fundamentales.
-4. Modalidades F5 / F7 / F11.
-5. Representá a Tucumán (WhatsApp + Instagram, sin fotos).
-6. Quienes conducen FAT.
-7. La cancha: video Las Torres F5 con zoom tipo dron.
-8. Footer: contacto + "Desarrollado por Enzo Valenzuela Massa".
+0. Intro con cortes rápidos → "Somos la FAT." (botón Entrar).
+1. Escudo 3D con zoom automático al bajar.
+2. Sponsors: showcase horizontal con transición (una marca por vez) + muro animado con "¿Querés formar parte del seleccionado como sponsor?".
+3. Indumentaria 360°.
+4. Quiénes somos: tarjetas flotantes animadas, cámara con zoom y cursor.
+5. Lugar de entrenamiento: Las Torres F5 — el video se expande a pantalla completa.
+6. Convocatoria: "¿Querés formar parte del seleccionado de Tucumán? Comunicate con nosotros así te vemos jugar."
+7. Modalidades · 8. Autoridades · Footer.
 
-Contactos: sólo logo + "Mandar WhatsApp" / logo de Instagram + "Entrar" (sin números visibles).
+## WhatsApp
+Un solo botón "Mandar WhatsApp" → elegís Gonzalo Ríos (+54 9 381 332-3280) o Enzo Valenzuela Massa (+54 9 381 556-0086).
 
-## Publicación
-Subí el contenido de esta carpeta a la raíz del repo fat-web (rama main) reemplazando index.html, style.css y script.js.
+## Música
+Botón "Música" arriba a la derecha. Arranca con el primer toque (los navegadores no permiten sonido automático).
+Si subís un archivo llamado musica.mp3 a la raíz del repo, se usa ese tema; si no, suena una base original generada por la página.
