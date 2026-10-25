@@ -1,4 +1,4 @@
-/* FAT WEB · V6 — motor de scroll cinematográfico (vanilla, sin dependencias) */
+/* FAT WEB · V7 — motor de scroll cinematográfico (vanilla, sin dependencias) */
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s, c = document) => c.querySelector(s);
@@ -55,8 +55,8 @@
   const prog = el => { const r = el.getBoundingClientRect(); return clamp(-r.top / Math.max(el.offsetHeight - vh, 1)); };
   const inView = el => { const r = el.getBoundingClientRect(); return r.bottom > -100 && r.top < vh + 100; };
 
-  /* ---------- HERO: cámara sobre el video + escudo 3D ---------- */
-  const hero = $('#inicio'), heroCopy = $('#heroCopy'), videoCard = $('#videoCard'),
+  /* ---------- HERO: escudo 3D + llamado a sponsors ---------- */
+  const hero = $('#inicio'), heroCopy = $('#heroCopy'),
         shield = $('#shield'), shieldBody = $('#shieldBody'), heroChips = $$('.hero .chip');
   let px = 0, py = 0, tpx = 0, tpy = 0;
   addEventListener('pointermove', e => { tpx = e.clientX / vw - .5; tpy = e.clientY / vh - .5; }, { passive: true });
@@ -65,90 +65,47 @@
     if (!inView(hero)) return;
     const p = reduce ? 0 : prog(hero);
     const e = ease(p);
-    heroCopy.style.transform = `translate3d(${-e * 60}px,${-e * 90}px,0)`;
-    heroCopy.style.opacity = 1 - clamp(p * 1.8);
-    heroCopy.style.filter = `blur(${(e * 12).toFixed(2)}px)`;
+    heroCopy.style.transform = `translate3d(0,${-e * 80}px,0)`;
+    heroCopy.style.opacity = 1 - clamp(p * 1.6);
+    heroCopy.style.filter = `blur(${(e * 10).toFixed(2)}px)`;
 
-    // "dron": la tarjeta de video viaja al centro y la cámara se acerca
-    if (document.body.classList.contains('is-ready') || p > 0) {
-      const r = videoCard.offsetParent.getBoundingClientRect();
-      const cardCx = r.left + videoCard.offsetLeft + videoCard.offsetWidth / 2;
-      const dx = (vw / 2 - cardCx) * e;
-      const s = 1 + e * (vw > 900 ? .38 : .5);
-      videoCard.style.transform = `translate3d(${dx}px,${e * 20}px,0) rotateY(${(-6 * (1 - e) + 0).toFixed(2)}deg) scale(${s})`;
-    }
-
-    // escudo: flota, sigue al puntero y "vuela" hacia la cámara al bajar
     px = lerp(px, tpx, .06); py = lerp(py, tpy, .06);
-    const idle = reduce ? 0 : Math.sin(time / 1400) * 6;
-    shieldBody.style.setProperty('--ry', `${(px * 34 + idle + e * 50).toFixed(2)}deg`);
+    const idle = reduce ? 0 : Math.sin(time / 1400) * 8;
+    shieldBody.style.setProperty('--ry', `${(px * 34 + idle + e * 60).toFixed(2)}deg`);
     shieldBody.style.setProperty('--rx', `${(-py * 22 + Math.cos(time / 1700) * 3).toFixed(2)}deg`);
     shieldBody.style.setProperty('--sheen', `${(120 - ((time / 40) % 260)).toFixed(1)}%`);
     if (document.body.classList.contains('is-ready')) {
-      shield.style.transform = `translate3d(${-e * 140}px,${-e * 160 + Math.sin(time / 1100) * 6}px,${e * 260}px) scale(${1 + e * .3})`;
-      shield.style.opacity = 1 - clamp(p * 1.7);
+      shield.style.transform = `translate3d(${-e * 120}px,${-e * 120 + Math.sin(time / 1100) * 8}px,${e * 320}px) scale(${1 + e * .25})`;
+      shield.style.opacity = 1 - clamp(p * 1.5);
     }
     heroChips.forEach(c => {
       const f = parseFloat(c.dataset.float || 0);
-      c.style.transform = `translate3d(0,${-e * 220 * f}px,0)`;
-      c.style.opacity = 1 - clamp(p * 2);
+      c.style.transform = `translate3d(0,${-e * 240 * f}px,0)`;
+      c.style.opacity = document.body.classList.contains('is-loading') ? '' : 1 - clamp(p * 2);
     });
   }
 
-  /* ---------- QUÉ ES FAT: cámara tipo Screen Studio sobre tablero de capas ---------- */
-  const story = $('#que-es'), steps = $$('.step'), ticks = $$('.ticks i'),
-        board = $('#board'), viewport = $('#storyViewport'),
-        storyNum = $('#storyNum'), vpLabel = $('#vpLabel'), vpZoom = $('#vpZoom');
-  const BW = 1570, BH = 1040;
-  const R = {
-    all: [0, 0, BW, BH],
-    s0: [40, 60, 870, 640],
-    s1: [430, 370, 650, 340],
-    s2: [1090, 60, 440, 440],
-    s3: [40, 710, 660, 290],
-    s4: [710, 710, 820, 290],
-  };
-  const labels = ['Quiénes somos', 'Oportunidades', 'Estado institucional', 'Misión', 'Visión'];
-  // pares (posición, encuadre): mantener y luego "cortar" rápido al siguiente
-  const KEYS = [[0, R.all], [.35, R.s0], [1, R.s0], [1.3, R.s1], [2, R.s1], [2.3, R.s2], [3, R.s2], [3.3, R.s3], [4, R.s3], [4.3, R.s4], [4.75, R.s4], [5, R.all]];
-  const cam = { x: 0, y: 0, s: .4, init: false };
-  let activeStep = -1;
-
-  function rectAt(u) {
-    for (let i = 0; i < KEYS.length - 1; i++) {
-      const [ua, ra] = KEYS[i], [ub, rb] = KEYS[i + 1];
-      if (u <= ub) {
-        const t = ease(clamp((u - ua) / (ub - ua)));
-        return ra.map((v, k) => lerp(v, rb[k], t));
-      }
-    }
-    return KEYS[KEYS.length - 1][1];
+  /* ---------- LA CANCHA: video con acercamiento tipo dron ---------- */
+  const pitch = $('#cancha'), videoCard = $('#videoCard'), pitchCopy = $('#pitchCopy');
+  function pitchFrame() {
+    if (!inView(pitch)) return;
+    const p = reduce ? .0 : prog(pitch);
+    const e = ease(p);
+    const r = videoCard.parentElement.getBoundingClientRect();
+    const dx = (vw / 2 - (r.left + r.width / 2)) * e;
+    const s = .86 + e * (vw > 900 ? .5 : .35);
+    videoCard.style.transform = `translate3d(${dx.toFixed(1)}px,0,0) rotateY(${(-8 * (1 - e)).toFixed(2)}deg) scale(${s.toFixed(3)})`;
+    pitchCopy.style.opacity = 1 - clamp((p - .35) * 2.2);
+    pitchCopy.style.transform = `translate3d(0,${-e * 60}px,0)`;
   }
-  function storyFrame() {
-    if (!inView(story)) return;
-    const p = prog(story), u = p * 5;
-    const idx = Math.min(4, Math.floor(u));
-    if (idx !== activeStep) {
-      activeStep = idx;
-      steps.forEach((s, i) => { s.classList.toggle('is-active', i === idx); s.classList.toggle('is-past', i < idx); });
-      storyNum.textContent = String(idx + 1).padStart(2, '0');
-      vpLabel.textContent = labels[idx];
-    }
-    ticks.forEach((t, i) => t.style.setProperty('--p', clamp(u - i).toFixed(3)));
 
-    const W = viewport.clientWidth, H = viewport.clientHeight;
-    const [x, y, w, h] = rectAt(u);
-    const s = Math.min(W / w, H / h) * .9;
-    const tx = W / 2 - (x + w / 2) * s, ty = H / 2 - (y + h / 2) * s;
-    if (!cam.init || reduce) { cam.x = tx; cam.y = ty; cam.s = s; cam.init = true; }
-    const k = .14;
-    const ox = cam.x, oy = cam.y, os = cam.s;
-    cam.x = lerp(cam.x, tx, k); cam.y = lerp(cam.y, ty, k); cam.s = lerp(cam.s, s, k);
-    const speed = Math.hypot(cam.x - ox, cam.y - oy) + Math.abs(cam.s - os) * 900;
-    const blur = reduce ? 0 : Math.min(speed * .07, 5);
-    board.style.transform = `translate3d(${cam.x.toFixed(2)}px,${cam.y.toFixed(2)}px,0) scale(${cam.s.toFixed(4)})`;
-    board.style.filter = blur > .3 ? `blur(${blur.toFixed(2)}px)` : 'none';
-    vpZoom.textContent = (cam.s / (Math.min(W / BW, H / BH) * .9)).toFixed(2) + '×';
+  /* ---------- Identidad: índice activo ---------- */
+  const idItems = $$('#idIndex li');
+  if (idItems.length && 'IntersectionObserver' in window) {
+    const io2 = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) idItems.forEach(li => li.classList.toggle('on', li.dataset.for === e.target.id));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    $$('.id-block').forEach(b => io2.observe(b));
   }
 
   /* ---------- INDUMENTARIA: giro 360° automático + scroll ---------- */
@@ -216,7 +173,7 @@
   /* ---------- Loop ---------- */
   function frame(time) {
     const dt = lastT ? Math.min(time - lastT, 64) : 16; lastT = time;
-    updateNow(); blurFrame(); heroFrame(time); storyFrame(); kitFrame(time, dt); layersFrame(); mosaicFrame();
+    updateNow(); blurFrame(); heroFrame(time); pitchFrame(); kitFrame(time, dt); layersFrame(); mosaicFrame();
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
