@@ -1,18 +1,21 @@
-# FAT-WEB V9 · "Somos la FAT"
+# FAT-WEB V10 · "Somos la FAT"
 
 ## Orden
-0. Intro con cortes rápidos → "Somos la FAT." (botón Entrar).
-1. Escudo 3D con zoom automático al bajar.
-2. Sponsors: showcase horizontal con transición (una marca por vez) + muro animado con "¿Querés formar parte del seleccionado como sponsor?".
+0. Entrada: escudo + botón ENTRAR (activa la música) → intro con cortes rápidos → "Somos la FAT."
+1. Escudo 3D con zoom al bajar.
+2. Sponsors: showcase con transición + muro "¿Querés formar parte del seleccionado como sponsor?".
 3. Indumentaria 360°.
-4. Quiénes somos: tarjetas flotantes animadas, cámara con zoom y cursor.
-5. Lugar de entrenamiento: Las Torres F5 — el video se expande a pantalla completa.
-6. Convocatoria: "¿Querés formar parte del seleccionado de Tucumán? Comunicate con nosotros así te vemos jugar."
-7. Modalidades · 8. Autoridades · Footer.
+4. Quiénes somos (tarjetas animadas con cámara y cursor).
+5. Convocatoria: "Te queremos ver jugar" + tarjeta FAT.
+6. Modalidades · 7. Autoridades.
+8. Lugar de entrenamiento: Las Torres F5 (video nuevo, se expande a pantalla completa).
+Footer.
 
-## WhatsApp
-Un solo botón "Mandar WhatsApp" → elegís Gonzalo Ríos (+54 9 381 332-3280) o Enzo Valenzuela Massa (+54 9 381 556-0086).
+## Celulares
+La experiencia es la misma en todos los celulares (Samsung, Motorola, iPhone), aunque tengan activado "quitar animaciones" o ahorro de batería.
 
 ## Música
-Botón "Música" arriba a la derecha. Arranca con el primer toque (los navegadores no permiten sonido automático).
-Si subís un archivo llamado musica.mp3 a la raíz del repo, se usa ese tema; si no, suena una base original generada por la página.
+Arranca al tocar ENTRAR. Si subís "musica.mp3" a la raíz, se usa ese tema.
+
+## Publicación
+Subí todo el contenido de la carpeta a la raíz del repo. Podés borrar canchas-las-torres.mp4 y canchas-poster.jpg viejos.

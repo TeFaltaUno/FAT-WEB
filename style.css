@@ -318,10 +318,6 @@ strong{font-weight:600;color:var(--fg)}
   .foot-top{flex-direction:column}
   .foot-bottom{font-size:14px}
 }
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  [data-reveal]{opacity:1;transform:none;filter:none}
-}
 
 /* =========================================================
    V9 · Palabras animadas en títulos
@@ -344,9 +340,9 @@ strong{font-weight:600;color:var(--fg)}
 .now{margin-left:auto}
 
 /* ---------- Intro: failsafe si el JS no carga ---------- */
-.intro{animation:introFailsafe 0s linear 9s forwards}
+html:not(.js) .intro{animation:introFailsafe 0s linear 9s forwards}
 @keyframes introFailsafe{to{visibility:hidden;opacity:0;pointer-events:none}}
-body.is-intro{animation:unlock 0s linear 9s forwards}
+html:not(.js) body.is-intro{animation:unlock 0s linear 9s forwards}
 @keyframes unlock{to{overflow:auto;height:auto}}
 .skip{top:auto;bottom:64px;left:50%;right:auto;transform:translateX(-50%);padding:14px 26px;font-size:13px;border-color:rgba(255,255,255,.6)}
 
@@ -465,9 +461,11 @@ button.act{background:none;border:0;border-bottom:1px solid var(--line-d);width:
 .join-stripes{position:absolute;inset:-20%;background:repeating-linear-gradient(115deg,rgba(169,205,238,.07) 0 60px,transparent 60px 120px,rgba(255,255,255,.04) 120px 180px,transparent 180px 240px);animation:stripes 18s linear infinite}
 @keyframes stripes{to{transform:translateX(240px)}}
 .join-kinetic{position:relative;margin-bottom:clamp(30px,6svh,70px);pointer-events:none}
-.kl{margin:0;white-space:nowrap;font-weight:900;font-stretch:62%;text-transform:uppercase;font-size:clamp(64px,12vw,200px);line-height:.88;letter-spacing:-.02em;will-change:transform}
+.kl{margin:0;white-space:nowrap;text-align:center;font-weight:900;font-stretch:62%;text-transform:uppercase;line-height:.9;letter-spacing:-.015em;will-change:transform,opacity}
+.k1{font-size:clamp(46px,8.4vw,170px)}
+.k2{font-size:clamp(34px,7.2vw,148px);margin-top:.08em}
 .kl em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;font-stretch:100%}
-.kl.outline{color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55)}
+.kl.outline{color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85)}
 .join-grid{position:relative;z-index:2}
 .join-lede{font-family:var(--serif);font-size:clamp(28px,2.8vw,42px);line-height:1.15;margin:0 0 18px;color:#fff}
 .join-lede strong{font-family:var(--display);font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:.9em;letter-spacing:-.01em;background:linear-gradient(90deg,#fff,var(--sky),#fff);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 3s linear infinite}
@@ -534,16 +532,49 @@ button.act{background:none;border:0;border-bottom:1px solid var(--line-d);width:
   .pitch-copy .h2.big{font-size:38px;margin-bottom:6px}
   .pitch-copy .body{font-size:15px}
   .tag.tl{top:auto;bottom:20px;left:var(--gutter);right:auto}
-  .kl{font-size:clamp(54px,17vw,90px)}
+  .k1{font-size:15.5vw;white-space:normal;line-height:.88}
+  .k1 span{display:block}
+  .k2{font-size:9vw}
+  .kl.outline{-webkit-text-stroke:1.5px #fff}
   .join-lede{font-size:28px}
   .join-media{height:60svh}
-  .join-photo{left:12%;right:4%}
+  .join-fat{left:8%;right:4%}
   .jchip{padding:12px 14px}
   .jchip b{font-size:16px}
-  .jc2{top:40%}
+  .jc2{top:6%;right:0}
+  .jc1{top:auto;bottom:24%}
   .ig-cta{flex:1;justify-content:center}
   .wa-sheet{align-items:flex-end}
   .wa-box{width:100%;border-radius:26px 26px 0 0;padding-bottom:max(20px,env(safe-area-inset-bottom));animation:sheetUp .45s var(--ease)}
   .wa-grab{display:block;width:44px;height:5px;border-radius:5px;background:rgba(255,255,255,.25);margin:-10px auto 14px}
   @keyframes sheetUp{from{transform:translateY(100%)}}
 }
+
+/* =========================================================
+   V10 · Entrada con sonido (gate)
+   ========================================================= */
+.gate{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(700px 500px at 50% 45%,rgba(169,205,238,.16),transparent 70%),#000;transition:opacity .5s,visibility .5s}
+.intro.started .gate{opacity:0;visibility:hidden}
+.gate-crest{width:min(46vw,220px);filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));animation:gateFloat 3.2s ease-in-out infinite}
+@keyframes gateFloat{50%{transform:translateY(-10px) rotateY(12deg)}}
+.gate-k{margin:0;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.gate-btn{display:inline-flex;align-items:center;gap:14px;margin-top:8px;padding:18px 34px 18px 20px;border-radius:999px;border:0;background:#fff;color:#000;font-family:var(--display);font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:24px;letter-spacing:.02em;cursor:pointer;box-shadow:0 0 0 0 rgba(255,255,255,.5);animation:gatePulse 1.8s infinite}
+@keyframes gatePulse{70%{box-shadow:0 0 0 18px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.gate-ic{width:40px;height:40px;border-radius:50%;background:#000;display:grid;place-items:center}
+.gate-ic .eq i{background:#fff;animation:eq 1s ease-in-out infinite}
+.gate-ic .eq i:nth-child(2){animation-delay:-.3s}.gate-ic .eq i:nth-child(3){animation-delay:-.6s}.gate-ic .eq i:nth-child(4){animation-delay:-.15s}
+.gate-hint{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* =========================================================
+   V10 · Tarjeta "FAT" en la convocatoria
+   ========================================================= */
+.join-fat{position:absolute;left:16%;right:6%;top:0;bottom:0;border-radius:30px;overflow:hidden;display:grid;place-items:center;container-type:inline-size;
+  background:radial-gradient(80% 60% at 50% 40%,rgba(169,205,238,.28),transparent 70%),linear-gradient(160deg,#152238,#0a101b);
+  border:1px solid rgba(255,255,255,.16);box-shadow:0 50px 120px rgba(0,0,0,.55)}
+.jf-grid{position:absolute;inset:-50%;background:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px) 0 0/48px 48px;transform:perspective(600px) rotateX(55deg) translateY(20%);animation:grid 6s linear infinite}
+@keyframes grid{to{background-position:0 48px,0 0}}
+.jf-word{position:relative;grid-area:1/1;font-weight:900;font-stretch:62%;font-size:150px;font-size:44cqw;line-height:.8;letter-spacing:-.03em;color:#fff;text-shadow:0 30px 80px rgba(0,0,0,.5);animation:fatIn 4s var(--ease) infinite}
+.jf-ghost{color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.5);text-shadow:none;animation:fatGhost 4s var(--ease) infinite}
+@keyframes fatIn{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes fatGhost{0%{transform:scale(1);opacity:.8}60%{transform:scale(1.35);opacity:0}100%{opacity:0}}
+.jf-sub{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8)}

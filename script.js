@@ -1,6 +1,8 @@
-/* FAT WEB · V9 — "Somos la FAT" · motor de scroll cinematográfico (vanilla, sin dependencias) */
+/* FAT WEB · V10 — "Somos la FAT" · motor de scroll cinematográfico (vanilla, sin dependencias) */
 (() => {
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Misma experiencia en todos los celulares: no se desactivan animaciones por ahorro de batería
+  const reduce = false;
+  document.documentElement.classList.add('js');
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
   const clamp = (n, a = 0, b = 1) => Math.min(Math.max(n, a), b);
@@ -86,8 +88,8 @@
     function ui() { btn.setAttribute('aria-pressed', on); btn.setAttribute('aria-label', on ? 'Pausar música' : 'Activar música'); }
     btn.addEventListener('click', e => { e.stopPropagation(); if (on) { stop(); pref = 'off'; } else { start(); pref = 'on'; } try { localStorage.setItem('fat-music', pref); } catch (er) {} });
     // por defecto: arranca con el primer toque/click (los navegadores no permiten audio sin interacción)
-    const first = () => { if (pref !== 'off') start(); ['pointerdown', 'keydown'].forEach(ev => removeEventListener(ev, first, true)); };
-    ['pointerdown', 'keydown'].forEach(ev => addEventListener(ev, first, true));
+    const first = () => { if (pref !== 'off') start(); ['pointerup', 'touchend', 'click', 'keydown'].forEach(ev => removeEventListener(ev, first, true)); };
+    ['pointerup', 'touchend', 'click', 'keydown'].forEach(ev => addEventListener(ev, first, true));
     return { start };
   })();
 
@@ -107,9 +109,11 @@
     setTimeout(() => body.classList.add('is-live'), 1700);
     setTimeout(() => intro.classList.add('gone'), 1000);
   }
-  if (reduce) { intro.classList.add('gone'); endIntro(); }
-  else {
-    let t = 200;
+  let started = false;
+  function runIntro() {
+    if (started) return; started = true;
+    intro.classList.add('started');
+    let t = 350;
     cuts.forEach((c, i) => {
       timers.push(setTimeout(() => {
         cuts.forEach(x => x.classList.remove('on'));
@@ -119,10 +123,13 @@
       t += DUR[i];
     });
     timers.push(setTimeout(endIntro, t));
-    $('#skip').addEventListener('click', endIntro);
-    ['wheel', 'touchmove'].forEach(ev => addEventListener(ev, () => { if (!introDone) endIntro(); }, { once: true, passive: true }));
-    addEventListener('keydown', () => { if (!introDone) endIntro(); }, { once: true });
   }
+  // Entrar: el toque habilita el sonido (requisito de todos los navegadores) y arranca la intro
+  $('#gateBtn').addEventListener('click', () => { Music.start(); runIntro(); });
+  $('#skip').addEventListener('click', () => { Music.start(); endIntro(); });
+  addEventListener('wheel', () => { if (!started) runIntro(); else if (!introDone) endIntro(); }, { passive: true });
+  addEventListener('touchmove', () => { if (!started) runIntro(); }, { passive: true });
+  addEventListener('keydown', e => { if (introDone) return; if (!started) { Music.start(); runIntro(); } else if (e.key === 'Escape') endIntro(); });
 
   /* ---------- Títulos palabra por palabra ---------- */
   $$('.split-words').forEach(h => {
@@ -382,8 +389,10 @@
     if (!inView(join)) return;
     const r = join.getBoundingClientRect();
     const d = (r.top + r.height / 2 - vh / 2) / vh;
-    kl1.style.transform = `translate3d(${(-20 + d * 30).toFixed(2)}%,0,0)`;
-    kl2.style.transform = `translate3d(${(-40 - d * 30).toFixed(2)}%,0,0)`;
+    const q = ease(clamp((vh - r.top) / (vh * .55)));
+    kl1.style.transform = `translate3d(${((1 - q) * -45).toFixed(2)}%,0,0)`;
+    kl2.style.transform = `translate3d(${((1 - q) * 45).toFixed(2)}%,0,0)`;
+    kl1.style.opacity = kl2.style.opacity = q.toFixed(3);
     floats.forEach(el => {
       const rr = el.getBoundingClientRect();
       const dd = (rr.top + rr.height / 2 - vh / 2) / vh;

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="escudo-fat-3d.webp">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body class="is-intro">
 
@@ -21,7 +21,13 @@
 </svg>
 
 <!-- ============ INTRO ============ -->
-<div class="intro" id="intro" aria-hidden="true">
+<div class="intro" id="intro">
+  <div class="gate" id="gate">
+    <img src="escudo-fat-3d.webp" alt="Escudo FAT" class="gate-crest">
+    <p class="gate-k">Fútbol Amateur Tucumán · 2026</p>
+    <button class="gate-btn" id="gateBtn" type="button"><span class="gate-ic" aria-hidden="true"><span class="eq"><i></i><i></i><i></i><i></i></span></span>Entrar</button>
+    <p class="gate-hint">Con sonido</p>
+  </div>
   <div class="cut" data-t="0"><span class="w">Esto</span></div>
   <div class="cut" data-t="1"><span class="w">es</span></div>
   <div class="cut" data-t="2"><span class="w">la</span></div>
@@ -34,7 +40,7 @@
   <div class="cut cut-txt" data-t="9"><span class="w md"><em>Tucumán.</em></span></div>
   <div class="cut cut-final" data-t="10"><span class="k">Fútbol Amateur Tucumán · 2026</span><span class="w lg">Somos <em>la FAT.</em></span></div>
   <div class="intro-hud"><span id="introCount">00</span><span>Seleccionado oficial · 2026</span></div>
-  <button class="skip" id="skip" type="button">Entrar</button>
+  <button class="skip" id="skip" type="button">Saltar</button>
 </div>
 
 <header class="topbar">
@@ -257,31 +263,12 @@
   </div>
 </section>
 
-<!-- ============ 05 · LUGAR DE ENTRENAMIENTO (video que se expande) ============ -->
-<section class="pitch" id="cancha" data-label="Lugar de entrenamiento" data-index="05">
-  <div class="pitch-pin" id="pitchPin">
-    <div class="pitch-video" id="pitchVideo">
-      <video muted loop playsinline preload="metadata" poster="canchas-poster.jpg">
-        <source src="canchas-las-torres.mp4" type="video/mp4">
-      </video>
-      <div class="pitch-shade" id="pitchShade"></div>
-    </div>
-    <div class="pitch-copy" id="pitchCopy">
-      <p class="kicker">05 — Lugar de entrenamiento</p>
-      <h2 class="h2 big">Las Torres <em>Fútbol 5.</em></h2>
-      <p class="body">Donde entrena el seleccionado · San Miguel de Tucumán.</p>
-    </div>
-    <div class="pitch-end" id="pitchEnd"><span>Nos vemos</span><em>en la cancha.</em></div>
-    <span class="tag tl" id="pitchTag">Las Torres F5 · REC <i class="dot"></i></span>
-  </div>
-</section>
-
 <!-- ============ 06 · REPRESENTÁ A TUCUMÁN ============ -->
-<section class="join" id="convocatoria" data-label="Convocatoria" data-index="06">
+<section class="join" id="convocatoria" data-label="Convocatoria" data-index="05">
   <div class="join-stripes" aria-hidden="true"></div>
   <div class="join-kinetic" aria-hidden="true">
-    <p class="kl k1" id="kl1">Te queremos <em>ver jugar</em> · Te queremos <em>ver jugar</em> ·</p>
-    <p class="kl k2 outline" id="kl2">Representá a Tucumán · Representá a Tucumán ·</p>
+    <p class="kl k1" id="kl1"><span>Te queremos</span> <em>ver jugar.</em></p>
+    <p class="kl k2 outline" id="kl2">Representá a Tucumán</p>
   </div>
   <div class="wrap split join-grid">
     <div class="copy">
@@ -295,7 +282,12 @@
       </div>
     </div>
     <div class="join-media">
-      <figure class="join-photo" data-float="-.5"><img src="jugadora-fat-retrato.webp" alt="Jugadora del seleccionado FAT" loading="lazy"></figure>
+      <div class="join-fat" data-float="-.4" aria-label="FAT">
+        <span class="jf-grid" aria-hidden="true"></span>
+        <span class="jf-word">FAT</span>
+        <span class="jf-word jf-ghost" aria-hidden="true">FAT</span>
+        <span class="jf-sub">Seleccionado de Tucumán</span>
+      </div>
       <div class="jchip jc1" data-float=".9"><small>Ramas</small><b>Femenino · Masculino</b></div>
       <div class="jchip jc2" data-float="-.9"><small>Formatos</small><b>F5 · F7 · F11</b></div>
       <div class="jchip jc3" data-float=".5"><small>Convocatoria</small><b><span class="live"></span>Abierta</b></div>
@@ -304,10 +296,10 @@
 </section>
 
 <!-- ============ 07 · MODALIDADES ============ -->
-<section class="modes paper" id="modalidades" data-label="Modalidades" data-index="07">
+<section class="modes paper" id="modalidades" data-label="Modalidades" data-index="06">
   <div class="wrap split">
     <div class="copy">
-      <p class="kicker" data-reveal>07 — Modalidades</p>
+      <p class="kicker" data-reveal>06 — Modalidades</p>
       <h2 class="h2 big split-words">Tres formatos. <em>Una pasión.</em></h2>
       <p class="body" data-reveal>Seleccionados femeninos y masculinos en las tres modalidades del fútbol amateur. Cada formato tiene su ritmo, su espacio y su forma de competir.</p>
     </div>
@@ -320,16 +312,35 @@
 </section>
 
 <!-- ============ 08 · AUTORIDADES ============ -->
-<section class="authorities" id="autoridades" data-label="Autoridades" data-index="08">
+<section class="authorities" id="autoridades" data-label="Autoridades" data-index="07">
   <div class="wrap split">
     <div class="copy">
-      <p class="kicker" data-reveal>08 — Autoridades</p>
+      <p class="kicker" data-reveal>07 — Autoridades</p>
       <h2 class="h2 big split-words">Quienes <em>conducen FAT.</em></h2>
     </div>
     <div class="people">
       <article class="person" data-reveal><small>Presidente</small><h3>Gonzalo Ríos</h3><span>Fútbol Amateur Tucumán</span></article>
       <article class="person" data-reveal><small>Secretario</small><h3>Enzo Valenzuela Massa</h3><span>Fútbol Amateur Tucumán</span></article>
     </div>
+  </div>
+</section>
+
+<!-- ============ 08 · LUGAR DE ENTRENAMIENTO (video que se expande) ============ -->
+<section class="pitch" id="cancha" data-label="Lugar de entrenamiento" data-index="08">
+  <div class="pitch-pin" id="pitchPin">
+    <div class="pitch-video" id="pitchVideo">
+      <video muted loop playsinline preload="metadata" poster="canchas-hd-poster.jpg">
+        <source src="canchas-las-torres-hd.mp4" type="video/mp4">
+      </video>
+      <div class="pitch-shade" id="pitchShade"></div>
+    </div>
+    <div class="pitch-copy" id="pitchCopy">
+      <p class="kicker">08 — Lugar de entrenamiento</p>
+      <h2 class="h2 big">Las Torres <em>Fútbol 5.</em></h2>
+      <p class="body">Donde entrena el seleccionado · San Miguel de Tucumán.</p>
+    </div>
+    <div class="pitch-end" id="pitchEnd"><span>Nos vemos</span><em>en la cancha.</em></div>
+    <span class="tag tl" id="pitchTag">Las Torres F5 · REC <i class="dot"></i></span>
   </div>
 </section>
 
@@ -377,6 +388,6 @@
   </div>
 </div>
 
-<script src="script.js?v=9" defer></script>
+<script src="script.js?v=10" defer></script>
 </body>
 </html>
