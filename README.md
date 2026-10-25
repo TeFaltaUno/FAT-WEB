@@ -1,18 +1,16 @@
-# FAT-WEB V7 · Editorial / Scrollytelling
+# FAT-WEB V8 · "Esto es la FAT"
 
-Todo por deslizamiento. Texto a la izquierda, imágenes a la derecha.
+Intro cinética + scrollytelling. Todo por deslizamiento.
 
 ## Orden
-1. ¿Querés formar parte del seleccionado como sponsor? (escudo 3D) + sponsors oficiales en mosaico.
-2. Indumentaria: camiseta 360° automática + jugadora.
-3. Quiénes somos (sólo texto): Quiénes somos · Estado institucional · Misión · Visión · Valores fundamentales.
-4. Modalidades F5 / F7 / F11.
-5. Representá a Tucumán (WhatsApp + Instagram, sin fotos).
-6. Quienes conducen FAT.
-7. La cancha: video Las Torres F5 con zoom tipo dron.
-8. Footer: contacto + "Desarrollado por Enzo Valenzuela Massa".
-
-Contactos: sólo logo + "Mandar WhatsApp" / logo de Instagram + "Entrar" (sin números visibles).
+0. Intro: "Esto es la FAT" con cortes rápidos (se puede saltar).
+1. Escudo 3D con entrada animada y zoom automático al bajar.
+2. Sponsors: ¿Querés formar parte del seleccionado como sponsor? + anillo 3D con las 7 marcas juntas.
+3. Indumentaria: camiseta 360° + jugadora.
+4. Quiénes somos: tarjetas flotantes (translúcidas, sobre degradé) con cámara que hace zoom en cada una.
+5. La cancha: video Las Torres F5.
+6. Modalidades · 7. Representá a Tucumán · 8. Autoridades · Footer.
 
 ## Publicación
-Subí el contenido de esta carpeta a la raíz del repo fat-web (rama main) reemplazando index.html, style.css y script.js.
+Subí todo el contenido de esta carpeta a la raíz del repo fat-web (rama main).
+Podés borrar del repo: cancha-2.webp, cancha-12.webp, cancha-17.webp, certificado-fat.png, FAT-CERTIFICADO.pdf, models.js, *.glb.

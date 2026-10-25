@@ -3,100 +3,121 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0c0d0f">
-<meta name="description" content="FAT · Fútbol Amateur Tucumán. Seleccionado oficial de Fútbol 5, 7 y 11, femenino y masculino. Sumate como sponsor.">
+<meta name="theme-color" content="#07080a">
+<meta name="description" content="Esto es la FAT · Fútbol Amateur Tucumán. Seleccionado oficial de Fútbol 5, 7 y 11, femenino y masculino.">
 <title>FAT · Fútbol Amateur Tucumán</title>
 <link rel="icon" href="escudo-fat-3d.webp" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="escudo-fat-3d.webp">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
-<body class="is-loading">
+<body class="is-intro">
 
-<!-- Íconos reutilizables -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.2 11.6a8.2 8.2 0 0 1-12.3 7.1L3.2 20l1.4-4.5a8.2 8.2 0 1 1 15.6-3.9Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.7"/><path d="M8.3 7.5c-.4-.6-.8-.7-1.2-.2-1.8 2.6 1.9 7.8 5.8 9.4 1.2.5 2.4.3 3.2-.8.2-.3.1-.6-.2-.8l-2-1c-.4-.2-.7 0-1 .4-.3.5-.6.6-1.1.4-1.2-.5-2.6-1.8-3.2-2.9-.2-.4-.2-.8.2-1.1.4-.3.5-.6.3-1l-.8-2.4Z" fill="currentColor"/></symbol>
   <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.1" y="3.1" width="17.8" height="17.8" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.6" cy="6.6" r="1.15" fill="currentColor"/></symbol>
 </svg>
 
+<!-- ============ INTRO · "Esto es la FAT" ============ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="cut" data-t="0"><span class="w">Esto</span></div>
+  <div class="cut" data-t="1"><span class="w">es</span></div>
+  <div class="cut" data-t="2"><span class="w">la</span></div>
+  <div class="cut cut-fat" data-t="3"><span class="w xl">FAT</span></div>
+  <div class="cut cut-img" data-t="4"><img src="escudo-fat-3d.webp" alt=""></div>
+  <div class="cut cut-txt" data-t="5"><span class="w md">Fútbol 5 · 7 · 11</span></div>
+  <div class="cut cut-img light" data-t="6"><img src="jersey-front.webp" alt=""></div>
+  <div class="cut cut-txt" data-t="7"><span class="w md">Femenino · Masculino</span></div>
+  <div class="cut cut-img" data-t="8"><img src="jugadora-fat-retrato.webp" alt="" class="cover"></div>
+  <div class="cut cut-txt" data-t="9"><span class="w md"><em>Tucumán.</em></span></div>
+  <div class="cut cut-final" data-t="10"><span class="k">Fútbol Amateur Tucumán</span><span class="w lg">Esto es <em>la FAT.</em></span></div>
+  <div class="intro-hud"><span id="introCount">00</span><span>Seleccionado oficial · 2026</span></div>
+  <button class="skip" id="skip" type="button">Saltar intro</button>
+</div>
+
 <header class="topbar">
   <div class="wordmark"><b>FAT</b><span>Fútbol Amateur Tucumán</span></div>
-  <div class="now" aria-hidden="true"><span id="nowIndex">01</span><i></i><span id="nowLabel">Sponsors</span></div>
+  <div class="now" aria-hidden="true"><span id="nowIndex">01</span><i></i><span id="nowLabel">Inicio</span></div>
   <div class="bar" aria-hidden="true"><span id="progress"></span></div>
 </header>
 
 <main>
 
-<!-- ============ 01 · SUMATE COMO SPONSOR ============ -->
-<section class="hero" id="inicio" data-label="Sumate como sponsor" data-index="01">
+<!-- ============ 01 · ESCUDO (zoom automático al bajar) ============ -->
+<section class="hero" id="inicio" data-label="Inicio" data-index="01">
   <div class="hero-pin">
-    <div class="grain" aria-hidden="true"></div>
-    <div class="wrap split hero-split">
-      <div class="hero-copy" id="heroCopy">
-        <p class="kicker" data-reveal>Sumate a FAT <span class="sep"></span> Temporada 2026</p>
-        <h1 class="display">
-          <span class="line"><span data-reveal>¿Querés formar</span></span>
-          <span class="line"><span data-reveal>parte del</span></span>
-          <span class="line"><span data-reveal>seleccionado</span></span>
-          <span class="line"><em data-reveal>como sponsor?</em></span>
-        </h1>
-        <p class="lede" data-reveal>Si querés acompañar y patrocinar al Seleccionado Oficial de Fútbol Amateur de Tucumán (FAT), solicitá nuestra propuesta comercial y conocé las opciones de patrocinio.</p>
+    <div class="hero-bg" aria-hidden="true">
+      <span class="halo"></span>
+      <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+      <span class="beam"></span>
+    </div>
+    <p class="hero-kicker" id="heroKicker">Seleccionado oficial <span class="sep"></span> Tucumán 2026</p>
+    <div class="shield3d" id="shield" aria-label="Escudo FAT">
+      <div class="shield-body" id="shieldBody">
+        <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-16px;--d:0">
+        <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-12px;--d:1">
+        <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-8px;--d:2">
+        <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-4px;--d:3">
+        <img class="face" src="escudo-fat-3d.webp" alt="Escudo FAT · Fútbol Amateur Tucumán">
+        <span class="sheen"></span>
+      </div>
+      <span class="shield-shadow"></span>
+    </div>
+    <h1 class="hero-title" id="heroTitle"><span>Fútbol Amateur</span> <em>Tucumán</em></h1>
+    <div class="scroll-cue" id="scrollCue" aria-hidden="true"><i></i><span>Deslizá</span></div>
+    <div class="flash" id="heroFlash" aria-hidden="true"></div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Fútbol 5</span><b>✦</b><span>Fútbol 7</span><b>✦</b><span>Fútbol 11</span><b>✦</b><span><em>Femenino</em></span><b>✦</b><span><em>Masculino</em></span><b>✦</b><span>Tucumán 2026</span><b>✦</b>
+    <span>Fútbol 5</span><b>✦</b><span>Fútbol 7</span><b>✦</b><span>Fútbol 11</span><b>✦</b><span><em>Femenino</em></span><b>✦</b><span><em>Masculino</em></span><b>✦</b><span>Tucumán 2026</span><b>✦</b>
+  </div>
+</div>
+
+<!-- ============ 02 · SPONSORS (anillo 3D, todos juntos) ============ -->
+<section class="sponsors" id="sponsors" data-label="Sponsors" data-index="02">
+  <div class="sp-pin">
+    <div class="wrap split">
+      <div class="copy">
+        <p class="kicker" data-reveal>02 — Sumate a FAT</p>
+        <h2 class="h2 big" data-reveal>¿Querés formar parte del seleccionado <em>como sponsor?</em></h2>
+        <p class="body" data-reveal>Si querés acompañar y patrocinar al Seleccionado Oficial de Fútbol Amateur de Tucumán (FAT), solicitá nuestra propuesta comercial y conocé las opciones de patrocinio.</p>
         <div class="actions" data-reveal>
           <a class="act" href="https://wa.me/5493813323280?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" target="_blank" rel="noopener noreferrer" aria-label="Mandar WhatsApp para ser sponsor (contacto 1)"><svg><use href="#i-wa"/></svg><span>Mandar WhatsApp</span><i>↗</i></a>
           <a class="act" href="https://wa.me/5493815560086?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" target="_blank" rel="noopener noreferrer" aria-label="Mandar WhatsApp para ser sponsor (contacto 2)"><svg><use href="#i-wa"/></svg><span>Mandar WhatsApp</span><i>↗</i></a>
         </div>
       </div>
 
-      <div class="hero-media">
-        <div class="shield3d" id="shield" aria-label="Escudo FAT">
-          <div class="shield-body" id="shieldBody">
-            <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-14px">
-            <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-11px">
-            <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-8px">
-            <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-5px">
-            <img class="sl" src="escudo-fat-3d.webp" alt="" style="--z:-2px">
-            <img class="face" src="escudo-fat-3d.webp" alt="Escudo FAT · Fútbol Amateur Tucumán">
-            <span class="sheen"></span>
+      <div class="sp-stage" id="spStage">
+        <p class="sp-label">Sponsors oficiales · <b id="spCount">7</b> marcas</p>
+        <div class="sp-scene">
+          <div class="sp-ring" id="spRing">
+            <figure class="sp-card" style="--bg:#fff"><img src="sponsor-caruso.jpg" alt="Caruso Seguros"></figure>
+            <figure class="sp-card cover" style="--bg:#101825"><img src="sponsor-unidad-legal.jpg" alt="Unidad Legal"></figure>
+            <figure class="sp-card" style="--bg:#fff"><img src="sponsor-ciudad-smt.jpg" alt="Ciudad SMT"></figure>
+            <figure class="sp-card" style="--bg:#fff"><img src="sponsor-siorm.jpg" alt="Siorm"></figure>
+            <figure class="sp-card cover" style="--bg:#000"><img src="sponsor-bordtex.jpg" alt="Bordtex"></figure>
+            <figure class="sp-card cover" style="--bg:#f5e305"><img src="sponsor-lucben.jpg" alt="Lucben"></figure>
+            <figure class="sp-card" style="--bg:#fff"><img src="sponsor-las-torres.jpg" alt="Las Torres Fútbol 5"></figure>
           </div>
-          <span class="shield-shadow"></span>
+          <span class="sp-floor"></span>
         </div>
-        <div class="chip chip-a" data-float="0.6"><small>Seleccionado oficial</small><b>Tucumán</b></div>
-        <div class="chip chip-b" data-float="-0.4"><small>Formatos</small><b>5 · 7 · 11</b></div>
-        <div class="chip chip-c" data-float="0.3"><small>Ramas</small><b>Fem. · Masc.</b></div>
+        <p class="sp-now">Ahora: <b id="spNow">Caruso Seguros</b></p>
       </div>
     </div>
-    <div class="scroll-cue" aria-hidden="true"><span>Deslizá</span><i></i></div>
   </div>
 </section>
 
-<!-- Sponsors actuales -->
-<section class="sponsors paper" id="sponsors" data-label="Sponsors oficiales" data-index="01">
-  <div class="wrap split">
-    <div class="copy">
-      <p class="kicker" data-reveal>01 — Sponsors oficiales</p>
-      <h2 class="h2 big" data-reveal>Marcas que<br><em>juegan con nosotros.</em></h2>
-      <p class="body" data-reveal>Empresas e instituciones que ya acompañan el crecimiento del fútbol amateur tucumano.</p>
-    </div>
-    <div class="mosaic" id="mosaic">
-      <figure class="tile t-caruso" style="--bg:#fff"><img src="sponsor-caruso.jpg" alt="Caruso Seguros" loading="lazy"></figure>
-      <figure class="tile t-ul" style="--bg:#101825"><img src="sponsor-unidad-legal.jpg" alt="Unidad Legal" loading="lazy"></figure>
-      <figure class="tile" style="--bg:#fff"><img src="sponsor-ciudad-smt.jpg" alt="Ciudad SMT" loading="lazy"></figure>
-      <figure class="tile" style="--bg:#fff"><img src="sponsor-siorm.jpg" alt="Siorm" loading="lazy"></figure>
-      <figure class="tile cover" style="--bg:#000"><img src="sponsor-bordtex.jpg" alt="Bordtex" loading="lazy"></figure>
-      <figure class="tile cover" style="--bg:#f5e305"><img src="sponsor-lucben.jpg" alt="Lucben" loading="lazy"></figure>
-      <figure class="tile t-torres" style="--bg:#fefefe"><img src="sponsor-las-torres.jpg" alt="Las Torres Fútbol 5" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 02 · INDUMENTARIA (360°) ============ -->
-<section class="kit" id="indumentaria" data-label="Indumentaria" data-index="02">
+<!-- ============ 03 · INDUMENTARIA (360°) ============ -->
+<section class="kit" id="indumentaria" data-label="Indumentaria" data-index="03">
   <div class="kit-pin">
     <div class="wrap split">
       <div class="copy">
-        <p class="kicker">02 — Indumentaria oficial</p>
+        <p class="kicker">03 — Indumentaria oficial</p>
         <h2 class="h2 big">Los colores<br>que nos <em>representan.</em></h2>
         <p class="body">Verde, blanco y celeste. Una camiseta pensada para llevar la identidad de Tucumán a cada cancha.</p>
         <ol class="spec" id="spec">
@@ -106,7 +127,6 @@
         </ol>
         <p class="readout" aria-hidden="true">Rotación <b id="rotDeg">000°</b></p>
       </div>
-
       <div class="kit-stage" aria-label="Camiseta FAT en vista de 360 grados">
         <div class="turntable">
           <div class="jersey" id="jersey">
@@ -127,85 +147,106 @@
   </div>
 </section>
 
-<!-- ============ 03 · IDENTIDAD INSTITUCIONAL (sólo texto) ============ -->
-<section class="identity" id="quienes-somos" data-label="Quiénes somos" data-index="03">
-  <div class="wrap identity-grid">
-    <aside class="id-aside">
-      <p class="kicker" data-reveal>03 — Identidad institucional</p>
-      <h2 class="h2 big" data-reveal>Quiénes<br><em>somos.</em></h2>
-      <ol class="id-index" id="idIndex" aria-hidden="true">
-        <li data-for="id-quienes"><span>01</span>Quiénes somos</li>
-        <li data-for="id-estado"><span>02</span>Estado institucional</li>
-        <li data-for="id-mision"><span>03</span>Misión</li>
-        <li data-for="id-vision"><span>04</span>Visión</li>
-        <li data-for="id-valores"><span>05</span>Valores</li>
-      </ol>
-    </aside>
-
-    <div class="id-body">
-      <article class="id-block" id="id-quienes">
-        <p class="id-tag" data-reveal>01 · ¿Quiénes somos?</p>
-        <p class="id-lead" data-reveal>FAT – Fútbol Amateur Tucumán es un proyecto deportivo independiente creado con el firme propósito de promover, desarrollar y representar el fútbol amateur de la Provincia de Tucumán.</p>
-        <p class="id-text" data-reveal>Lo hacemos mediante la conformación de seleccionados representativos en las modalidades de <strong>Fútbol 5, Fútbol 7 y Fútbol 11</strong>, tanto femenino como masculino.</p>
-        <p class="id-text" data-reveal>Nuestra organización busca oportunidades para jugadoras y jugadores amateurs, fomentando el compromiso, la disciplina deportiva, la inclusión social y un profundo sentido de pertenencia.</p>
-        <p class="id-text" data-reveal>El proyecto tiene como objetivo generar una estructura deportiva que permita que los talentos amateurs de nuestra provincia puedan representar a Tucumán en amistosos, encuentros, torneos y competencias interprovinciales.</p>
-      </article>
-
-      <article class="id-block" id="id-estado">
-        <p class="id-tag" data-reveal>02 · Estado institucional</p>
-        <p class="id-text big" data-reveal>FAT – Fútbol Amateur Tucumán es actualmente un proyecto deportivo independiente en <strong>proceso de formalización institucional</strong>, contando con:</p>
-        <ul class="id-list" data-reveal>
-          <li>Estructura organizativa</li>
-          <li>Autoridades</li>
-          <li>Reglamento</li>
-          <li>Documentación interna de funcionamiento</li>
-        </ul>
-      </article>
-
-      <article class="id-block" id="id-mision">
-        <p class="id-tag" data-reveal>03 · Misión</p>
-        <p class="id-quote" data-reveal>Representar al fútbol amateur tucumano mediante una organización comprometida con el desarrollo deportivo y social, generando oportunidades para jugadores y jugadoras de nuestra provincia.</p>
-      </article>
-
-      <article class="id-block" id="id-vision">
-        <p class="id-tag" data-reveal>04 · Visión</p>
-        <p class="id-quote" data-reveal>Consolidarnos como una organización referente del fútbol amateur de Tucumán y proyectar nuestro modelo hacia otras provincias argentinas.</p>
-      </article>
-
-      <article class="id-block" id="id-valores">
-        <p class="id-tag" data-reveal>05 · Nuestros valores fundamentales</p>
-        <dl class="values">
-          <div data-reveal><dt>Compromiso</dt><dd>Dedicación total al crecimiento y desarrollo de nuestros deportistas.</dd></div>
-          <div data-reveal><dt>Transparencia</dt><dd>Gestión clara, responsable y abierta de los recursos y proyectos.</dd></div>
-          <div data-reveal><dt>Inclusión</dt><dd>Oportunidades deportivas para quienes forman parte del fútbol amateur.</dd></div>
-          <div data-reveal><dt>Disciplina</dt><dd>Cultura de trabajo, respeto, responsabilidad y compromiso deportivo.</dd></div>
-        </dl>
-      </article>
+<!-- ============ 04 · QUIÉNES SOMOS (bento flotante + cámara) ============ -->
+<section class="story" id="quienes-somos" data-label="Quiénes somos" data-index="04">
+  <div class="story-pin">
+    <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="story-hud">
+      <p class="kicker">04 — Identidad institucional</p>
+      <p class="hud-title"><span id="hudTitle">Quiénes somos</span></p>
+    </div>
+    <div class="viewport" id="storyViewport">
+      <div class="board" id="board">
+      <div class="col">
+        <article class="g g-a" data-k="0">
+          <small>01 · ¿Quiénes somos?</small>
+          <h3>Fútbol Amateur <em>Tucumán.</em></h3>
+          <p>FAT es un proyecto deportivo independiente creado con el firme propósito de promover, desarrollar y representar el fútbol amateur de la Provincia de Tucumán, con seleccionados representativos de <strong>Fútbol 5, 7 y 11</strong>, femenino y masculino.</p>
+        </article>
+        <article class="g g-e quote" data-k="4">
+          <small>05 · Misión</small>
+          <p class="q">Representar al fútbol amateur tucumano con una organización comprometida con el desarrollo deportivo y social, generando oportunidades para jugadores y jugadoras de nuestra provincia.</p>
+        </article>
+      </div>
+      <div class="col">
+        <article class="g g-b" data-k="1">
+          <small>02 · Oportunidades</small>
+          <h3>Para jugadoras <em>y jugadores.</em></h3>
+          <p>Buscamos oportunidades para jugadoras y jugadores amateurs, fomentando el compromiso, la disciplina deportiva, la inclusión social y un profundo sentido de pertenencia.</p>
+        </article>
+        <article class="g g-d" data-k="3">
+          <small>04 · Estado institucional</small>
+          <h3>En proceso de <em>formalización.</em></h3>
+          <p>Proyecto deportivo independiente que ya cuenta con:</p>
+          <ul class="checks"><li>Estructura organizativa</li><li>Autoridades</li><li>Reglamento</li><li>Documentación interna</li></ul>
+        </article>
+      </div>
+      <div class="col">
+        <article class="g g-c" data-k="2">
+          <small>03 · Objetivo</small>
+          <h3>Representar <em>a Tucumán.</em></h3>
+          <p>Generar una estructura deportiva para que los talentos amateurs de la provincia representen a Tucumán en:</p>
+          <div class="tags"><span>Amistosos</span><span>Encuentros</span><span>Torneos</span><span>Interprovinciales</span></div>
+        </article>
+        <article class="g g-f quote" data-k="5">
+          <small>06 · Visión</small>
+          <p class="q">Consolidarnos como una organización referente del fútbol amateur de Tucumán y proyectar nuestro modelo hacia otras provincias argentinas.</p>
+        </article>
+      </div>
+        <div class="g-vals" data-k="6">
+          <article class="g v"><small>07 · Valor</small><h4>Compromiso</h4><p>Dedicación total al crecimiento y desarrollo de nuestros deportistas.</p></article>
+          <article class="g v"><small>07 · Valor</small><h4>Transparencia</h4><p>Gestión clara, responsable y abierta de los recursos y proyectos.</p></article>
+          <article class="g v"><small>07 · Valor</small><h4>Inclusión</h4><p>Oportunidades deportivas para quienes forman parte del fútbol amateur.</p></article>
+          <article class="g v"><small>07 · Valor</small><h4>Disciplina</h4><p>Cultura de trabajo, respeto, responsabilidad y compromiso deportivo.</p></article>
+        </div>
+      </div>
+    </div>
+    <div class="story-foot">
+      <div class="ticks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <span class="zoom">Cámara <b id="vpZoom">1.00×</b></span>
     </div>
   </div>
 </section>
 
-<!-- ============ 04 · MODALIDADES ============ -->
-<section class="modes paper" id="modalidades" data-label="Modalidades" data-index="04">
+<!-- ============ 05 · LA CANCHA (video) ============ -->
+<section class="pitch" id="cancha" data-label="La cancha" data-index="05">
+  <div class="pitch-pin">
+    <div class="pitch-copy" id="pitchCopy">
+      <p class="kicker">05 — La cancha</p>
+      <h2 class="h2 big">Nos vemos<br><em>en la cancha.</em></h2>
+      <p class="body">Las Torres Fútbol 5 · San Miguel de Tucumán.</p>
+    </div>
+    <div class="video-card" id="videoCard">
+      <video muted loop playsinline preload="metadata" poster="canchas-poster.jpg">
+        <source src="canchas-las-torres.mp4" type="video/mp4">
+      </video>
+      <span class="tag tl">Las Torres F5</span>
+      <span class="tag br">REC <i class="dot"></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · MODALIDADES ============ -->
+<section class="modes paper" id="modalidades" data-label="Modalidades" data-index="06">
   <div class="wrap split">
     <div class="copy">
-      <p class="kicker" data-reveal>04 — Modalidades</p>
+      <p class="kicker" data-reveal>06 — Modalidades</p>
       <h2 class="h2 big" data-reveal>Tres formatos.<br><em>Una pasión.</em></h2>
       <p class="body" data-reveal>Seleccionados femeninos y masculinos en las tres modalidades del fútbol amateur. Cada formato tiene su ritmo, su espacio y su forma de competir.</p>
     </div>
     <div class="modes-stack" data-cam>
-      <article class="mode" data-float="0.08"><span class="mode-n">5</span><div><small>Modalidad 01</small><h3>Fútbol 5</h3><p>Cancha reducida, juego rápido y técnico.</p></div></article>
-      <article class="mode" data-float="0.16"><span class="mode-n">7</span><div><small>Modalidad 02</small><h3>Fútbol 7</h3><p>Intensidad, espacios y trabajo colectivo.</p></div></article>
-      <article class="mode" data-float="0.24"><span class="mode-n">11</span><div><small>Modalidad 03</small><h3>Fútbol 11</h3><p>El formato clásico, en cancha completa.</p></div></article>
+      <article class="mode"><span class="mode-n">5</span><div><small>Modalidad 01</small><h3>Fútbol 5</h3><p>Cancha reducida, juego rápido y técnico.</p></div></article>
+      <article class="mode"><span class="mode-n">7</span><div><small>Modalidad 02</small><h3>Fútbol 7</h3><p>Intensidad, espacios y trabajo colectivo.</p></div></article>
+      <article class="mode"><span class="mode-n">11</span><div><small>Modalidad 03</small><h3>Fútbol 11</h3><p>El formato clásico, en cancha completa.</p></div></article>
     </div>
   </div>
 </section>
 
-<!-- ============ 05 · REPRESENTÁ A TUCUMÁN ============ -->
-<section class="convo dark-alt" id="convocatoria" data-label="Formá parte" data-index="05">
+<!-- ============ 07 · REPRESENTÁ A TUCUMÁN ============ -->
+<section class="convo dark-alt" id="convocatoria" data-label="Formá parte" data-index="07">
   <div class="wrap split">
     <div class="copy">
-      <p class="kicker" data-reveal>05 — Formá parte</p>
+      <p class="kicker" data-reveal>07 — Formá parte</p>
       <h2 class="h2 big" data-reveal>Representá<br><em>a Tucumán.</em></h2>
       <p class="body" data-reveal>Buscamos jugadoras y jugadores amateurs que sueñen con vestir los colores de la provincia. Si querés formar parte de los seleccionados FAT, escribinos por nuestros canales oficiales.</p>
       <div class="actions" data-reveal>
@@ -227,11 +268,11 @@
   </div>
 </section>
 
-<!-- ============ 06 · AUTORIDADES ============ -->
-<section class="authorities" id="autoridades" data-label="Autoridades" data-index="06">
+<!-- ============ 08 · AUTORIDADES ============ -->
+<section class="authorities" id="autoridades" data-label="Autoridades" data-index="08">
   <div class="wrap split">
     <div class="copy">
-      <p class="kicker" data-reveal>06 — Autoridades</p>
+      <p class="kicker" data-reveal>08 — Autoridades</p>
       <h2 class="h2 big" data-reveal>Quienes<br><em>conducen FAT.</em></h2>
     </div>
     <div class="people">
@@ -241,32 +282,9 @@
   </div>
 </section>
 
-<!-- ============ LA CANCHA · Las Torres (video, casi al final) ============ -->
-<section class="pitch" id="cancha" data-label="La cancha" data-index="07">
-  <div class="pitch-pin">
-    <div class="wrap split">
-      <div class="copy" id="pitchCopy">
-        <p class="kicker">07 — La cancha</p>
-        <h2 class="h2 big">Nos vemos<br><em>en la cancha.</em></h2>
-        <p class="body">Las Torres Fútbol 5 · San Miguel de Tucumán.</p>
-      </div>
-      <div class="pitch-media">
-        <div class="video-card" id="videoCard">
-          <video muted loop playsinline preload="metadata" poster="canchas-poster.jpg">
-            <source src="canchas-las-torres.mp4" type="video/mp4">
-          </video>
-          <span class="tag tl">Cancha · Las Torres F5</span>
-          <span class="tag br">REC <i class="dot"></i></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="footer" id="contacto" data-label="Contacto" data-index="08">
+<footer class="footer" id="contacto" data-label="Contacto" data-index="09">
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
@@ -285,7 +303,7 @@
         </div>
       </div>
     </div>
-    <p class="foot-giant" aria-hidden="true">Fútbol Amateur Tucumán</p>
+    <p class="foot-giant" aria-hidden="true">Esto es la FAT</p>
     <div class="foot-bottom">
       <span>© 2026 FAT · Fútbol Amateur Tucumán</span>
       <a href="https://www.instagram.com/enzovalenzuelamassa/" target="_blank" rel="noopener noreferrer"><svg><use href="#i-ig"/></svg>Desarrollado por <b>Enzo Valenzuela Massa</b></a>
@@ -293,18 +311,15 @@
   </div>
 </footer>
 
-<!-- WhatsApp flotante para sponsors -->
 <div class="wa" id="wa">
   <div class="wa-panel" id="waPanel" role="dialog" aria-label="Contacto para sponsors">
     <small>Contacto sponsors</small>
     <a href="https://wa.me/5493813323280?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" target="_blank" rel="noopener noreferrer"><svg><use href="#i-wa"/></svg>Mandar WhatsApp <em>1</em></a>
     <a href="https://wa.me/5493815560086?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20ser%20sponsor%20de%20FAT" target="_blank" rel="noopener noreferrer"><svg><use href="#i-wa"/></svg>Mandar WhatsApp <em>2</em></a>
   </div>
-  <button class="wa-btn" id="waBtn" aria-expanded="false" aria-controls="waPanel" aria-label="WhatsApp para sponsors">
-    <svg><use href="#i-wa"/></svg>
-  </button>
+  <button class="wa-btn" id="waBtn" aria-expanded="false" aria-controls="waPanel" aria-label="WhatsApp para sponsors"><svg><use href="#i-wa"/></svg></button>
 </div>
 
-<script src="script.js?v=7" defer></script>
+<script src="script.js?v=8" defer></script>
 </body>
 </html>
