@@ -436,4 +436,19 @@
   $$('[data-close]', sheet).forEach(b => b.addEventListener('click', closeWA));
   [o1, o2].forEach(a => a.addEventListener('click', () => setTimeout(closeWA, 300)));
   addEventListener('keydown', e => { if (e.key === 'Escape' && !sheet.hidden) closeWA(); });
+  /* ---------- Ver todos los sponsors ---------- */
+  const allSp = $('#allSp'), allGrid = $('#allGrid'), allBtn = $('#spxAll');
+  if (allSp) {
+    allGrid.innerHTML = $$('#spxTrack .spc').map((c, n) => {
+      const st = c.getAttribute('style'), plate = $('.spc-plate', c), img = $('img', plate);
+      const rubro = $$('.spc-top span', c)[1].textContent;
+      return `<article class="all-card" style="${st};--n:${n}"><div class="all-plate${plate.classList.contains('cover') ? ' cover' : ''}"><img src="${img.getAttribute('src')}" alt="${img.alt}" loading="lazy"></div><div><small>${rubro}</small><b>${$('h3', c).innerHTML}</b></div></article>`;
+    }).join('');
+    let back = null;
+    const openAll = () => { back = document.activeElement; allSp.hidden = false; $('.all-close', allSp).focus(); body.style.overflow = 'hidden'; };
+    const closeAll = () => { allSp.hidden = true; body.style.overflow = ''; if (back) back.focus(); };
+    allBtn.addEventListener('click', openAll);
+    $$('[data-close-all]', allSp).forEach(b => b.addEventListener('click', closeAll));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && !allSp.hidden) closeAll(); });
+  }
 })();

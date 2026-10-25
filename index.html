@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="escudo-fat-3d.webp">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body class="is-intro">
 
@@ -94,7 +94,10 @@
         <p class="kicker">02 — Sponsors oficiales</p>
         <h2 class="h2 big split-words">Marcas que <em>juegan con nosotros.</em></h2>
       </div>
-      <p class="spx-count" aria-hidden="true"><b id="spxNum">01</b> / 07</p>
+      <div class="spx-side">
+        <button class="spx-all" id="spxAll" type="button" aria-haspopup="dialog">Ver todos los sponsors <i aria-hidden="true">↗</i></button>
+        <p class="spx-count" aria-hidden="true"><b id="spxNum">01</b> / 07</p>
+      </div>
     </div>
     <div class="spx-track" id="spxTrack">
       <article class="spc" style="--brand:#6a4fc4;--plate:#ffffff">
@@ -376,6 +379,17 @@
 <button class="wa-float" type="button" data-wa="sponsor" aria-label="Mandar WhatsApp"><svg><use href="#i-wa"/></svg></button>
 
 <!-- Selector de WhatsApp: un solo botón → dos contactos con nombre -->
+<div class="all-sp" id="allSp" role="dialog" aria-modal="true" aria-labelledby="allSpTitle" hidden>
+  <div class="all-backdrop" data-close-all></div>
+  <div class="all-box">
+    <div class="all-head">
+      <div><p class="kicker">Sponsors oficiales · 7 marcas</p><p class="all-title" id="allSpTitle">Todos los <em>sponsors.</em></p></div>
+      <button class="all-close" type="button" data-close-all aria-label="Cerrar">✕</button>
+    </div>
+    <div class="all-grid" id="allGrid"></div>
+  </div>
+</div>
+
 <div class="wa-sheet" id="waSheet" role="dialog" aria-modal="true" aria-labelledby="waTitle" hidden>
   <div class="wa-backdrop" data-close></div>
   <div class="wa-box">
@@ -388,6 +402,6 @@
   </div>
 </div>
 
-<script src="script.js?v=10" defer></script>
+<script src="script.js?v=11" defer></script>
 </body>
 </html>

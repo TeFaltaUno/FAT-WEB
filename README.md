@@ -1,9 +1,9 @@
-# FAT-WEB V10 · "Somos la FAT"
+# FAT-WEB V11 · "Somos la FAT"
 
 ## Orden
 0. Entrada: escudo + botón ENTRAR (activa la música) → intro con cortes rápidos → "Somos la FAT."
 1. Escudo 3D con zoom al bajar.
-2. Sponsors: showcase con transición + muro "¿Querés formar parte del seleccionado como sponsor?".
+2. Sponsors: showcase con transición (botón "Ver todos los sponsors" en la esquina) + muro "¿Querés formar parte del seleccionado como sponsor?".
 3. Indumentaria 360°.
 4. Quiénes somos (tarjetas animadas con cámara y cursor).
 5. Convocatoria: "Te queremos ver jugar" + tarjeta FAT.

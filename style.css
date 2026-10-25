@@ -578,3 +578,43 @@ button.act{background:none;border:0;border-bottom:1px solid var(--line-d);width:
 @keyframes fatIn{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
 @keyframes fatGhost{0%{transform:scale(1);opacity:.8}60%{transform:scale(1.35);opacity:0}100%{opacity:0}}
 .jf-sub{position:absolute;bottom:22px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+
+/* =========================================================
+   V11 · "Ver todos los sponsors"
+   ========================================================= */
+.spx-side{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.spx-all{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);color:#fff;font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .3s,transform .4s var(--ease)}
+.spx-all i{font-style:normal;transition:transform .4s var(--ease)}
+.spx-all:hover{background:rgba(255,255,255,.14)}
+.spx-all:hover i{transform:translate(3px,-3px)}
+.all-sp{position:fixed;inset:0;z-index:110;display:flex;align-items:center;justify-content:center;padding:20px}
+.all-sp[hidden]{display:none}
+.all-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:fade .3s}
+.all-box{position:relative;width:min(1100px,100%);max-height:calc(100svh - 40px);overflow:auto;padding:clamp(20px,3vw,36px);border-radius:28px;background:#101216;border:1px solid rgba(255,255,255,.14);box-shadow:0 50px 140px rgba(0,0,0,.7);animation:sheetIn .5s var(--ease)}
+.all-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}
+.all-head .kicker{margin-bottom:8px}
+.all-title{margin:0;font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:clamp(32px,4vw,54px);line-height:.95}
+.all-title em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;font-stretch:100%}
+.all-close{flex:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;font-size:18px;cursor:pointer}
+.all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.all-card{border-radius:22px;padding:14px;display:flex;flex-direction:column;gap:12px;
+  background:radial-gradient(120% 80% at 50% 0%,color-mix(in srgb,var(--brand) 30%,transparent),transparent 70%),linear-gradient(170deg,#1b1e24,#0d0f12);
+  border:1px solid color-mix(in srgb,var(--brand) 45%,rgba(255,255,255,.12));animation:allIn .6s var(--ease) both;animation-delay:calc(var(--n) * 60ms)}
+@keyframes allIn{from{opacity:0;transform:translateY(26px) scale(.95);filter:blur(6px)}}
+.all-plate{aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--plate);display:grid;place-items:center}
+.all-plate img{width:78%;height:78%;object-fit:contain}
+.all-plate.cover img{width:100%;height:100%;object-fit:contain}
+.all-card small{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.all-card b{display:block;font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:26px;line-height:1;margin-top:4px}
+.all-card b em{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;font-stretch:100%}
+@media (max-width:900px){
+  .spx-head{flex-direction:column;align-items:stretch}
+  .spx-side{flex-direction:row;justify-content:space-between;align-items:center}
+  .spx-all{padding:9px 12px;font-size:11px}
+  .all-sp{padding:0;align-items:flex-end}
+  .all-box{border-radius:26px 26px 0 0;max-height:88svh}
+  .all-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .all-card{padding:10px;border-radius:18px}
+  .all-card b{font-size:20px}
+  .all-card small{font-size:10px}
+}
