@@ -1,4 +1,4 @@
-/* FAT WEB · V10 — "Somos la FAT" · motor de scroll cinematográfico (vanilla, sin dependencias) */
+/* FAT WEB · V10 — "Somos FAT" · motor de scroll cinematográfico (vanilla, sin dependencias) */
 (() => {
   // Misma experiencia en todos los celulares: no se desactivan animaciones por ahorro de batería
   const reduce = false;
@@ -94,10 +94,10 @@
   })();
 
   /* =========================================================
-     INTRO — "Esto es la FAT" → "Somos la FAT"
+     INTRO — "Esto es FAT" → "Somos FAT"
      ========================================================= */
   const intro = $('#intro'), cuts = $$('.cut', intro), count = $('#introCount');
-  const DUR = [360, 320, 320, 720, 220, 280, 220, 280, 220, 320, 1300];
+  const DUR = [360, 320, 720, 220, 280, 220, 280, 220, 320, 1300];
   let introDone = false; const timers = [];
   function endIntro() {
     if (introDone) return; introDone = true;

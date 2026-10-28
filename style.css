@@ -1,5 +1,5 @@
 /* =========================================================
-   FAT WEB · V8 — "Esto es la FAT"
+   FAT WEB · V8 — "Esto es FAT"
    Editorial · scrollytelling · tipografía sin color
    ========================================================= */
 :root{
@@ -70,7 +70,7 @@ strong{font-weight:600;color:var(--fg)}
 .bar span{display:block;height:100%;background:#fff;transform-origin:0 50%;transform:scaleX(0)}
 
 /* =========================================================
-   INTRO · "Esto es la FAT"
+   INTRO · "Esto es FAT"
    ========================================================= */
 .intro{position:fixed;inset:0;z-index:100;background:#000;color:#fff;overflow:hidden;display:grid;place-items:center;clip-path:inset(0 0 0 0);transition:clip-path .9s cubic-bezier(.77,0,.18,1)}
 .intro.out{clip-path:inset(0 0 100% 0)}
@@ -618,3 +618,6 @@ button.act{background:none;border:0;border-bottom:1px solid var(--line-d);width:
   .all-card b{font-size:20px}
   .all-card small{font-size:10px}
 }
+
+/* V12 · Autoridades sólo con nombres */
+.person{grid-template-columns:1fr}
