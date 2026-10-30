@@ -621,3 +621,9 @@ button.act{background:none;border:0;border-bottom:1px solid var(--line-d);width:
 
 /* V12 · Autoridades sólo con nombres */
 .person{grid-template-columns:1fr}
+
+/* V14 · Autoridades: nombre + cargo, tipografía más chica */
+.person{padding:20px 0}
+.person h3{font-size:clamp(26px,2.6vw,40px);line-height:1;font-stretch:72%}
+.person span{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);margin-top:8px}
+@media (max-width:900px){.person{padding:16px 0}.person h3{font-size:28px}}
