@@ -130,6 +130,13 @@
   addEventListener('wheel', () => { if (!started) runIntro(); else if (!introDone) endIntro(); }, { passive: true });
   addEventListener('touchmove', () => { if (!started) runIntro(); }, { passive: true });
   addEventListener('keydown', e => { if (introDone) return; if (!started) { Music.start(); runIntro(); } else if (e.key === 'Escape') endIntro(); });
+  // Link directo a una sección (ej: /#convocatoria): saltea portada e intro y baja a esa sección
+  const deep = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (deep && deep.tagName === 'SECTION') {
+    started = true;
+    endIntro();
+    setTimeout(() => deep.scrollIntoView({ block: 'start' }), 1100);
+  }
 
   /* ---------- Títulos palabra por palabra ---------- */
   $$('.split-words').forEach(h => {
