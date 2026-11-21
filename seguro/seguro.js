@@ -158,8 +158,9 @@
     var checked = form.querySelector('input[name="categoria"]:checked');
     var cat = checked && (checked.value === 'Fútbol 5' || checked.value === 'Fútbol 7') ? checked.value : 'Fútbol 5';
 
+    var rama = { femenino: ' (femenino)', masculino: ' (masculino)' }[form.getAttribute('data-rama')] || '';
     var msg = 'Hola, soy ' + name + '. Pagué el seguro para jugar el Torneo Regional del 29/11 en ' +
-      cat + '. Les mando el comprobante.';
+      cat + rama + '. Les mando el comprobante.';
     window.open('https://wa.me/' + to + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
   });
 
