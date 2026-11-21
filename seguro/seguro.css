@@ -14,6 +14,7 @@
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+:root{color-scheme:only light} /* evita que el "modo oscuro forzado" de Chrome oscurezca las tarjetas */
 html{-webkit-text-size-adjust:100%;background:var(--mag-3)}
 body{min-height:100svh;font-family:var(--display);color:var(--w);font-size:17px;line-height:1.6;overflow-x:hidden;
   background:radial-gradient(120% 80% at 10% 0%,var(--mag) 0%,var(--mag-2) 45%,var(--mag-3) 100%)}
@@ -27,6 +28,7 @@ a{color:inherit}
   --pick:var(--ink); --blob2:#3a4a63; --top-line:linear-gradient(90deg,var(--tq),#a9cdee);
 }
 .theme-negro .b1{opacity:.16}
+.theme-negro .letter,.theme-negro .insurer{background:#fff}
 .theme-negro .b3{background:#0c1320;opacity:.7}
 
 /* Fondo animado */
