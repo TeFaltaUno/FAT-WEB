@@ -8,11 +8,11 @@
      solo se leen de este archivo del repo.
    ───────────────────────────────────────────────────────────── */
 window.FAT_SEGURO = Object.freeze({
-  alias: "",        // ej: "fat.seguro.regional"
-  titular: "",      // ej: "Nombre y apellido de quien recibe"
-  banco: "",        // ej: "Mercado Pago" / "Banco Macro"
-  cbu: "",          // CBU o CVU (22 números). Opcional
-  monto: "",        // ej: "$5.000" — si está vacío no se muestra
+  alias: "MSORIA251.NX.ARS",        // ej: "fat.seguro.regional"
+  titular: "María del Tránsito Soria",      // ej: "Nombre y apellido de quien recibe"
+  banco: "Naranja X",        // ej: "Mercado Pago" / "Banco Macro"
+  cbu: "4530000800018996974519",          // CBU o CVU (22 números). Opcional
+  monto: "$18.850",        // ej: "$5.000" — si está vacío no se muestra
 
   // Cierre del pago: martes 24/11/2026 a las 23:59 (hora de Argentina)
   cierre: "2026-11-24T23:59:59-03:00",
