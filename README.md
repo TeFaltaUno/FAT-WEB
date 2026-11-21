@@ -19,3 +19,10 @@ Arranca al tocar ENTRAR. Si subís "musica.mp3" a la raíz, se usa ese tema.
 
 ## Publicación
 Subí todo el contenido de la carpeta a la raíz del repo. Podés borrar canchas-las-torres.mp4 y canchas-poster.jpg viejos.
+
+## /seguro/ · Seguro obligatorio Torneo Regional 29/11
+Link: futbolamateurtucuman.online/seguro/ — aviso para jugadoras (pago hasta el martes 24/11, F5 y F7),
+alias para transferir, envío de comprobante por WhatsApp y datos de Caruso Seguros.
+**Para cambiar el alias, titular, banco, CBU o monto:** editá solo `seguro/config.js` y subí el `?v=` de
+`config.js` en `seguro/index.html`. Los datos no se pueden cambiar desde el link (por seguridad).
+Imagen para compartir: `og-seguro-regional.jpg`.
