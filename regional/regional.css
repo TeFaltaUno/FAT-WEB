@@ -1,0 +1,46 @@
+/* Torneo Regional · Mensaje informativo · FAT
+   Página simple: logo de FAT, fondo del Regional y el mensaje. Sin JavaScript. */
+:root{
+  color-scheme:only light;
+  --mag:#fd05a3; --mag-2:#d1047f; --mag-3:#7a0350;
+  --tq:#0afbd8; --navy:#0d1a4a; --w:#fff; --w70:rgba(255,255,255,.72);
+  --display:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--mag-3)}
+body{min-height:100svh;font-family:var(--display);color:var(--w);font-size:17px;line-height:1.6;overflow-x:hidden;
+  background:radial-gradient(120% 80% at 10% 0%,var(--mag) 0%,var(--mag-2) 45%,var(--mag-3) 100%)}
+img{display:block;max-width:100%;height:auto}
+
+/* Fondo animado */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;animation:float 14s ease-in-out infinite alternate}
+.b1{width:60vmax;height:60vmax;left:-20vmax;bottom:-25vmax;background:var(--tq);opacity:.35}
+.b2{width:45vmax;height:45vmax;right:-15vmax;top:-10vmax;background:#ff4fc3;animation-delay:-5s}
+.b3{width:35vmax;height:35vmax;right:10vmax;bottom:-10vmax;background:var(--navy);opacity:.5;animation-delay:-9s}
+.stripes{position:absolute;inset:-50%;background:repeating-linear-gradient(-28deg,rgba(255,255,255,.05) 0 2px,transparent 2px 46px);animation:slide 18s linear infinite}
+@keyframes float{to{transform:translate3d(6vmax,-4vmax,0) scale(1.12)}}
+@keyframes slide{to{transform:translate3d(46px,0,0)}}
+
+.wrap{position:relative;z-index:1;width:min(760px,100%);margin:0 auto;padding:clamp(28px,6vw,64px) clamp(18px,4vw,32px) 32px}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--w70)}
+
+/* Logo */
+.logo{text-align:center;animation:in .9s cubic-bezier(.2,.7,.2,1) both}
+.logo img{width:clamp(120px,26vw,160px);height:auto;margin:0 auto 14px;filter:drop-shadow(0 16px 30px rgba(0,0,0,.4));animation:bob 6s ease-in-out infinite}
+.brand{font-weight:900;font-stretch:80%;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(20px,3vw,26px);line-height:1.15}
+.logo .mono{margin-top:4px}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+/* Mensaje */
+.msg{margin-top:clamp(28px,5vw,44px);background:#fff;color:#1a1b1f;border-radius:24px;padding:clamp(24px,5vw,48px);box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative;overflow:hidden;animation:in .9s .15s cubic-bezier(.2,.7,.2,1) both}
+.msg::before{content:"";position:absolute;inset:0 0 auto 0;height:8px;background:linear-gradient(90deg,var(--mag),var(--tq))}
+.msg p{font-size:clamp(17px,1.7vw,19px);margin-bottom:16px}
+.msg strong{font-weight:800}
+.greeting{font-family:var(--serif);font-style:italic;font-size:clamp(28px,4vw,36px)!important;line-height:1.15}
+.msg .sign{margin:24px 0 0;padding-top:18px;border-top:1px solid rgba(0,0,0,.12);font-family:var(--mono);font-size:12.5px!important;letter-spacing:.14em;text-transform:uppercase;color:rgba(0,0,0,.55)}
+@keyframes in{from{opacity:0;transform:translateY(20px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+
+.foot{margin-top:36px;text-align:center}
