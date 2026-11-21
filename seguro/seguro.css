@@ -149,7 +149,8 @@ h1{margin:14px 0 18px;line-height:.86;text-transform:uppercase}
 .field input[type=text]{width:100%;font:600 18px var(--display);color:var(--ink);background:var(--w);border:2px solid transparent;border-radius:14px;padding:14px 16px;outline:none}
 .field input[type=text]:focus{border-color:var(--tq)}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
-.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip{position:relative}
+.chip input{position:absolute;inset:0;opacity:0;pointer-events:none}
 .chip span{display:inline-block;cursor:pointer;border:2px solid rgba(255,255,255,.6);border-radius:999px;padding:10px 22px;font-weight:900;font-stretch:85%;text-transform:uppercase;font-size:18px;transition:background .2s,color .2s}
 .chip input:checked+span{background:var(--w);color:var(--mag-2);border-color:var(--w)}
 .chip input:focus-visible+span{outline:3px solid var(--tq);outline-offset:3px}
@@ -200,4 +201,37 @@ button.wa{border:0;cursor:pointer;font-family:var(--display)}
   .alias-box{grid-template-columns:1fr}
   .copy{width:100%}
   .docs-grid{grid-template-columns:1fr}
+}
+
+/* ── Formulario de inscripción (mismo estilo que el PDF de FAT) ── */
+.insc{--g:#16653a;--g2:#1f7a47;background:#fff;color:#1d2330;border-radius:22px;padding:clamp(20px,4vw,40px);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.insc-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:16px;border-bottom:3px solid var(--g);margin-bottom:20px}
+.insc-head img{width:64px;height:64px;flex:none}
+.insc-title{color:var(--g);font-weight:900;font-stretch:85%;text-transform:uppercase;font-size:clamp(22px,3vw,30px);line-height:1.05}
+.insc-sub{margin-top:4px;font-weight:800;text-transform:uppercase;font-size:clamp(13px,1.6vw,16px);color:#2e3440;letter-spacing:.02em}
+.insc-box{border:1px solid #d9dde3;border-left:5px solid var(--g);border-radius:6px;padding:16px 20px 18px;margin:0 0 16px;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;min-width:0}
+.insc-box legend,.insc-legend{grid-column:1/-1;float:left;width:100%;color:var(--g);font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:15px;padding-bottom:10px;margin-bottom:6px;border-bottom:1px solid #eceef1}
+.insc-box>p:not(.insc-legend){grid-column:1/-1;font-size:16px;line-height:1.55}
+.insc-f{display:block;padding:8px 0 4px;min-width:0}
+.insc-full{grid-column:1/-1}
+.insc-f>span{display:block;font-weight:800;text-transform:uppercase;font-size:12.5px;letter-spacing:.03em;color:#3a4150;margin-bottom:4px}
+.insc-f input{width:100%;min-width:0;font:600 17px var(--display);color:#1d2330;background:transparent;border:0;border-bottom:1.5px dashed #9aa3b2;border-radius:0;padding:8px 2px;outline:none;-webkit-appearance:none;appearance:none}
+.insc-f input:focus{border-bottom:2px solid var(--g);background:#f3f8f5}
+.insc-f input::placeholder{color:#a4abb6;font-weight:500}
+.chips-light{margin-top:6px}
+.chips-light .chip span{border-color:#c5ccd6;color:#2e3440;font-size:16px;padding:8px 18px}
+.chips-light .chip input:checked+span{background:var(--g);color:#fff;border-color:var(--g)}
+.insc-amount{display:inline-block;background:#e9f5ee;border:1px solid #b9dcc7;color:var(--g);font-family:var(--mono);font-weight:700;border-radius:4px;padding:1px 8px}
+.insc-check{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5;cursor:pointer}
+.insc-check input{flex:none;width:22px;height:22px;margin-top:2px;accent-color:var(--g)}
+.insc .field-error{background:#fde8ef;border:1px solid #f4b3c8}
+.insc-send{margin:6px 0 10px;font-weight:800;text-transform:uppercase;font-size:13px;letter-spacing:.06em;color:#3a4150}
+.insc .wa{border:1.5px solid #d9dde3;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+.insc-note{margin-top:14px;font-size:15px;color:#4a5160}
+.insc-note strong{color:#1d2330}
+.insc-pdf{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:var(--g);font-weight:800;font-size:15px;text-decoration:underline;text-underline-offset:3px}
+.insc-pdf svg{width:20px;height:20px;fill:currentColor}
+@media (max-width:520px){
+  .insc-box{grid-template-columns:1fr;padding:14px 14px 16px}
+  .insc-head img{width:52px;height:52px}
 }

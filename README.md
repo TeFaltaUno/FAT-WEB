@@ -26,5 +26,6 @@ alias para transferir, envío de comprobante por WhatsApp y datos de Caruso Segu
 **Para cambiar el alias, titular, banco, CBU o monto:** editá solo `seguro/config.js` y subí el `?v=` de
 `config.js` en `seguro/index.html`. Los datos no se pueden cambiar desde el link (por seguridad).
 Imagen para compartir: `og-seguro-regional.jpg`.
+Femenino incluye el formulario de inscripción (estilo del PDF `seguro/formulario-inscripcion-fat.pdf`), que se envía por WhatsApp con el comprobante; no se guardan datos.
 Versión masculina: futbolamateurtucuman.online/seguro/masculino/ (usa el mismo config.js, seguro.css y seguro.js;
 imagen para compartir `og-seguro-regional-masculino.jpg`). El mensaje de WhatsApp indica la rama (femenino/masculino).

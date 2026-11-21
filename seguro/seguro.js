@@ -2,7 +2,9 @@
    - Muestra el alias y los datos de pago desde config.js (no desde el link).
    - Botón para copiar alias / CBU.
    - Cuenta regresiva hasta el cierre del pago (martes 24/11 23:59).
-   - Arma el mensaje de WhatsApp con nombre y categoría para mandar el comprobante.
+   - Arma el mensaje de WhatsApp con nombre y categoría para mandar el comprobante
+     (en la página femenina, con el formulario de inscripción completo).
+     Los datos personales no se guardan ni se envían a ningún servidor: solo van en el mensaje.
    - Animaciones de entrada al hacer scroll.
    Seguridad: todo el texto se escribe con textContent (nunca innerHTML) y los
    valores que van a un link se validan y se codifican. */
@@ -132,17 +134,34 @@
     var timer = setInterval(function () { if (tick()) clearInterval(timer); }, 15000);
   }
 
-  /* ── Comprobante por WhatsApp ── */
+  /* ── Comprobante / inscripción por WhatsApp ── */
   var form = $('proof-form');
   var nameInput = $('pf-name');
   var err = $('pf-error');
   var PHONE = /^\d{10,15}$/;
+  var isInsc = form.getAttribute('data-mode') === 'inscripcion';
+
+  if (isInsc && data.monto && $('insc-monto')) $('insc-monto').textContent = data.monto;
 
   var lastBtn = null;
   form.querySelectorAll('[data-to]').forEach(function (b) {
     b.addEventListener('click', function () { lastBtn = b; });
   });
-  nameInput.addEventListener('input', function () { err.hidden = true; });
+  form.addEventListener('input', function () { err.hidden = true; });
+
+  function fail(msg, el) {
+    err.textContent = msg;
+    err.hidden = false;
+    if (el) el.focus();
+  }
+  function birthText(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || '');
+    if (!m) return '';
+    var y = +m[1], now = new Date().getFullYear();
+    if (y < 1950 || y > now - 5) return '';
+    return m[3] + '/' + m[2] + '/' + m[1];
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var btn = e.submitter || lastBtn;
@@ -150,17 +169,41 @@
     if (!PHONE.test(to || '')) return;
 
     var name = clean(nameInput.value, 60).replace(/[<>]/g, '').replace(/\s+/g, ' ');
-    if (name.length < 3) {
-      err.hidden = false;
-      nameInput.focus();
-      return;
-    }
+    if (name.length < 3) return fail('Escribí tu apellido y nombre.', nameInput);
+
     var checked = form.querySelector('input[name="categoria"]:checked');
     var cat = checked && (checked.value === 'Fútbol 5' || checked.value === 'Fútbol 7') ? checked.value : 'Fútbol 5';
+    var ramaKey = form.getAttribute('data-rama');
+    var rama = { femenino: ' (femenino)', masculino: ' (masculino)' }[ramaKey] || '';
+    var msg;
 
-    var rama = { femenino: ' (femenino)', masculino: ' (masculino)' }[form.getAttribute('data-rama')] || '';
-    var msg = 'Hola, soy ' + name + '. Pagué el seguro para jugar el Torneo Regional del 29/11 en ' +
-      cat + rama + '. Les mando el comprobante.';
+    if (isInsc) {
+      var dniEl = $('pf-dni'), birthEl = $('pf-birth'), addrEl = $('pf-addr'), phoneEl = $('pf-phone'), accEl = $('pf-accept');
+      var dni = clean(dniEl.value, 12).replace(/\D/g, '');
+      if (dni.length < 7 || dni.length > 8) return fail('Revisá el DNI (7 u 8 números, sin puntos).', dniEl);
+      var birth = birthText(birthEl.value);
+      if (!birth) return fail('Completá una fecha de nacimiento válida.', birthEl);
+      var addr = clean(addrEl.value, 100).replace(/[<>]/g, '').replace(/\s+/g, ' ');
+      if (addr.length < 4) return fail('Completá tu domicilio.', addrEl);
+      var tel = clean(phoneEl.value, 20).replace(/\D/g, '');
+      if (tel.length < 8 || tel.length > 15) return fail('Revisá el teléfono (solo números, con característica).', phoneEl);
+      if (!accEl.checked) return fail('Tenés que aceptar la declaración del Reglamento General de FAT.', accEl);
+
+      msg = 'Hola, envío mi inscripción a FAT y el comprobante del seguro para el Torneo Regional del 29/11.\n\n' +
+        'FORMULARIO DE INSCRIPCIÓN · FAT\n' +
+        '• Apellido y nombre: ' + name + '\n' +
+        '• DNI: ' + dni + '\n' +
+        '• Fecha de nacimiento: ' + birth + '\n' +
+        '• Domicilio: ' + addr + '\n' +
+        '• Teléfono: ' + tel + '\n' +
+        '• Categoría: ' + cat + rama + '\n' +
+        (data.monto ? '• Aporte mensual: ' + data.monto + ' (incluye seguro deportivo)\n' : '') +
+        '• Declaro conocer y aceptar el Reglamento General de FAT.\n\n' +
+        'Adjunto el comprobante de pago.';
+    } else {
+      msg = 'Hola, soy ' + name + '. Pagué el seguro para jugar el Torneo Regional del 29/11 en ' +
+        cat + rama + '. Les mando el comprobante.';
+    }
     window.open('https://wa.me/' + to + '?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
   });
 
